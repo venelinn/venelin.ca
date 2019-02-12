@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Venelin Nikolov • Frond-end Developer • UX/UI • PageSpeed`,
     description: `Frond-end Developer, Performance specialist, SEO optimization, UX/UI`,
-    author: `@gatsbyjs`,
+    author: `@venelin`,
     socialItems,
   },
   plugins: [
@@ -44,7 +44,7 @@ module.exports = {
         background_color: `#ff0100`,
         theme_color: `#ff0100`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/vca-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
