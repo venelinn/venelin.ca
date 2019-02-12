@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://venelin.ca">
-    <img alt="Venelin.ca" src="src/images/vca-icon.png" width="60" />
+    <img alt="Venelin.ca" src="src/images/vca-icon.png" />
   </a>
 </p>
 <h1 align="center">
@@ -83,6 +83,6 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/venelinn/venelin.ca)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
