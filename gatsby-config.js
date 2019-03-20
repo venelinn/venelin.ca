@@ -1,11 +1,10 @@
-const socialItems = require('./src/data/socialItems');
+const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
     title: `Venelin Nikolov • Frond-end Developer • UX/UI • PageSpeed`,
     description: `Frond-end Developer, Performance specialist, SEO optimization, UX/UI`,
-    author: `@venelin`,
-    socialItems,
+    author: `@venelin`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,7 +22,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: path.join(__dirname, `src`, `images`),
       },
     },
     {

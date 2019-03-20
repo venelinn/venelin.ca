@@ -1,12 +1,13 @@
-import PropTypes from "prop-types"
 import React from "react"
-import Menus from '../menus'
-import Hero from '../Hero/Hero';
+import Hero from './Hero/Hero';
 
 import "./header.scss"
 
-const Header = ({ siteTitle, socialItems, hero }) => (
+const Header = ({ hero }) => (
   <section className="intro">
+    <div className="hero__image">
+      <Hero {...hero} />
+    </div>
     <div className="intro__content">
       <span className="intro__msg">Hi there!</span>
       <h1>I'm Venelin</h1>
@@ -19,21 +20,11 @@ const Header = ({ siteTitle, socialItems, hero }) => (
         <li><a className="button jsSmoothScroll" href="#portfolio" title="Venelin's Portfolio">Portfolio</a></li>
       </ul>
       <div className="header__menu__social-container">
-      <Menus socialItems={socialItems}
-      />
+
       </div>
     </div>
-    <Hero {...hero} />
 
   </section>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

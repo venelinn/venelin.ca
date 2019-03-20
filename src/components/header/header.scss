@@ -1,29 +1,31 @@
-/** 
+/**
  * ===================================================================
- * Intro 
+ * Intro
  *
- * ------------------------------------------------------------------- 
+ * -------------------------------------------------------------------
  */
 
-/*! @{target: critical} */
+
 .intro {
 	height: 100vh;
 	display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
-	background-size: cover;
-	background-position: 50%;
-	background-repeat: no-repeat;
-	background-color: #111;
-	transition: background-color .5s ease-in;
 }
-/*! {target: critical}@ */
+
+.hero__image {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: -1;
+}
 
 .intro {
-	background-image: url(../../images/bg.jpg);
-	background-attachment: fixed;
-	background-color: transparent;
+	// background-image: url(../../images/bg.jpg);
+	// background-attachment: fixed;
+	// background-color: transparent;
 	&:before {
 		content: '';
 		position: absolute;
@@ -129,7 +131,7 @@
 /*! {target: critical}@ */
 
 .button {
-	&:hover, 
+	&:hover,
 	&:focus {
 		border-color: var(--base-color);
 		color: var(--base-color);
@@ -141,7 +143,7 @@
 	    transition: all .3s ease-in-out;
 	}
 	.button {
-		&:hover, 
+		&:hover,
 		&:focus {
 			&:before,
 	    	&:after {
@@ -168,7 +170,7 @@
 				display: inline-block;
 				color: rgba(0, 0, 0, 0.3);
 			}
-	
+
 		}
 	}
 	@include breakpoint($smedium + 1) {

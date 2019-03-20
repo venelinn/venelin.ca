@@ -14,10 +14,6 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
-            socialItems {
-              name
-              url
-            }
           }
         }
       }
