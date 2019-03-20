@@ -16,9 +16,10 @@ const Profile = () => (
       }
     `}
     render={data => (
-      <>
-      <ul className="about__info-list">{getProfileData(data)}</ul>
-      </>
+      <div>
+        <div className="about__label">Profile</div>
+        <ul className="about__info-list">{getProfileData(data)}</ul>
+      </div>
     )}
   />
 )
