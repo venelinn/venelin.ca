@@ -1,10 +1,11 @@
 import PropTypes from "prop-types"
 import React from "react"
 import Menus from '../menus'
+import Hero from '../Hero/Hero';
 
 import "./header.scss"
 
-const Header = ({ siteTitle, socialItems }) => (
+const Header = ({ siteTitle, socialItems, hero }) => (
   <section className="intro">
     <div className="intro__content">
       <span className="intro__msg">Hi there!</span>
@@ -22,6 +23,7 @@ const Header = ({ siteTitle, socialItems }) => (
       />
       </div>
     </div>
+    <Hero {...hero} />
 
   </section>
 )
