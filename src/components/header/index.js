@@ -1,9 +1,10 @@
 import React from "react"
 import Hero from './Hero/Hero';
+import Social from './Social';
 
 import "./header.scss"
 
-const Header = ({ hero }) => (
+const Header = ({ hero, social }) => (
   <section className="intro">
     <div className="hero__image">
       <Hero {...hero} />
@@ -19,11 +20,10 @@ const Header = ({ hero }) => (
         <li><a className="button jsSmoothScroll" href="#about" title="More About Venelin">About Me</a></li>
         <li><a className="button jsSmoothScroll" href="#portfolio" title="Venelin's Portfolio">Portfolio</a></li>
       </ul>
-      <div className="header__menu__social-container">
-
-      </div>
     </div>
-
+    <div className="header__menu__social-container">
+      <Social {...social} />
+    </div>
   </section>
 )
 

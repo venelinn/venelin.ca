@@ -1,7 +1,7 @@
 import React from "react"
 
 const Aboutme = () => (
-    <div className="grid grid--about">
+  <div className="grid grid--about">
     <h2>About</h2>
     <h3>Let me introduce myself.</h3>
     <div className="about__intro">

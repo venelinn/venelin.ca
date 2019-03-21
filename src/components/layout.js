@@ -25,7 +25,7 @@ const Layout = ({ children }) => (
         <div>
           <main>{children}</main>
           <footer>
-            © {new Date().getFullYear()}, Built with Love
+            <div className="copyright">© {new Date().getFullYear()}, Built with Love</div>
             {` `}
           </footer>
         </div>
