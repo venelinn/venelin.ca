@@ -17,12 +17,12 @@
 
 // @import 'base/variables';
 // @import 'breakpoints/breakpoint';
+@import 'fonts';
 @import 'portfolio';
 @import 'contacts';
 
 /*! @{target: critical} */
 @import 'reset';
-
 
 html,
 body {
@@ -31,7 +31,7 @@ body {
 
 body {
 	background-color: #fff;
-	font-family: serif;
+	font-family: 'Jost', serif;
 	//font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 	//font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 	font-size: 1rem;
@@ -67,8 +67,9 @@ a:active {
  * -------------------------------------------------------------------
  */
 h1, h2, h3, h4, h5, h6{
-	font-family: sans-serif;
-	color: #313131;
+	//font-family: sans-serif;
+	font-family: 'League Spartan',sans-serif;
+	color: var(--color-dark);
 	font-style: normal;
 	text-rendering: optimizeLegibility;
 	margin-bottom: 1.5rem;
@@ -89,13 +90,6 @@ h3 {
 		font-size: 1.5rem;
 	}
 }
-
-h4 {
-	text-transform: uppercase;
-	color: var(--base-color);
-	letter-spacing: .3rem;
-}
-
 
 
 /**
@@ -347,7 +341,6 @@ h4 {
 footer {
 	font-family: sans-serif;
 	text-align: center;
-	background-color: #fff;
 }
 
 .copyright {

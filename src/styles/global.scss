@@ -1,10 +1,11 @@
 :root {
-    --base-color: #ff0100;
-    --color-dark: #313131;
-    --color-light: #444;
-    --page-max-width: 850px;
-  }
+  --base-color: #ff0100;
+  --color-dark: #313131;
+  --color-light: #444;
+  --page-max-width: 850px;
+}
   /*! {target: critical}@ */
-  
-  @import 'base/variables';
-  @import 'breakpoints/breakpoint';
+
+@import 'base/variables';
+@import 'breakpoints/breakpoint';
+@import 'base/mixins';

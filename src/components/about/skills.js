@@ -17,15 +17,11 @@ const Skills = () => (
         <strong>PageSpeed</strong>
       </li>
       <li>
-        <div className="progress percent60"><span>60%</span></div>
-        <strong>jQuery</strong>
+        <div className="progress percent50"><span>50%</span></div>
+        <strong>JavaScript</strong>
       </li>
       <li>
-        <div className="progress percent35"><span>35%</span></div>
-        <strong>Angular</strong>
-      </li>
-      <li>
-        <div className="progress percent75"><span>75%</span></div>
+        <div className="progress percent85"><span>85%</span></div>
         <strong>Wordpress</strong>
       </li>
       <li>

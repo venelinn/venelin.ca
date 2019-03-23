@@ -20,19 +20,19 @@
    max-width: var(--page-max-width);
 	@include breakpoint($smedium + 1) {
 		margin: 1rem auto 4rem;
-		font-size: 1.5rem;
-    }
-    @include breakpoint(0 $smedium) {
-    	margin: 1rem auto 3rem;
 		font-size: 1.3rem;
-    }
-    h5 {
-    	margin-bottom: 0px;
-    	font-size: 1.4rem;
-    }
-    p {
-    	margin-bottom: 20px;
-    }
+  }
+  @include breakpoint(0 $smedium) {
+   	margin: 1rem auto 3rem;
+		font-size: 1.3rem;
+  }
+  h4 {
+		 margin-bottom: 0px;
+		 margin-top: 2rem;
+  }
+	p {
+		margin-bottom: 1.3rem;
+	}
 }
 
 .about__content {
@@ -47,12 +47,11 @@
 }
 
 .about__label {
-	font-family: sans-serif;
-    font-size: 1.1rem;
-    color: var(--color-dark);
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-    font-weight: bold;
+	font-size: 1.1rem;
+	color: var(--color-dark);
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+	font-weight: bold;
 }
 
 .about__info-list {
