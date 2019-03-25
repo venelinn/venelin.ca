@@ -5,7 +5,7 @@ import Social from './Social';
 import "./header.scss"
 
 const Header = ({ hero, social }) => (
-  <section className="intro">
+  <section className="intro intro--gradient">
     <div className="hero__image">
       <Hero {...hero} />
     </div>
