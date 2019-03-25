@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import About from "./about"
-import Resume from "./resume/resume"
+import Resume from "./resume"
 
 import "../styles/style.scss"
 

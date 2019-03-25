@@ -1,9 +1,11 @@
-import React from "react"
-import Icon from '../Icons/Icon'
+import React from "react";
+import Icon from '../Icons/Icon';
+//import PresentationVideo from './Timeline';
+import { graphql } from 'gatsby';
 
-import "./resume.scss"
+import "./resume.scss";
 
-const Resume = () => (
+const Resume = ({ data }) => (
 	<section id="resume" className="section section--resume">
 		<div className="section-intro">
 			<h2>Resume</h2>
@@ -13,7 +15,10 @@ const Resume = () => (
 			<div className="resume-header">
 				<div className="timeline__exp">Work Experience</div>
 			</div>
-			<div className="timeline-wrap jsExpWrapper">
+			<div>
+				{data.ExperienceQuery.edges.map(({ node }) => (
+					`${node.company}`
+				))}
 
 			</div>
 		</div>
@@ -35,13 +40,23 @@ const Resume = () => (
 						<p>Technical University of Sofia, Bulgaria</p>
 					</div>
 				</div>
-
 			</div>
-
-
 		</div>
 
 	</section>
 )
 
 export default Resume
+
+export const query = graphql`
+	query ExperienceQuery {
+		allExperienceJson {
+			edges {
+				node {
+					position
+					company
+				}
+			}
+		}
+	}
+`;

@@ -7,9 +7,7 @@ import Icon from '../Icons/Icon'
 //import "./resume.scss"
 
 class Album extends React.Component {
-  constructor() {
-    super();
-  }
+
   render() {
     const {
       title, source, thumbnail, images, ...props

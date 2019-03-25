@@ -1,34 +1,32 @@
-import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
-import Icon from '../Icons/Icon'
+import PropTypes from 'prop-types';
+import React from 'react';
+import Video from './TimelineItem';
 
-const Timeline = () => (
-  <StaticQuery
-    query={graphql`
-      query ExperienceQuery {
-        allExperienceJson {
-          edges {
-            node {
-              name
-              url
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <ul className="intro__social">{getSocialData(data)}</ul>
-      </>
-    )}
-  />
-)
-export default Timeline
+const PresentationVideo = ({
+  company,
+  position,
+  ...props
+}) => (
+  <article {...props}>
+    <div>
+      <h2>{position}</h2>
+    </div>
 
-function getSocialData(data) {
-  const socialArray = [];
-  data.allSocialItemsJson.edges.forEach(item =>
-    socialArray.push(<li key={item.node.name}><a  href={`${item.node.url}`} target="_blank" rel="noopener noreferrer" title={`${item.node.name}`}><Icon name={`${item.node.name}`} /></a></li>)
-  );
-  return socialArray;
-}
+    <div>
+      <Video
+        src={company}
+      />
+    </div>
+  </article>
+);
+
+PresentationVideo.propTypes = {
+  company: PropTypes.string.isRequired,
+  position: PropTypes.string.isRequired,
+};
+
+PresentationVideo.defaultProps = {
+  className: '',
+};
+
+export default PresentationVideo;
