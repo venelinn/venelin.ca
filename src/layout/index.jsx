@@ -2,9 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import About from "./about"
-import Resume from "./resume"
+import Header from "../sections/header"
+import About from "../sections/about"
+import Resume from "../sections/resume"
 
 import "../styles/style.scss"
 

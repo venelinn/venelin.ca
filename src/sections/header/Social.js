@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from 'gatsby'
-import Icon from '../Icons/Icon'
+import Icon from '../../components/icons'
 
 const Social = () => (
   <StaticQuery

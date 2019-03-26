@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from '../Icons/Icon';
+import Icon from '../../components/icons';
 //import PresentationVideo from './Timeline';
 import { graphql } from 'gatsby';
 
@@ -16,9 +16,7 @@ const Resume = ({ data }) => (
 				<div className="timeline__exp">Work Experience</div>
 			</div>
 			<div>
-				{data.ExperienceQuery.edges.map(({ node }) => (
-					`${node.company}`
-				))}
+
 
 			</div>
 		</div>
@@ -50,13 +48,9 @@ export default Resume
 
 export const query = graphql`
 	query ExperienceQuery {
-		allExperienceJson {
-			edges {
-				node {
-					position
-					company
-				}
-			}
+		experienceJson {
+			company
+			position
 		}
 	}
 `;

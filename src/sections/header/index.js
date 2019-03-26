@@ -1,11 +1,13 @@
 import React from "react"
+import Section from "../../components/Section";
 import Hero from './Hero/Hero';
 import Social from './Social';
 
 import "./header.scss"
 
 const Header = ({ hero, social }) => (
-  <section className="intro intro--gradient">
+  <Section className="intro">
+  {/* <section className="intro intro--gradient"> */}
     <div className="hero__image">
       <Hero {...hero} />
     </div>
@@ -24,7 +26,7 @@ const Header = ({ hero, social }) => (
     <div className="header__menu__social-container">
       <Social {...social} />
     </div>
-  </section>
+  </Section>
 )
 
 export default Header
