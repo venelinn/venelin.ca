@@ -10,7 +10,7 @@ const Portfolio = () => (
         <h3>Check Out Some of My Works</h3>
       </div>
       <div className="portfolio-content">
-          images here
+        images here
       </div>
   </Section>
 )

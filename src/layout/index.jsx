@@ -31,7 +31,7 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <About />
         <Resume />
-        <Portfolio />>
+        <Portfolio />
         <footer>
           <div className="copyright">© {new Date().getFullYear()}, Built with Love</div>
           {` `}
