@@ -5,23 +5,9 @@
  * -------------------------------------------------------------------
  */
 
-/*! @{target: critical} */
-
-// :root {
-//   --base-color: #ff0100;
-//   --color-dark: #313131;
-//   --color-light: #444;
-//   --page-max-width: 850px;
-// }
-// /*! {target: critical}@ */
-
-// @import 'base/variables';
-// @import 'breakpoints/breakpoint';
 @import 'fonts';
-@import 'portfolio';
 @import 'contacts';
 
-/*! @{target: critical} */
 @import 'reset';
 
 html,
@@ -80,6 +66,7 @@ h2 {
 	color: var(--base-color);
 	letter-spacing: .2rem;
 	white-space: nowrap;
+	font-size: inherit;
 }
 
 h3 {

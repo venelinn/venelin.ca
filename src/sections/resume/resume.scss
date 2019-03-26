@@ -12,8 +12,6 @@
 	position: relative;
 	margin-top: 1.5rem;
 	margin-bottom: 4rem;
-	display: flex;
-	flex-direction: column-reverse;
 	&:before {
 		content: "";
 		display: block;
@@ -23,7 +21,7 @@
 		position: absolute;
     	top: 17px;
 		@include breakpoint($smedium + 1) {
-			left: 278px;
+			left: 287px;
 		}
 		@include breakpoint(0 $smedium) {
 			left: 2rem;
@@ -59,7 +57,7 @@
 	display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 1rem;
+  margin: 0 1.5rem;
 	.vicon {
 		font-size: inherit;
 	}

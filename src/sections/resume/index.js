@@ -1,24 +1,21 @@
 import React from "react";
+import Section from "../../components/Section";
 import Icon from '../../components/icons';
-//import PresentationVideo from './Timeline';
-import { graphql } from 'gatsby';
+import Jobs from "./jobs"
 
 import "./resume.scss";
 
-const Resume = ({ data }) => (
-	<section id="resume" className="section section--resume">
+const Resume = () => (
+	<Section className="resume">
 		<div className="section-intro">
 			<h2>Resume</h2>
-			<h3>More of my credentials.</h3>
+			<h3>More of my credentials</h3>
 		</div>
 		<div className="timeline">
 			<div className="resume-header">
 				<div className="timeline__exp">Work Experience</div>
 			</div>
-			<div>
-
-
-			</div>
+			<Jobs />
 		</div>
 		<div className="timeline">
 			<div className="resume-header">
@@ -41,16 +38,8 @@ const Resume = ({ data }) => (
 			</div>
 		</div>
 
-	</section>
+	</Section>
 )
 
 export default Resume
 
-export const query = graphql`
-	query ExperienceQuery {
-		experienceJson {
-			company
-			position
-		}
-	}
-`;
