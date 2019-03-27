@@ -3,8 +3,6 @@ import React from "react"
 
 const Aboutme = () => (
   <div className="grid grid--about">
-    <h2>About</h2>
-    <h3>Let me introduce myself</h3>
     <div className="about__intro">
       <p>My name is Venelin Nikolov. I'm Frond-end and UX/UI developer from Montreal, Canada.</p>
       <p>I'm developing the front end look & feel of the web sites. Also I'm web-standards advocate and an outstanding grip on the inner workings of the W3C guidelines, not to mention my unnatural obsession with Website performance and optimization, Modular CSS, HTML/5 and the list continues. I'm the glue between design and usability and I'm always ready for new challenges including new ideas and innovations.</p>

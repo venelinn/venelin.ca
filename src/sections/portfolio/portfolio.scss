@@ -26,6 +26,7 @@
 		transition: all 0.5s ease-in-out;
 	}
 }
+
 .folio-item__link {
 	display: block;
 	position: relative;
@@ -54,9 +55,6 @@
 			}
 		}
 	}
-	@include breakpoint(0 $smedium) {
-
-	}
 }
 
 
@@ -71,9 +69,6 @@
 		width: 100%;
 		height: 100%;
 		z-index: 2;
-	}
-	@include breakpoint(0 $smedium) {
-		//display: none;
 	}
 }
 

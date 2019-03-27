@@ -8,8 +8,11 @@ import CTA from "./cta"
 import "./about.scss"
 
 const About = () => (
-	<Section className="about">
-		{/* <section id="about" className="section section--about"> */}
+	<Section
+		className="about"
+		title="About"
+		description="Let me introduce myself"
+	>
 			<Aboutme/>
 			<div className="about__content">
 				<Profile/>

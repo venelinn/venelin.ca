@@ -6,11 +6,11 @@ import Jobs from "./jobs"
 import "./resume.scss";
 
 const Resume = () => (
-	<Section className="resume">
-		<div className="section-intro">
-			<h2>Resume</h2>
-			<h3>More of my credentials</h3>
-		</div>
+	<Section
+		className="resume"
+		title="Resume"
+		description="More of my credentials"
+		>
 		<div className="timeline">
 			<div className="resume-header">
 				<div className="timeline__exp">Work Experience</div>

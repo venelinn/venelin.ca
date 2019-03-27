@@ -4,13 +4,8 @@
  *
  * -------------------------------------------------------------------
  */
- #about {
-	.section-intro {
-		margin-bottom: 2rem;
-	}
-}
 
-.grid--about {
+ .grid--about {
 	display: grid;
 	justify-items: center;
 	margin: 0 auto;
@@ -66,7 +61,6 @@
 		}
 	}
 	strong {
-		font-family: sans-serif;
 		color: #313131;
 		font-weight: bold;
 		letter-spacing: .1rem;
@@ -74,7 +68,6 @@
 	}
 	span {
 		display: block;
-		font-family: sans-serif;
 		line-height: 1;
 	}
 	@include breakpoint(0 $smedium) {
@@ -133,15 +126,15 @@
 		height: 100%;
 		span {
 			position: absolute;
-		    right: 0;
-		    top: -2.1rem;
-		    display: block;
-		    color: #fff;
-		    font-size: .7rem;
-		    line-height: 1;
-		    background: #313131;
-		    padding: .4rem .4rem;
-		    border-radius: 3px;
+			right: 0;
+			top: -2.1rem;
+			display: block;
+			color: #fff;
+			font-size: .7rem;
+			line-height: 1;
+			background: #313131;
+			padding: .4rem .4rem;
+			border-radius: 3px;
 			&:after {
 				position: absolute;
 				left: 50%;

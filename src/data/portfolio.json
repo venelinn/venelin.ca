@@ -1,60 +1,45 @@
-{
-  "portfolio": [
-    {
-      "id": 1,
-      "name": "Talpool",
-      "url": "https://www.talpool.com",
-      "types": "Design, UX/UI, Web development",
-      "description": "TALPOOL is a website where photographers can find and get matched with projects that are looking for their expertise.",
-      "photos": [
-          {
-              "url": "assets/images/portfolio/talpool",
-              "thmbUrl": "assets/images/portfolio/talpool-thumb",
-              "thmbUrl2x": "assets/images/portfolio/talpool-thumb-2x"
-          }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "YellowPages",
-      "url": "https://www.yellowpages.ca",
-      "types": "HTML/CSS, Pagespeed, UX/UI",
-      "description": "YellowPages.ca connects you to Canada's businesses, products and services, providing all the information from the business directory: addresses and telephone numbers + videos, photos, email and web sites",
-      "photos": [
-          {
-              "url": "assets/images/portfolio/yp",
-              "thmbUrl": "assets/images/portfolio/yp-thumb",
-              "thmbUrl2x": "assets/images/portfolio/yp-thumb-2x"
-          }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Balevski Photography",
-      "url": "http://www.vladibalevski.com",
-      "types": "Wordpress, HTML/CSS/JS, UX/UI",
-      "description": "Photography website",
-      "photos": [
-          {
-              "url": "assets/images/portfolio/balevski",
-              "thmbUrl": "assets/images/portfolio/balevski-thumb",
-              "thmbUrl2x": "assets/images/portfolio/balevski-thumb-2x"
-          }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "CanPages",
-      "url": "https://www.canpages.ca",
-      "types": "HTML/CSS, UX/UI",
-      "description": "Canadian Business Directory Listings and Business Reverse Lookup around you.",
-      "photos": [
-          {
-              "url": "assets/images/portfolio/canpages",
-              "thmbUrl": "assets/images/portfolio/canpages-thumb",
-              "thmbUrl2x": "assets/images/portfolio/canpages-thumb-2x"
-          }
-      ]
-    }
-  ]
-}
+[{
+    "id": "1",
+    "name": "Talpool",
+    "url": "https://www.talpool.com",
+    "types": "Design, UX/UI, Web development",
+    "description": "TALPOOL is a website where photographers can find and get matched with projects that are looking for their expertise.",
+    "photos": [{
+      "src": "assets/images/portfolio/talpool",
+      "thumb": "assets/images/portfolio/talpool-thumb"
+    }]
+  },
+  {
+    "id": "2",
+    "name": "YellowPages",
+    "url": "https://www.yellowpages.ca",
+    "types": "HTML/CSS, Pagespeed, UX/UI",
+    "description": "YellowPages.ca connects you to Canada's businesses, products and services, providing all the information from the business directory: addresses and telephone numbers + videos, photos, email and web sites",
+    "photos": [{
+      "src": "assets/images/portfolio/yp",
+      "thumb": "assets/images/portfolio/yp-thumb"
+    }]
+  },
+  {
+    "id": "3",
+    "name": "Balevski Photography",
+    "url": "http://www.vladibalevski.com",
+    "types": "Wordpress, HTML/CSS/JS, UX/UI",
+    "description": "Photography website",
+    "photos": [{
+      "src": "assets/images/portfolio/balevski",
+      "thumb": "assets/images/portfolio/balevski-thumb"
+    }]
+  },
+  {
+    "id": "4",
+    "name": "CanPages",
+    "url": "https://www.canpages.ca",
+    "types": "HTML/CSS, UX/UI",
+    "description": "Canadian Business Directory Listings and Business Reverse Lookup around you.",
+    "photos": [{
+      "src": "assets/images/portfolio/canpages",
+      "thumb": "assets/images/portfolio/canpages-thumb"
+    }]
+  }
+]
