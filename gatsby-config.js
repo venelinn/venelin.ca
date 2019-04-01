@@ -4,7 +4,8 @@ module.exports = {
   siteMetadata: {
     title: `Venelin Nikolov • Frond-end Developer • UX/UI • PageSpeed`,
     description: `Frond-end Developer, Performance specialist, SEO optimization, UX/UI`,
-    author: `@venelin`
+    author: `@venelin`,
+    baseURL: `https://venelin.ca`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
