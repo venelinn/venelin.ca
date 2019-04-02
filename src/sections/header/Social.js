@@ -18,17 +18,19 @@ const Social = () => (
     `}
     render={data => (
       <>
-        <ul className="intro__social">{getSocialData(data)}</ul>
+        <ul className="intro__social">
+         {
+          data.allSocialItemsJson.edges.map(item => (
+            <li key={item.node.name}>
+              <a href={`${item.node.url}`} target="_blank" rel="noopener noreferrer" title={`${item.node.name}`}>
+                <Icon name={`${item.node.name}`} />
+              </a>
+            </li>
+          ))
+        }
+        </ul>
       </>
     )}
   />
 )
 export default Social
-
-function getSocialData(data) {
-  const socialArray = [];
-  data.allSocialItemsJson.edges.forEach(item =>
-    socialArray.push(<li key={item.node.name}><a  href={`${item.node.url}`} target="_blank" rel="noopener noreferrer" title={`${item.node.name}`}><Icon name={`${item.node.name}`} /></a></li>)
-  );
-  return socialArray;
-}

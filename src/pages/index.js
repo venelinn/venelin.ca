@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from 'prop-types';
 import Layout from "../layout"
 import SEO from "../layout/seo"
 
@@ -18,6 +17,7 @@ const IndexPage = () => (
     <About />
     <Resume />
     <Portfolio />
+
   </Layout>
 )
 
