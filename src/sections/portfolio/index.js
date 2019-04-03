@@ -19,13 +19,12 @@ const PortfolioList = () => (
             description
             images {
               childImageSharp {
-                fixed (
-                  width: 256
-                  height: 256
-                  cropFocus: CENTER
+                fluid(
+                  maxWidth: 500,
+                  jpegProgressive: true,
                   quality: 92
                 ) {
-                  src
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -37,11 +36,10 @@ const PortfolioList = () => (
     render={data => (
       <div className="portfolio-content">
         <div className="stack">
-         {
-          data.allPortfolioJson.edges.map(item => (
+         {data.allPortfolioJson.edges.map(item => (
             <div className="bgrid folio-item" key={item.node.id}>
               <a href="#" className="folio-item__link">
-                <Img fixed={item.node.childImageSharp.fixed.src} />
+                <Img fluid={item.node.images.childImageSharp.fluid} />
                 <span className="folio-item-table">
                   <span className="folio-item-cell">
                       <h3 className="folio-title">{item.node.name}</h3>
@@ -49,9 +47,9 @@ const PortfolioList = () => (
                   </span>
                 </span>
               </a>
-          </div>
-          ))
-        }
+            </div>
+            ))
+          }
         </div>
       </div>
     )}
