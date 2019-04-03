@@ -4,7 +4,7 @@
     "url": "https://www.talpool.com",
     "types": "Design, UX/UI, Web development",
     "description": "TALPOOL is a website where photographers can find and get matched with projects that are looking for their expertise.",
-    "photos": "./portfolio/talpool.jpg"
+    "images": "./portfolio/talpool.jpg"
   },
   {
     "id": "2",
@@ -12,7 +12,7 @@
     "url": "https://www.yellowpages.ca",
     "types": "HTML/CSS, Pagespeed, UX/UI",
     "description": "YellowPages.ca connects you to Canada's businesses, products and services, providing all the information from the business directory: addresses and telephone numbers + videos, photos, email and web sites",
-    "photos": "./portfolio/yp.jpg"
+    "images": "./portfolio/yp.jpg"
   },
   {
     "id": "3",
@@ -20,7 +20,7 @@
     "url": "http://www.vladibalevski.com",
     "types": "Wordpress, HTML/CSS/JS, UX/UI",
     "description": "Photography website",
-    "photos": "./portfolio/balevski.jpg"
+    "images": "./portfolio/balevski.jpg"
   },
   {
     "id": "4",
@@ -28,6 +28,6 @@
     "url": "https://www.canpages.ca",
     "types": "HTML/CSS, UX/UI",
     "description": "Canadian Business Directory Listings and Business Reverse Lookup around you.",
-    "photos": "./portfolio/canpages.jpg"
+    "images": "./portfolio/canpages.jpg"
   }
 ]

@@ -17,9 +17,9 @@ const PortfolioList = () => (
             url
             types
             description
-            photos {
+            images {
               childImageSharp {
-                resolutions(
+                fixed (
                   width: 256
                   height: 256
                   cropFocus: CENTER
@@ -41,7 +41,7 @@ const PortfolioList = () => (
           data.allPortfolioJson.edges.map(item => (
             <div className="bgrid folio-item" key={item.node.id}>
               <a href="#" className="folio-item__link">
-                <Img resolutions={item.node.childImageSharp.resolutions.src} className={styles.image} />
+                <Img fixed={item.node.childImageSharp.fixed.src} />
                 <span className="folio-item-table">
                   <span className="folio-item-cell">
                       <h3 className="folio-title">{item.node.name}</h3>
