@@ -4,11 +4,9 @@ import Social from './Social';
 
 import "./header.scss"
 
-const Header = ({ hero, social }) => (
+const Header = ({ social }) => (
   <section className="intro intro--gradient">
-    <div className="hero__image">
-      <Hero {...hero} />
-    </div>
+    <Hero />
     <div className="intro__content">
       <span className="intro__msg">Hi there!</span>
       <h1>I'm Venelin</h1>

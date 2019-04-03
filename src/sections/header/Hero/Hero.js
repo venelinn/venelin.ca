@@ -16,10 +16,12 @@ const Hero = ({height}) => (
       }
     `}
     render={data => (
-      <Img
-        resolutions={data.placeholderImage.childImageSharp.resolutions}
-        style={{ width: `100%`, display: `block`, height }}
-      />
+      <div className="hero__image">
+        <Img
+          resolutions={data.placeholderImage.childImageSharp.resolutions}
+          style={{ width: `100%`, display: `block`, height }}
+        />
+      </div>
     )}
   />
 )

@@ -1,11 +1,26 @@
-const path = require(`path`);
+const config = require('./src/utils/siteConfig')
+const dotenv = require('dotenv')
+const path = require(`path`)
+
+if(process.env.NODE_ENV !== 'production') {
+  dotenv.config()
+}
 
 module.exports = {
   siteMetadata: {
-    title: `Venelin Nikolov • Frond-end Developer • UX/UI • PageSpeed`,
-    description: `Frond-end Developer, Performance specialist, SEO optimization, UX/UI`,
-    author: `@venelin`,
-    baseURL: `https://venelin.ca`,
+    title: config.siteTitle,
+    description: config.siteDescription,
+    siteUrl: config.siteUrl,
+    author: config.author,
+    rssMetadata: {
+      site_url: config.siteUrl,
+      feed_url: `${config.siteUrl}/rss.xml`,
+      title: config.siteTitle,
+      description: config.siteDescription,
+      image_url: `${config.siteUrl}${config.siteLogo}`,
+      author: config.author,
+      copyright: config.copyright,
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -31,6 +46,14 @@ module.exports = {
       options: {
         plugins: ['gatsby-remark-smartypants'],
       },
+    },
+    'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
