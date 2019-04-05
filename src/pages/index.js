@@ -19,7 +19,7 @@ const IndexPage = ({data}) => {
       />
       <Header />
       <About aboutme={data.aboutData} />
-      <Resume />
+      <Resume jobs={data.experienceData} />
       <Portfolio />
       <Footer/>
     </Layout>
