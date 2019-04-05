@@ -11,15 +11,15 @@ import Reveal from 'react-reveal/Reveal';
 import "./about.scss"
 
 const About = props => {
-	const ab = props.data.contentfulAbout;
+	const aboutme = props.aboutme;
 	return (
 		<Section
-			className={ab.slug}
-			title={ab.title}
-			description={ab.subtitle}
+			className={aboutme.slug}
+			title={aboutme.title}
+			description={aboutme.subtitle}
 		>
 		<Reveal effect="fadeInUp">
-			<div className="about__intro"  dangerouslySetInnerHTML={{ __html: ab.content.childContentfulRichText.html}} />
+			<div className="about__intro"  dangerouslySetInnerHTML={{ __html: aboutme.content.childContentfulRichText.html}} />
 		</Reveal>
 			<div className="about__content">
 				<Profile/>

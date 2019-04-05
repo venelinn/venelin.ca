@@ -18,7 +18,7 @@ const IndexPage = ({data}) => {
         keywords={[`front-end`, `ui`, `react`]}
       />
       <Header />
-      <About data={data} />
+      <About aboutme={data.aboutData} />
       <Resume />
       <Portfolio />
       <Footer/>
@@ -34,7 +34,7 @@ IndexPage.propTypes = {
 
 export const query = graphql`
   query Index {
-    contentfulAbout {
+    aboutData: contentfulAbout {
       title
       subtitle
       slug
@@ -44,7 +44,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulExperience {
+    experienceData: allContentfulExperience {
       edges {
         node {
           position
