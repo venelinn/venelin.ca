@@ -1,4 +1,6 @@
 import React from "react"
+import { graphql } from "gatsby"
+import PropTypes from 'prop-types'
 import Section from "../../components/Section";
 import Aboutme from "./aboutme"
 import Profile from "./profile"
@@ -23,3 +25,13 @@ const About = () => (
 )
 
 export default About
+
+export const query = graphql`
+  query About {
+    contentfulAbout {
+      slug
+			title
+      subtitle
+    }
+  }
+`

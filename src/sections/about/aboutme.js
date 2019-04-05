@@ -17,3 +17,29 @@ const Aboutme = () => (
   </div>
 )
 export default Aboutme
+
+
+// class Aboutme extends React.Component {
+//   render({data}) {
+//     const ab = data.contentfulRichText
+//     return (
+//       <>
+//         {ab.html}
+//       </>
+//     )
+//   }
+// }
+
+// export default Aboutme
+
+// Aboutme.PropTypes = {
+//   data: PropTypes.object
+// }
+
+// export const query = graphql`
+//   query AboutQuery {
+//     contentfulRichText {
+//       html
+//     }
+//   }
+// `

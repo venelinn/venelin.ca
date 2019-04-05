@@ -92,6 +92,53 @@ h3 {
 	}
 }
 
+.button {
+	text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  display: inline-block;
+  letter-spacing: .2rem;
+  font-weight: bold;
+  border-radius: 44px;
+	text-transform: uppercase;
+	font-size: .85rem;
+	border: 3px solid transparent;
+	padding: 1rem 2rem;
+	&:hover,
+	&:focus {
+		border-color: var(--base-color);
+		color: var(--base-color);
+	}
+}
+
+.btn__group {
+	display: flex;
+	justify-content: center;
+	margin-top: .6rem;
+	li {
+		+ li {
+			margin-left: -3px;
+			position: relative;
+		}
+		&:nth-last-child(2),
+      &:nth-last-child(2)~li {
+			&:first-child {
+				.button {
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
+				}
+			}
+			&:last-child {
+				.button {
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+			}
+    }
+	}
+}
+
+
 /**
  * responsive:
  * common styles
@@ -130,11 +177,6 @@ h3 {
     	height: 1.5rem;
     }
 	}
-	.isPhone & {
-  	@include breakpoint($landscape) {
-  		bottom: 1rem;
-  	}
-  }
 }
 /*! {target: critical}@ */
 
