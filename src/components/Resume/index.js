@@ -1,6 +1,6 @@
 import React from "react";
-import Section from "../../components/Section";
-import Icon from '../../components/icons';
+import Section from "../Section";
+import Icon from '../icons';
 import Jobs from "./jobs"
 
 import "./resume.scss";

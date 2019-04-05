@@ -1,0 +1,11 @@
+h1.example {
+	&-appear {
+		opacity: 0.01;
+		transition: opacity 1000ms ease-in;
+	}
+	&-enter-done {
+		opacity: 1;
+		transition: opacity 1000ms ease-in;
+	}
+}
+

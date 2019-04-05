@@ -1,6 +1,5 @@
 import React from "react"
 
-
 const Aboutme = () => (
   <div className="grid grid--about">
     <div className="about__intro">

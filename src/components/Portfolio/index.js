@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from 'gatsby'
-import Section from "../../components/Section"
+import Section from "../Section"
 import Img from "gatsby-image"
 
 import "./portfolio.scss"

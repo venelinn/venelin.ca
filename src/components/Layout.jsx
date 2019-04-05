@@ -12,10 +12,6 @@ if (typeof window !== 'undefined') {
 const Layout = ({ children }) => (
   <>
     { children }
-    <footer>
-      <div className="copyright">© {new Date().getFullYear()}, Built with Love</div>
-      {` `}
-    </footer>
   </>
 )
 

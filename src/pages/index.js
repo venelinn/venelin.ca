@@ -1,25 +1,59 @@
 import React from "react"
-import Layout from "../layout"
-import SEO from "../layout/seo"
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
 
-import Header from "../sections/header"
-import About from "../sections/about"
-import Resume from "../sections/resume"
-import Portfolio from "../sections/portfolio"
+import Header from "../components/Header"
+import About from "../components/About"
+import Resume from "../components/Resume"
+import Portfolio from "../components/Portfolio"
+import Footer from "../components/Footer"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO
-      title="Venelin.ca"
-      keywords={[`gatsby`, `application`, `react`]}
-    />
-    <Header />
-    <About />
-    <Resume />
-    <Portfolio />
-
-  </Layout>
-)
+const IndexPage = ({data}) => {
+  return (
+    <Layout>
+      <SEO
+        title="Venelin.ca"
+        keywords={[`front-end`, `ui`, `react`]}
+      />
+      <Header />
+      <About data={data} />
+      <Resume />
+      <Portfolio />
+      <Footer/>
+    </Layout>
+  )
+}
 
 export default IndexPage;
 
+IndexPage.propTypes = {
+  data: PropTypes.object,
+}
+
+export const query = graphql`
+  query Index {
+    contentfulAbout {
+      title
+      subtitle
+      slug
+      content {
+        childContentfulRichText {
+          html
+        }
+      }
+    }
+    allContentfulExperience {
+      edges {
+        node {
+          position
+          company
+          description
+          start
+          end
+        }
+      }
+    }
+  }
+`
