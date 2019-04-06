@@ -55,7 +55,7 @@
 		}
 	}
 	@include breakpoint(0 $smedium) {
-	
+
 	}
 }
 
@@ -102,7 +102,7 @@
 		color: #fff;
 	}
 	@include breakpoint(0 $smedium) {
-		color: var(--color-dark);	
+		color: var(--color-dark);
 		font-weight: normal;
 	}
 }
@@ -110,7 +110,6 @@
 .folio-types {
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
 	color: rgba(255, 255, 255, 0.6);
 	font-size: .8rem;
 	@include breakpoint($medium + 1) {
@@ -118,7 +117,7 @@
 		letter-spacing: .1rem;
 	}
 	@include breakpoint(0 $medium) {
-		display: none;	
+		display: none;
 	}
 }
 
@@ -178,8 +177,7 @@
 }
 .modal__content {
 	padding: 2rem;
-	font-family: sans-serif;
-	
+
 }
 .modal__content__name {
 	font-size: 1.3rem;
@@ -195,7 +193,6 @@
 }
 
 .modal__categories {
-	font-family: sans-serif;
 	font-size: .9rem;
 	display: block;
 	text-align: left;
@@ -208,7 +205,6 @@
 	flex-direction: row-reverse;
 	background: #000;
 	a, button {
-		font-family: sans-serif;
 		font-size: .9rem;
 		line-height: 4rem;
 		color: #fff;

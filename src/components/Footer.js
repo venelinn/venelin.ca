@@ -1,8 +1,9 @@
 import React from "react"
+import classes from "./Footer.module.scss";
 
 const Footer = () => (
-  <footer>
-    <div className="copyright">© {new Date().getFullYear()}, Built with Love</div>
+  <footer className={classes.footer}>
+    <div className={classes.copyright}>© {new Date().getFullYear()}, Built with Gatsby. I love you Lea!</div>
     {` `}
   </footer>
 )

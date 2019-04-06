@@ -1,9 +1,7 @@
 import React from "react"
-import { CSSTransition } from 'react-transition-group';
 import Hero from '../Hero';
 import Social from './Social';
 import styles from './index.module.scss';
-//import { AnimatedText } from '../../components/AnimatedText';
 
 import "./header.scss"
 
@@ -12,13 +10,7 @@ const Header = () => (
     <Hero className={styles.hero__image} />
     <div className={styles.intro__content}>
       <span className={styles.intro__msg}>Hi there!</span>
-      <CSSTransition
-        in={true}
-        appear={true}
-        timeout={500}
-        classNames="example">
-        <h1>I'm Venelin</h1>
-      </CSSTransition>
+      <h1>I'm Venelin</h1>
       <p className={styles.intro__position}>
         <span>Front-end Developer</span>
         <span>UI/UX</span>

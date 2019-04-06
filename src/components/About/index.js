@@ -16,7 +16,7 @@ const About = props => {
 			title={aboutme.title}
 			description={aboutme.subtitle}
 		>
-		<Reveal effect="fadeInUp">
+		<Reveal effect="animated fadeInUp">
 			<div className="about__intro"  dangerouslySetInnerHTML={{ __html: aboutme.content.childContentfulRichText.html}} />
 		</Reveal>
 			<div className="about__content">

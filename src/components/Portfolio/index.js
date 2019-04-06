@@ -11,7 +11,7 @@ const PortfolioList= props => {
     <div className="stack">
       {items.map(({ node: item }) => (
         <div className="bgrid folio-item" key={item.name}>
-          <a href="javascript:void(0)" className="folio-item__link">
+          <span className="folio-item__link">
             <Img fluid={item.image.fluid} />
             <span className="folio-item-table">
               <span className="folio-item-cell">
@@ -19,7 +19,7 @@ const PortfolioList= props => {
                   <span className="folio-types">{item.types}</span>
               </span>
             </span>
-          </a>
+          </span>
         </div>
         ))
       }

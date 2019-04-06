@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
+import { CSSTransition } from 'react-transition-group';
+
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 
@@ -17,7 +19,13 @@ const IndexPage = ({data}) => {
         title={"Venelin.ca"}
         keywords={[`front-end`, `ui`, `react`]}
       />
+      <CSSTransition
+        in={true}
+        appear={true}
+        timeout={500}
+        classNames="opening">
       <Header />
+      </CSSTransition>
       <About aboutme={data.aboutData} profile={data.profileData} />
       <Resume jobs={data.experienceData} />
       <Portfolio folio={data.portfolioData} />
