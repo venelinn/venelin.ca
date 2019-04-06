@@ -1,4 +1,4 @@
- .resume-header {
+ .resume__header {
 	text-align: center;
 }
 
@@ -8,7 +8,7 @@
   margin-right: auto;
 }
 
-.timeline-wrap {
+.timeline__wrap {
 	position: relative;
 	margin-top: 1.5rem;
 	margin-bottom: 4rem;
@@ -41,14 +41,15 @@
 	}
 }
 
-.timeline-block {
+.timeline__block {
 	padding-top: 1.5rem;
+	margin-bottom: 1rem;
 	display: flex;
     @include breakpoint(0 $smedium) {
 	    flex-wrap: wrap;
     }
 }
-.timeline-ico {
+.timeline__ico {
 	background: #313131;
 	border-radius: 50%;
 	text-align: center;
@@ -57,7 +58,7 @@
 	display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 1.5rem;
+	margin: -.3rem 1.5rem 0;
 	.vicon {
 		font-size: inherit;
 	}
@@ -81,7 +82,7 @@
 	}
 }
 
-.timeline-header {
+.timeline__header {
 	@include breakpoint($smedium + 1) {
 		flex: 0 0 238px;
     order: -1;
@@ -99,14 +100,14 @@
 	}
 }
 
-.timeline-content {
+.timeline__content {
 	@include breakpoint(0 $smedium) {
 		flex: 0 0 100%;
     padding-left: 4rem;
     margin-top: 1rem;
 	}
 	p {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
    	line-height: 1.5;
 	}
 }
