@@ -53,6 +53,8 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.development
+.contentful.json
 
 # gatsby files
 .cache/

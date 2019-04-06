@@ -1,69 +1,44 @@
 import React from "react"
-import { StaticQuery, graphql } from 'gatsby'
 import Section from "../Section"
 import Img from "gatsby-image"
 
 import "./portfolio.scss"
 
-const PortfolioList = () => (
-  <StaticQuery
-  query={graphql`
-    query ProjectsQuery {
-      allPortfolioJson {
-        edges {
-          node {
-            id
-            name
-            url
-            types
-            description
-            images {
-              childImageSharp {
-                fluid(
-                  maxWidth: 500,
-                  jpegProgressive: true,
-                  quality: 92
-                ) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `}
-    render={data => (
-      <div className="portfolio-content">
-        <div className="stack">
-         {data.allPortfolioJson.edges.map(item => (
-            <div className="bgrid folio-item" key={item.node.id}>
-              <a href="#" className="folio-item__link">
-                <Img fluid={item.node.images.childImageSharp.fluid} />
-                <span className="folio-item-table">
-                  <span className="folio-item-cell">
-                      <h3 className="folio-title">{item.node.name}</h3>
-                      <span className="folio-types">{item.node.types}</span>
-                  </span>
-                </span>
-              </a>
-            </div>
-            ))
-          }
+const PortfolioList= props => {
+  const items = props.items;
+  return (
+    <div className="portfolio-content">
+    <div className="stack">
+      {items.map(({ node: item }) => (
+        <div className="bgrid folio-item" key={item.name}>
+          <a href="javascript:void(0)" className="folio-item__link">
+            <Img fluid={item.image.fluid} />
+            <span className="folio-item-table">
+              <span className="folio-item-cell">
+                  <h3 className="folio-title">{item.name}</h3>
+                  <span className="folio-types">{item.types}</span>
+              </span>
+            </span>
+          </a>
         </div>
-      </div>
-    )}
-  />
-)
+        ))
+      }
+    </div>
+  </div>
+  )
+}
 
-const Portfolio = () => (
+const Portfolio = props =>  {
+  const items = props.folio.edges;
+  return (
   <Section
     className="portfolio"
     title="Portfolio"
     description="Check Out Some of My Works"
     >
-    <PortfolioList />
+    <PortfolioList items={items} />
   </Section>
-)
+  )
+}
 
 export default Portfolio

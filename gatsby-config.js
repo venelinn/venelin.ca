@@ -1,26 +1,26 @@
 const config = require('./src/utils/siteConfig')
-const dotenv = require('dotenv')
 const path = require(`path`)
-
-if(process.env.NODE_ENV !== 'production') {
-  dotenv.config()
-}
+require('dotenv').config();
+let env = process.env.NODE_ENV || 'development';
+require('dotenv').config({path: `./.env.${env}`});
 
 module.exports = {
   siteMetadata: {
-    title: config.siteTitle,
-    description: config.siteDescription,
-    siteUrl: config.siteUrl,
-    author: config.author,
-    rssMetadata: {
-      site_url: config.siteUrl,
-      feed_url: `${config.siteUrl}/rss.xml`,
-      title: config.siteTitle,
-      description: config.siteDescription,
-      image_url: `${config.siteUrl}${config.siteLogo}`,
-      author: config.author,
-      copyright: config.copyright,
-    },
+    title: `Venelin Nikolov • Frond-end Developer • UX/UI • PageSpeed`,
+    description: `Frond-end Developer, Performance specialist, SEO optimization, UX/UI`,
+    siteUrl: 'https://venelin.ca/', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
+    author: 'Venelin Nikolov', // Author for RSS author segment and SEO schema
+    authorJob: `Front-end Developer, UX/UI`,
+    copyright: 'Copyright © 2019 Venelin Nikolov', // Copyright string for the RSS feed
+    //image_url: `${config.siteUrl}${config.siteLogo}`,
+    userTwitter: '@venelinn', // Change for Twitter Cards
+    shortTitle: 'VNN', // Used for App manifest e.g. Mobile Home Screen
+    shareImage: '/logos/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
+    shareImageWidth: 900, // Change to the width of your default share image
+    shareImageHeight: 600, // Change to the height of your default share image
+    siteLogo: '/logos/logo-512.png', // Logo used for SEO, RSS, and App manifest
+    backgroundColor: '#e9e9e9', // Used for Offline Manifest
+    themeColor: '#ff0100', // Used for Offline Manifest
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -41,19 +41,13 @@ module.exports = {
         path: path.join(__dirname, `src`, `images`),
       },
     },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: ['gatsby-remark-smartypants'],
-      },
-    },
     'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      }
+        spaceId: `${process.env.CONTENTFUL_SPACE_ID}`,
+        accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      },
     },
     `@contentful/gatsby-transformer-contentful-richtext`,
     {
@@ -75,7 +69,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-108433153-1`,
+        trackingId: process.env.GOOGLE_ANALYTICS,
+        head: true,
       },
     },
     {

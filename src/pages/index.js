@@ -14,13 +14,13 @@ const IndexPage = ({data}) => {
   return (
     <Layout>
       <SEO
-        title="Venelin.ca"
+        title={"Venelin.ca"}
         keywords={[`front-end`, `ui`, `react`]}
       />
       <Header />
-      <About aboutme={data.aboutData} />
+      <About aboutme={data.aboutData} profile={data.profileData} />
       <Resume jobs={data.experienceData} />
-      <Portfolio />
+      <Portfolio folio={data.portfolioData} />
       <Footer/>
     </Layout>
   )
@@ -44,14 +44,49 @@ export const query = graphql`
         }
       }
     }
-    experienceData: allContentfulExperience {
+    experienceData: allContentfulExperience (
+      sort: {
+        fields: [end]
+        order: DESC
+      }
+    ) {
+      totalCount
       edges {
         node {
+          id
           position
-          company
           description
-          start
-          end
+          company
+          start(formatString: "MMM YYYY")
+          end(formatString: "MMM YYYY")
+        }
+      }
+    }
+    profileData: contentfulProfile {
+      name
+      jobPosition
+      website
+    }
+    portfolioData: allContentfulPortfolio (
+      sort: {
+        fields: [name]
+        order: ASC
+      }
+    ) {
+      edges {
+        node {
+          name
+          url
+          types
+          description
+          image {
+            fluid(
+              maxWidth: 500,
+              quality: 80
+            ) {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }

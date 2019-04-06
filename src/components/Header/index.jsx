@@ -1,5 +1,5 @@
 import React from "react"
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import Hero from '../Hero';
 import Social from './Social';
 import styles from './index.module.scss';
