@@ -11,14 +11,16 @@ import About from "../components/About"
 import Resume from "../components/Resume"
 import Portfolio from "../components/Portfolio"
 import Footer from "../components/Footer"
+import GlobalStyle from '../styles/global'
 
 const IndexPage = ({data}) => {
   return (
     <Layout>
       <SEO
         title={"Venelin.ca"}
-        keywords={[`front-end`, `ui`, `react`]}
+        keywords={[`front-end`, `ui`, `react`, 'optimization', 'performance', 'flexbox']}
       />
+      <GlobalStyle />
       <CSSTransition
         in={true}
         appear={true}

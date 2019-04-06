@@ -3,7 +3,7 @@ import Section from "../Section";
 import Profile from "./profile"
 import Skills from "./skills"
 import CTA from "./cta"
-import Reveal from 'react-reveal/Reveal';
+//import Reveal from 'react-reveal/Reveal';
 
 import "./about.scss"
 
@@ -16,9 +16,9 @@ const About = props => {
 			title={aboutme.title}
 			description={aboutme.subtitle}
 		>
-		<Reveal effect="animated fadeInUp">
+
 			<div className="about__intro"  dangerouslySetInnerHTML={{ __html: aboutme.content.childContentfulRichText.html}} />
-		</Reveal>
+
 			<div className="about__content">
 				<Profile info={profileData}/>
 				<Skills/>
