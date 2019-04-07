@@ -8,30 +8,24 @@ import "./Contacts.scss"
 const Form = () => {
   return (
     <div className="contact-form">
-      <form
-        name="contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        >
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <p className="hidden">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
         <div className="form-field">
           <label htmlFor="contactName" className="sr-only">Name</label>
-          <input name="contactName" type="text"  placeholder="Name" minLength="2" />
+          <input name="name" type="text"  placeholder="Name" minLength="2" />
         </div>
         <div className="form-field">
-          <label htmlFor="contactEmail" className="sr-only">Email</label>
-          <input name="contactEmail" type="email" placeholder="Email"  />
+          <label htmlFor="email" className="sr-only">Email</label>
+          <input name="email" type="email" placeholder="Email"  />
         </div>
         <div className="form-field">
-          <label htmlFor="contactSubject" className="sr-only">Subject</label>
-          <input name="contactSubject" type="text" placeholder="Subject" />
+          <label htmlFor="message" className="sr-only">Message</label>
+          <textarea name="message" placeholder="Message" rows="5" cols="5"></textarea>
         </div>
         <div className="form-field">
-          <label htmlFor="contactMessage" className="sr-only">Message</label>
-          <textarea name="contactMessage" placeholder="Message" rows="5" cols="5"></textarea>
-        </div>
-        <div className="form-field">
-          <button className="submitform">Submit</button>
+          <button className="submitform" type="submit">Submit</button>
           <div id="submit-loader">
             <div className="text-loader">Sending...</div>
             <div className="s-loader">
