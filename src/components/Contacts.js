@@ -10,8 +10,9 @@ const Form = () => {
     <div className="contact-form">
       <form
         name="contact"
+        method="post"
         data-netlify="true"
-        data-netlify-honeypot="bot"
+        data-netlify-honeypot="bot-field"
         >
         <div className="form-field">
           <label htmlFor="contactName" className="sr-only">Name</label>
@@ -30,7 +31,7 @@ const Form = () => {
           <textarea name="contactMessage" placeholder="Message" rows="5" cols="5"></textarea>
         </div>
         <div className="form-field">
-          <button className="submitform" type="submit">Submit</button>
+          <button className="submitform">Submit</button>
           <div id="submit-loader">
             <div className="text-loader">Sending...</div>
             <div className="s-loader">
