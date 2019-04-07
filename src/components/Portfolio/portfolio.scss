@@ -26,10 +26,6 @@
 	}
 }
 
-.gatsby-image-wrapper {
-	transition: all .5s ease-in-out;
-	transform: scale(1);
-}
 
 .folio-item__link {
 	display: block;
@@ -57,6 +53,10 @@
 			.folio-item-cell {
 				left: 0;
 			}
+		}
+		.gatsby-image-wrapper {
+			transition: all .5s ease-in-out;
+			transform: scale(1);
 		}
 	}
 }

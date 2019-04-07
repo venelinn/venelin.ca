@@ -17,7 +17,7 @@ const Social = () => (
       }
     `}
     render={data => (
-      <>
+      <div className="header__menu__social-container">
         <ul className="intro__social">
          {
           data.allSocialItemsJson.edges.map(item => (
@@ -29,7 +29,7 @@ const Social = () => (
           ))
         }
         </ul>
-      </>
+      </div>
     )}
   />
 )

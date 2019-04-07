@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-import { CSSTransition } from 'react-transition-group';
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
@@ -22,13 +21,7 @@ const IndexPage = ({data}) => {
         keywords={[`front-end`, `ui`, `react`, 'optimization', 'performance', 'flexbox']}
       />
       <GlobalStyle />
-      <CSSTransition
-        in={true}
-        appear={true}
-        timeout={500}
-        classNames="opening">
-      <Header />
-      </CSSTransition>
+      <Header hero={data.heroData} />
       <About aboutme={data.aboutData} profile={data.profileData} />
       <Resume jobs={data.experienceData} />
       <Portfolio folio={data.portfolioData} />
@@ -46,6 +39,14 @@ IndexPage.propTypes = {
 
 export const query = graphql`
   query Index {
+    heroData: contentfulHero {
+      title
+      image {
+        fluid(maxWidth: 1400, quality: 90) {
+          ...GatsbyContentfulFluid
+        }
+      }
+    }
     aboutData: contentfulAbout {
       title
       subtitle

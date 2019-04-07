@@ -1,38 +1,38 @@
-import React from "react"
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react'
+import Img from 'gatsby-image'
+import Plx from 'react-plx'
+//import styles from './Hero.module.scss'
 
-const Hero = ({height, className}) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "bg.jpg" }) {
-          childImageSharp {
-            resolutions(width: 1400, height: 980, quality: 90) {
-              ...GatsbyImageSharpResolutions
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <div className={className}>
+//import "./Hero.module.scss"
+
+
+const Hero = props => {
+  const prop = props.data;
+  return (
+    <div className="hero">
+      <Plx
+        parallaxData={[
+          {
+            start: 1,
+            duration: '.hero',
+            properties: [
+              {
+                startValue: 1,
+                endValue: 1.3,
+                property: "scale"
+              },
+            ],
+          },
+        ]}
+      >
         <Img
-          resolutions={data.placeholderImage.childImageSharp.resolutions}
-          style={{ width: `100%`, display: `block`, height }}
+          className="hero__image"
+          fluid={prop.image.fluid}
+          title={prop.image.title}
         />
-      </div>
-    )}
-  />
-)
-
-Hero.propTypes = {
-  className: PropTypes.string,
-};
-
-Hero.defaultProps = {
-  height: `100vh`
-};
+      </Plx>
+    </div>
+  )
+}
 
 export default Hero

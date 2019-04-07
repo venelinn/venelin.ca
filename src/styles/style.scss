@@ -173,6 +173,28 @@ h3 {
 	}
 }
 
+
+/// HERO
+
+.hero {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  z-index: -1;
+	height: 100vh;
+}
+
+.hero__image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  img {
+    object-fit: cover;
+  }
+}
+
 /**
  * ===================================================================
  * Misc Helper Styles
