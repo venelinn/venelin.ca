@@ -15,27 +15,15 @@ const Form = styled.form`
 `
 
 const Modal = styled.div`
-  background: white;
+  background: #f1f1f1;
   color: #000;
   padding: 2em;
   border-radius: 2px;
-  width: 50%;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  text-align: center;
   transition: 0.2s all;
+  text-align: center;
+  margin-top: 2rem;
   opacity: ${props => (props.visible ? '1' : '0')};
   visibility: ${props => (props.visible ? 'visible' : 'hidden')};
-  p {
-    line-height: 1.6;
-    margin: 0 0 2em 0;
-  }
 `
 const encode = data => {
   return Object.keys(data)
@@ -132,7 +120,14 @@ class Contacts extends React.Component {
             </div>
             <div className="form-field">
               <label htmlFor="message" className="sr-only">Message</label>
-              <textarea name="message" placeholder="Message" rows="5" cols="5"></textarea>
+              <textarea
+                name="message"
+                placeholder="Message"
+                value={this.state.message}
+                onChange={this.handleInputChange}
+                required
+                rows="5"
+                cols="5"></textarea>
             </div>
             <div className="form-field">
               <input className="submitform" name="submit" type="submit" value="Send" />
@@ -150,7 +145,6 @@ class Contacts extends React.Component {
                 Thank you for reaching out. I will get back to you as soon as
                 possible.
               </p>
-              <button onClick={this.closeModal}>Okay</button>
             </Modal>
           </Form>
         </div>
