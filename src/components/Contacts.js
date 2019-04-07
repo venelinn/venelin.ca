@@ -1,34 +1,9 @@
 import React from 'react'
 import Section from "./Section";
-import styled from 'styled-components'
-import 'whatwg-fetch'
+//import styled from 'styled-components'
+//import 'whatwg-fetch'
 
 import "./Contacts.scss"
-
-
-const Modal = styled.div`
-  background: white;
-  padding: 2em;
-  border-radius: 2px;
-  width: 50%;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99;
-  display: flex;
-  flex-flow: column;
-  height: 25vh;
-  align-items: center;
-  text-align: center;
-  transition: 0.2s all;
-  opacity: ${props => (props.visible ? '1' : '0')};
-  visibility: ${props => (props.visible ? 'visible' : 'hidden')};
-  p {
-    line-height: 1.6;
-    margin: 0 0 2em 0;
-  }
-`
 
 const Form = () => {
   return (
