@@ -5,13 +5,14 @@ import { CSSTransition } from 'react-transition-group';
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
+import GlobalStyle from '../styles/global'
 
 import Header from "../components/Header"
 import About from "../components/About"
 import Resume from "../components/Resume"
 import Portfolio from "../components/Portfolio"
+import Contacts from "../components/Contacts"
 import Footer from "../components/Footer"
-import GlobalStyle from '../styles/global'
 
 const IndexPage = ({data}) => {
   return (
@@ -31,6 +32,7 @@ const IndexPage = ({data}) => {
       <About aboutme={data.aboutData} profile={data.profileData} />
       <Resume jobs={data.experienceData} />
       <Portfolio folio={data.portfolioData} />
+      <Contacts/>
       <Footer/>
     </Layout>
   )

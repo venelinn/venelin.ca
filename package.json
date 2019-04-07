@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "venelin-ca",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Personal website with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Venelin Nikolov <venelinn@gmail.com>",
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^13.2.0",
@@ -34,7 +34,8 @@
     "react-reveal": "^1.2.2",
     "react-transition-group": "^2.8.0",
     "smooth-scroll": "^16.0.3",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "whatwg-fetch": "^3.0.0"
   },
   "keywords": [
     "gatsby"
@@ -49,9 +50,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/venelinn/venelin.ca"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/venelinn/venelin.ca/issues"
   }
 }
