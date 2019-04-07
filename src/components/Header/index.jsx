@@ -16,8 +16,8 @@ const Header = () => (
         <span>UI/UX</span>
       </p>
       <ul className={`${styles.intro__cta} btn__group`}>
-        <li><a className="button" href="#about" title="More About Venelin">About Me</a></li>
-        <li><a className="button" href="#portfolio" title="Venelin's Portfolio">Portfolio</a></li>
+        <li><a className="button jsSmoothScroll" href="#about" title="More About Venelin">About Me</a></li>
+        <li><a className="button jsSmoothScroll" href="#portfolio" title="Venelin's Portfolio">Portfolio</a></li>
       </ul>
     </div>
     <div className="header__menu__social-container">
