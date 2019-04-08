@@ -82,8 +82,8 @@ export const query = graphql`
     }
     portfolioData: allContentfulPortfolio (
       sort: {
-        fields: [name]
-        order: ASC
+        fields: [order]
+        order: DESC
       }
     ) {
       edges {
@@ -92,6 +92,7 @@ export const query = graphql`
           url
           types
           description
+          order
           image {
             fluid(
               maxWidth: 500,
