@@ -30,6 +30,7 @@ export default createGlobalStyle`
     font-family: "Jost";
     font-style: normal;
     font-weight: normal;
+    font-display: auto;
     src: local("Jost"),
         url(${JostTTF}) format("ttf"),
         url(${JostWOFF2}) format("woff2");
@@ -38,6 +39,7 @@ export default createGlobalStyle`
     font-family: "League Spartan";
     font-style: normal;
     font-weight: normal;
+    font-display: auto;
     src: local("League Spartan"),
         local("League-Spartan"),
         url(${LeagueSpartanOTF}) format("otf"),
