@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql } from 'gatsby'
 import Icon from '../icons'
+import styles from './Social.module.scss'
 
 const Social = () => (
   <StaticQuery
@@ -17,8 +18,8 @@ const Social = () => (
       }
     `}
     render={data => (
-      <div className="header__menu__social-container">
-        <ul className="intro__social">
+      <div className={styles.intro__social__root}>
+        <ul className={styles.intro__social}>
          {
           data.allSocialItemsJson.edges.map(item => (
             <li key={item.node.name}>
