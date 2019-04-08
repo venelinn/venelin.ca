@@ -1,7 +1,7 @@
 import React from "react"
-import { CSSTransition } from 'react-transition-group';
 import Hero from '../Hero';
 import Social from './Social';
+import Menu from './Hamburger';
 import styles from './index.module.scss';
 
 import "./header.scss"
@@ -11,7 +11,6 @@ const Header = props => {
   return (
     <section className={`${styles.intro} ${styles.introGradient}`}>
       <Hero data={hero} />
-
         <div className={styles.intro__content}>
           <span className={styles.intro__msg}>Hi there!</span>
           <h1>I'm Venelin</h1>
@@ -25,6 +24,7 @@ const Header = props => {
           </ul>
         </div>
         <Social />
+        <Menu />
     </section>
   )
 }

@@ -23,6 +23,9 @@ export default createGlobalStyle`
     --custom-ease-3: cubic-bezier(0.19,1,0.22,1);
     --custom-ease-4: cubic-bezier(0.63,0.03,0.21,1);
     --primary-ease: var(--custom-ease-1);
+    --color-primary-black-1: #1f1e1d;
+    --color-primary-black-2: #111;
+    --color-primary-white: #fff;
     --body-font: 'Jost', serif;
     --header-font: 'League Spartan';
   }

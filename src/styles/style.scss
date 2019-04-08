@@ -242,6 +242,13 @@ h3 {
 	text-align: center;
 }
 
+button {
+	border: 0;
+	background: none;
+	outline: none;
+	padding: 0;
+	-webkit-appearance: button;
+}
 
 .sr-only {
 	position:absolute;
