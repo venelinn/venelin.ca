@@ -1,4 +1,5 @@
 import React from "react"
+import Link from 'gatsby-link'
 import Section from "../Section"
 import Img from "gatsby-image"
 
@@ -8,23 +9,52 @@ const PortfolioList= props => {
   const items = props.items;
   return (
     <div className="portfolio-content">
-    <div className="stack">
-      {items.map(({ node: item }) => (
-        <div className="bgrid folio-item" key={item.name}>
-          <span className="folio-item__link">
-            <Img fluid={item.image.fluid} />
-            <span className="folio-item-table">
-              <span className="folio-item-cell">
-                  <h3 className="folio-title">{item.name}</h3>
-                  <span className="folio-types">{item.types}</span>
+      <div className="stack">
+        {items.map(({ node: item }) => (
+          <div className="bgrid folio-item" key={item.name}>
+            <a href={`#modal-${item.order}`} className="folio-item__link">
+              <Img fluid={item.image.fluid} />
+              <span className="folio-item-table">
+                <span className="folio-item-cell">
+                    <h3 className="folio-title">{item.name}</h3>
+                    <span className="folio-types">{item.types}</span>
+                </span>
               </span>
-            </span>
-          </span>
+            </a>
+          </div>
+          ))
+        }
+      </div>
+  </div>
+  )
+}
+
+const PortfolioModals= props => {
+  const items = props.items;
+  return (
+    <>
+      {items.map(({ node: item }) => (
+        <div className="modal__wrap" id={`modal-${item.order}`} key={item.name}>
+          <div className="modal">
+            <div className="modal__header">
+              <Img fluid={item.image.fluid} />
+            </div>
+            <div className="modal__content">
+              <div className="modal__content__name">
+                <a href={item.url} target="_blank"  title={`Visit ${item.name}`}>{item.name}</a>
+              </div>
+              <p>{item.description}</p>
+              <div className="modal__categories">{item.types}</div>
+            </div>
+            <div className="modal__footer">
+              <a href={item.url} target="_blank">Visit</a>
+              <a href={`#modal-close${item.order}`}>Close</a>
+            </div>
+          </div>
         </div>
         ))
       }
-    </div>
-  </div>
+  </>
   )
 }
 
@@ -37,6 +67,7 @@ const Portfolio = props =>  {
     description="Check Out Some of My Works"
     >
     <PortfolioList items={items} />
+    <PortfolioModals items={items} />
   </Section>
   )
 }

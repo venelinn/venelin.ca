@@ -21,18 +21,18 @@ class Menu extends React.Component {
 
   render() {
     return (
-      <div class="hamburger ">
-        <div class="hamburger-wrapper">
-          <div class="hbutton"><button class="button-hamburger">
-              <div class="background-hamburger background-is-white "></div>
-              <div class="background-hamburger white background-is-white inactive"></div>
-              <div class="icon-hamburger background-is-white false">
-                <div class="line-center"></div>
+      <div className="hamburger ">
+        <div className="hamburger-wrapper">
+          <div className="hbutton"><button className="button-hamburger">
+              <div className="background-hamburger background-is-white "></div>
+              <div className="background-hamburger white background-is-white inactive"></div>
+              <div className="icon-hamburger background-is-white false">
+                <div className="line-center"></div>
               </div>
-              <div class="icon-close background-is-white "></div>
+              <div className="icon-close background-is-white "></div>
             </button></div>
         </div>
-        <button class="click-layer"></button>
+        <button className="click-layer"></button>
       </div>
     )
   }
