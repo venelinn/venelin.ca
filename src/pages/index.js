@@ -23,8 +23,8 @@ const IndexPage = ({data}) => {
       <GlobalStyle />
       <Header hero={data.heroData} />
       <About aboutme={data.aboutData} profile={data.profileData} />
-      <Resume jobs={data.experienceData} />
       <Portfolio folio={data.portfolioData} />
+      <Resume jobs={data.experienceData} />
       <Contacts/>
       <Footer/>
     </Layout>
@@ -57,16 +57,10 @@ export const query = graphql`
         }
       }
     }
-    experienceData: allContentfulExperience (
-      sort: {
-        fields: [end]
-        order: DESC
-      }
-    ) {
-      totalCount
+    experienceData: allContentfulExperienceList {
       edges {
         node {
-          id
+         id
           position
           description
           company
@@ -80,25 +74,16 @@ export const query = graphql`
       jobPosition
       website
     }
-    portfolioData: allContentfulPortfolio (
-      sort: {
-        fields: [order]
-        order: DESC
-      }
-    ) {
+    portfolioData: allContentfulPortfolioItems {
       edges {
         node {
           name
           url
           types
           description
-          order
           image {
-            fluid(
-              maxWidth: 500,
-              quality: 80
-            ) {
-              ...GatsbyContentfulFluid_withWebp_noBase64
+          fluid(maxWidth: 500, quality: 80) {
+            ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
         }

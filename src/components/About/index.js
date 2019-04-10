@@ -21,7 +21,6 @@ const About = props => {
 
 			<div className="about__content">
 				<Profile info={profileData}/>
-				<Skills/>
 			</div>
 			<CTA/>
 	</Section>

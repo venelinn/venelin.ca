@@ -21,7 +21,8 @@ const Resume = props => {
 							<div className={styles.timeline__ico}><Icon name="bag" /></div>
 							<div className={styles.timeline__header}>
 								<div className={styles.timeline__pos}>{job.position}</div>
-								<p>{job.start} - {job.end}</p>
+
+								<p>{job.start} - {job.end ? job.end : 'Current' }</p>
 							</div>
 							<div className={styles.timeline__content}>
 								<div className={styles.timeline__company}>{job.company}</div>
