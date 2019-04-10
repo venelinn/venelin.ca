@@ -23,9 +23,6 @@ export default createGlobalStyle`
     --custom-ease-3: cubic-bezier(0.19,1,0.22,1);
     --custom-ease-4: cubic-bezier(0.63,0.03,0.21,1);
     --primary-ease: var(--custom-ease-1);
-    --color-primary-black-1: #1f1e1d;
-    --color-primary-black-2: #111;
-    --color-primary-white: #fff;
     --body-font: 'Jost', serif;
     --header-font: 'League Spartan';
   }
@@ -33,7 +30,7 @@ export default createGlobalStyle`
     font-family: "Jost";
     font-style: normal;
     font-weight: normal;
-    font-display: auto;
+    font-display: fallback;
     src: local("Jost"),
         url(${JostTTF}) format("ttf"),
         url(${JostWOFF2}) format("woff2");
@@ -42,7 +39,7 @@ export default createGlobalStyle`
     font-family: "League Spartan";
     font-style: normal;
     font-weight: normal;
-    font-display: auto;
+    font-display: swap;
     src: local("League Spartan"),
         local("League-Spartan"),
         url(${LeagueSpartanOTF}) format("otf"),

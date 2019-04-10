@@ -43,7 +43,7 @@ export const query = graphql`
       title
       image {
         fluid(maxWidth: 1400, quality: 90) {
-          ...GatsbyContentfulFluid
+          ...GatsbyContentfulFluid_withWebp_noBase64
         }
       }
     }
@@ -98,7 +98,7 @@ export const query = graphql`
               maxWidth: 500,
               quality: 80
             ) {
-              ...GatsbyContentfulFluid
+              ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
         }
