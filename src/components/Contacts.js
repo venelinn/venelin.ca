@@ -77,78 +77,72 @@ class Contacts extends React.Component {
 
   render() {
     return (
-      <Section
-        className="contact"
-        title="Contact"
-        description="I'd Love To Hear From You."
+      <div className="contact-form">
+        <Form
+          name="contact"
+          onSubmit={this.handleSubmit}
+          data-netlify="true"
+          data-netlify-honeypot="bot"
+          overlay={this.state.showModal}
+          onClick={this.closeModal}
         >
-        <div className="contact-form">
-          <Form
-            name="contact"
-            onSubmit={this.handleSubmit}
-            data-netlify="true"
-            data-netlify-honeypot="bot"
-            overlay={this.state.showModal}
-            onClick={this.closeModal}
-          >
-            <input type="hidden" name="form-name" value="contact" />
-            <p hidden>
-              <label>
-                Don’t fill this out:{' '}
-                <input name="bot" onChange={this.handleInputChange} />
-              </label>
-            </p>
-            <div className="form-field">
-              <label htmlFor="contactName" className="sr-only">Name</label>
-              <input
-                value={this.state.name}
-                onChange={this.handleInputChange}
-                required
-                name="name"
-                type="text"
-                placeholder="Name" minLength="2" />
-            </div>
-            <div className="form-field">
-              <label htmlFor="email" className="sr-only">Email</label>
-              <input
-                name="email"
-                type="email"
-                value={this.state.email}
-                onChange={this.handleInputChange}
-                required
-                placeholder="Email"  />
-            </div>
-            <div className="form-field">
-              <label htmlFor="message" className="sr-only">Message</label>
-              <textarea
-                name="message"
-                placeholder="Message"
-                value={this.state.message}
-                onChange={this.handleInputChange}
-                required
-                rows="5"
-                cols="5"></textarea>
-            </div>
-            <div className="form-field">
-              <input className="submitform" name="submit" type="submit" value="Send" />
-              <div id="submit-loader">
-                <div className="text-loader">Sending...</div>
-                <div className="s-loader">
-                  <div className="bounce1"></div>
-                  <div className="bounce2"></div>
-                  <div className="bounce3"></div>
-                </div>
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label>
+              Don’t fill this out:{' '}
+              <input name="bot" onChange={this.handleInputChange} />
+            </label>
+          </p>
+          <div className="form-field">
+            <label htmlFor="contactName" className="sr-only">Name</label>
+            <input
+              value={this.state.name}
+              onChange={this.handleInputChange}
+              required
+              name="name"
+              type="text"
+              placeholder="Name" minLength="2" />
+          </div>
+          <div className="form-field">
+            <label htmlFor="email" className="sr-only">Email</label>
+            <input
+              name="email"
+              type="email"
+              value={this.state.email}
+              onChange={this.handleInputChange}
+              required
+              placeholder="Email"  />
+          </div>
+          <div className="form-field">
+            <label htmlFor="message" className="sr-only">Message</label>
+            <textarea
+              name="message"
+              placeholder="Message"
+              value={this.state.message}
+              onChange={this.handleInputChange}
+              required
+              rows="5"
+              cols="5"></textarea>
+          </div>
+          <div className="form-field">
+            <input className="submitform" name="submit" type="submit" value="Send" />
+            <div id="submit-loader">
+              <div className="text-loader">Sending...</div>
+              <div className="s-loader">
+                <div className="bounce1"></div>
+                <div className="bounce2"></div>
+                <div className="bounce3"></div>
               </div>
             </div>
-            <Modal visible={this.state.showModal}>
-              <p>
-                Thank you for reaching out. I will get back to you as soon as
-                possible.
-              </p>
-            </Modal>
-          </Form>
-        </div>
-      </Section>
+          </div>
+          <Modal visible={this.state.showModal}>
+            <p>
+              Thank you for reaching out. I will get back to you as soon as
+              possible.
+            </p>
+          </Modal>
+        </Form>
+      </div>
     )
   }
 }

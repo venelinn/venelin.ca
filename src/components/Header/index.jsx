@@ -10,11 +10,11 @@ import "./header.scss"
 const Header = props => {
   return (
     <section className={`${styles.intro} ${styles.introGradient}`}>
-      <Hero data={props.hero.modules[0]} />
+      <Hero data={props.header.modules[0]} />
         <div className={styles.intro__content}>
-          <span className={styles.intro__msg}>Hi there!</span>
-          <h1>{props.hero.title}</h1>
-          <p className={styles.intro__position}>{props.hero.description}</p>
+          <span className={styles.intro__msg}>{props.header.sectionTitle}</span>
+          <h1>{props.header.title}</h1>
+          <p className={styles.intro__position}>{props.header.description}</p>
           <ul className={`${styles.intro__cta} btn__group`}>
             <li><a className="button jsSmoothScroll" href="#about" title="More About Venelin">About Me</a></li>
             <li><a className="button jsSmoothScroll" href="#portfolio" title="Venelin's Portfolio">Portfolio</a></li>

@@ -8,7 +8,6 @@ import CTA from "./cta"
 import "./about.scss"
 
 const About = props => {
-	console.log(props);
 	return (
 		<>
 			<div className="about__intro"  dangerouslySetInnerHTML={{ __html: props.about.content.childContentfulRichText.html}} />
