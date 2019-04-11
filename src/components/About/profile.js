@@ -4,7 +4,7 @@ import React from "react"
 const Profile = props => {
   const profile = props.info;
 	return (
-		<div>
+		<>
 		  <div className="about__label">Profile</div>
       <ul className="about__info-list">
         <li>
@@ -18,9 +18,9 @@ const Profile = props => {
         <li>
           <strong>Website:</strong>
           <span>{profile.website}</span>
-          </li>
-        </ul>
-	  </div>
+        </li>
+      </ul>
+	  </>
 	)
 }
 

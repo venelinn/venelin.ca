@@ -5,9 +5,8 @@ import Plx from 'react-plx'
 
 //import "./Hero.module.scss"
 
-
 const Hero = props => {
-  const prop = props.data;
+ console.log(props);
   return (
     <div className="hero">
       <Plx
@@ -27,8 +26,8 @@ const Hero = props => {
       >
         <Img
           className="hero__image"
-          fluid={prop.image.fluid}
-          title={prop.image.title}
+          fluid={props.image.fluid}
+          title="Venelin"
         />
       </Plx>
     </div>

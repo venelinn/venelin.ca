@@ -57,7 +57,7 @@ export const query = graphql`
         }
       }
     }
-    experienceData: allContentfulExperienceList {
+    experienceData: allContentfulExperience {
       edges {
         node {
          id
@@ -74,7 +74,7 @@ export const query = graphql`
       jobPosition
       website
     }
-    portfolioData: allContentfulPortfolioItems {
+    portfolioData: allContentfulPortfolio {
       edges {
         node {
           name
