@@ -1,8 +1,7 @@
 import React from "react";
-import Section from "./Section";
 import Icon from "./icons";
 
-import "./Resume.module.scss"
+import "./Resume.scss"
 
 const Resume = props => {
 	return (

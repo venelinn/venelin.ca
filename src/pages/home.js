@@ -6,7 +6,9 @@ import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import GlobalStyle from '../styles/global'
 import Section from "../components/Section"
+
 import Header from "../components/Header"
+import About from "../components/About"
 import Resume from "../components/Resume1"
 
 class HomePage extends React.Component {
@@ -23,12 +25,16 @@ class HomePage extends React.Component {
         {sections.modules.map((section, index) => (
          	<Section
             key={index}
+            type={section.__typename}
             className={section.slug}
             title={section.title}
             description={section.description}
           >
           {section.__typename === 'ContentfulIntro' && (
             <Header key={section.id} hero={section} />
+          )}
+          {section.__typename === 'ContentfulAbout' && (
+            <About key={section.id} about={section} />
           )}
           {section.__typename === 'ContentfulExperienceList' && (
             <Resume key={section.id} jobs={section.modules} />
@@ -62,7 +68,6 @@ export const query = graphql`
             description
             modules {
               ... on ContentfulHero {
-                id
                 title
                 image {
                   fluid(maxWidth: 1400, quality: 90) {

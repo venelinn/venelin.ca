@@ -8,22 +8,16 @@ import CTA from "./cta"
 import "./about.scss"
 
 const About = props => {
-	const aboutme = props.aboutme;
-	const profileData = props.profile;
+	console.log(props);
 	return (
-		<Section
-			className={aboutme.slug}
-			title={aboutme.title}
-			description={aboutme.subtitle}
-		>
-
-			<div className="about__intro"  dangerouslySetInnerHTML={{ __html: aboutme.content.childContentfulRichText.html}} />
+		<>
+			<div className="about__intro"  dangerouslySetInnerHTML={{ __html: props.about.content.childContentfulRichText.html}} />
 
 			<div className="about__content">
-				<Profile info={profileData}/>
+				<Profile info={props.about.modules[0]}/>
 			</div>
 			<CTA/>
-	</Section>
+	</>
 	)
 }
 
