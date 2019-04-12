@@ -1,6 +1,5 @@
 import React from "react"
 import Img from "gatsby-image"
-import PropTypes from 'prop-types'
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 
@@ -9,16 +8,15 @@ import "./portfolio.scss"
 class Portfolio extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       showLightbox: false,
       selectedImage: null,
+      data: this.props
     };
   }
 
   render() {
-    const items = this.props.items.projects;
-    console.log(this.props);
+    const items = this.props.folio.projects;
     const { selectedImage, showLightbox } = this.state;
     return (
       <>
@@ -26,24 +24,42 @@ class Portfolio extends React.Component {
           <div className="stack">
             {items.map((item, index) => (
               <div className="bgrid folio-item" key={index}>
-                <a
+                <div
                   key={index}
                   className="folio-item__link"
                   type="button"
-                  onClick={() => this.setState({ showLightbox: true, selectedImage: image })}
+                  onClick={() => this.setState({ showLightbox: true, selectedImage: item.image })}
                 >
-                  <Img fluid={image.image.fluid} />
-                </a>
+                  <Img fluid={item.image.fluid} />
+                  <span className="folio-item-table">
+                    <span className="folio-item-cell">
+                        <h3 className="folio-title">{item.name}</h3>
+                        <span className="folio-types">{item.types}</span>
+                    </span>
+                  </span>
+                </div>
               </div>
             ))}
           </div>
         </div>
         {showLightbox && (
-        <Dialog>
-          <Img fluid={selectedImage.image.fluid} />
-          <button type="button" onClick={() => this.setState({ showLightbox: false })}>
-            Close
-          </button>
+        <Dialog
+          className="modal"
+          onDismiss={() => this.setState({ showLightbox: false })}
+        >
+          <div className="modal__header">
+            <Img fluid={selectedImage.fluid} />
+          </div>
+          {/* <div className="modal__content">
+            <div className="modal__content__name">
+            <a href={selectedImage.url} target="_blank" rel="noopener noreferrer" title="Visit">{selectedImage.name}</a></div>
+              <p>{selectedImage.description}</p>
+            <div className="modal__categories">{data.types}</div>
+          </div> */}
+          <div className="modal__footer">
+            <a href="{{url}}" target="_blank" rel="noopener">Visit</a>
+            <button type="button" onClick={() => this.setState({ showLightbox: false })}>Close</button>
+          </div>
         </Dialog>
         )}
       </>

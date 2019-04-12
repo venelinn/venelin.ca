@@ -152,6 +152,11 @@
     pointer-events: auto;
   }
 }
+[data-reach-dialog-overlay] {
+	z-index: 100;
+	background-color: rgba(0,0,0,.7);
+}
+
 
 .modal {
 	background: #fff;
@@ -161,6 +166,7 @@
   transform: translate(-50%, -50%);;
 	z-index: 5;
 	max-width: 600px;
+	padding: 0;
 	@include breakpoint($smedium + 1) {
 		margin: 0 auto;
 	}
