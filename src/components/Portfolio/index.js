@@ -11,13 +11,13 @@ class Portfolio extends React.Component {
     this.state = {
       showLightbox: false,
       selectedImage: null,
-      data: this.props
+      moreData: null
     };
   }
 
   render() {
     const items = this.props.folio.projects;
-    const { selectedImage, showLightbox } = this.state;
+    const { selectedImage, showLightbox, moreData } = this.state;
     return (
       <>
         <div className="portfolio-content">
@@ -28,7 +28,7 @@ class Portfolio extends React.Component {
                   key={index}
                   className="folio-item__link"
                   type="button"
-                  onClick={() => this.setState({ showLightbox: true, selectedImage: item.image })}
+                  onClick={() => this.setState({ showLightbox: true, selectedImage: item.image, moreData: { name: item.name, url: item.url, description: item.description, types: item.types}  })}
                 >
                   <Img fluid={item.image.fluid} />
                   <span className="folio-item-table">
@@ -50,14 +50,15 @@ class Portfolio extends React.Component {
           <div className="modal__header">
             <Img fluid={selectedImage.fluid} />
           </div>
-          {/* <div className="modal__content">
+          <div className="modal__content">
             <div className="modal__content__name">
-            <a href={selectedImage.url} target="_blank" rel="noopener noreferrer" title="Visit">{selectedImage.name}</a></div>
-              <p>{selectedImage.description}</p>
-            <div className="modal__categories">{data.types}</div>
-          </div> */}
+              <a href={moreData.url} target="_blank" rel="noopener noreferrer" title="Visit">{moreData.name}</a>
+            </div>
+            <p>{moreData.description}</p>
+            <div className="modal__categories">{moreData.types}</div>
+          </div>
           <div className="modal__footer">
-            <a href="{{url}}" target="_blank" rel="noopener">Visit</a>
+            <a href={moreData.url} target="_blank" rel="noopener noreferrer">Visit</a>
             <button type="button" onClick={() => this.setState({ showLightbox: false })}>Close</button>
           </div>
         </Dialog>
