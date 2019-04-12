@@ -1,9 +1,7 @@
 import React from "react"
-import Section from "../Section";
 import Profile from "./profile"
 import Skills from "./skills"
 import CTA from "./cta"
-//import Reveal from 'react-reveal/Reveal';
 
 import "./about.scss"
 

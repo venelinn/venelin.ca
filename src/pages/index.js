@@ -10,7 +10,7 @@ import Section from "../components/Section"
 import Header from "../components/Header"
 import About from "../components/About"
 import Portfolio from "../components/Portfolio"
-import Resume from "../components/Resume1"
+import Resume from "../components/Resume"
 import Contacts from "../components/Contacts"
 import Footer from "../components/Footer"
 
