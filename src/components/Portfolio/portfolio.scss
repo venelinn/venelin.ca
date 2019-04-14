@@ -31,6 +31,7 @@
 .folio-item__link {
 	display: block;
 	position: relative;
+	cursor: pointer;
 	@include breakpoint($smedium + 1) {
 		overflow: hidden;
 		&:before {

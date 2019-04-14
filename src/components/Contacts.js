@@ -1,5 +1,4 @@
 import React from 'react'
-import Section from "./Section";
 import styled from 'styled-components'
 //import 'whatwg-fetch'
 

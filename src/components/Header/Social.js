@@ -2,6 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from 'gatsby'
 import Icon from '../icons'
 import styles from './Social.module.scss'
+import SVG from '../../components/SVG';
 
 const Social = () => (
   <StaticQuery
@@ -24,7 +25,7 @@ const Social = () => (
           data.allSocialItemsJson.edges.map(item => (
             <li key={item.node.name}>
               <a href={`${item.node.url}`} target="_blank" rel="noopener noreferrer" title={`${item.node.name}`}>
-                <Icon name={`${item.node.name}`} />
+                <SVG icon={`${item.node.name}`} />
               </a>
             </li>
           ))
