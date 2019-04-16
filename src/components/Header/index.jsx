@@ -36,7 +36,6 @@ const Header = props => {
         </ul>
       </div>
       <Social />
-      <Menu />
     </section>
   );
 };
