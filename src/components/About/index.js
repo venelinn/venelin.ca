@@ -1,7 +1,6 @@
 import React from 'react';
 import Profile from './profile';
-import Skills from './skills';
-import CTA from './cta';
+//import CTA from './cta';
 
 import './about.scss';
 
@@ -18,7 +17,7 @@ const About = props => {
       <div className='about__content'>
         <Profile info={props.about.modules[0]} />
       </div>
-      <CTA />
+      {/* <CTA /> */}
     </>
   );
 };

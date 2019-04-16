@@ -93,7 +93,7 @@ class Contacts extends React.Component {
             </label>
           </p>
           <div className="form-field">
-            <label htmlFor="contactName" className="sr-only">Name</label>
+            <label htmlFor="name" className="sr-only">Name</label>
             <input
               value={this.state.name}
               onChange={this.handleInputChange}
@@ -125,14 +125,6 @@ class Contacts extends React.Component {
           </div>
           <div className="form-field">
             <input className="submitform" name="submit" type="submit" value="Send" />
-            <div id="submit-loader">
-              <div className="text-loader">Sending...</div>
-              <div className="s-loader">
-                <div className="bounce1"></div>
-                <div className="bounce2"></div>
-                <div className="bounce3"></div>
-              </div>
-            </div>
           </div>
           <Modal visible={this.state.showModal}>
             <p>
