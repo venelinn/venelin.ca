@@ -1,5 +1,5 @@
 import React from 'react';
-import SVG from '../components/SVG';
+import SVG from './SVG';
 import './Resume.scss';
 
 const Resume = props => {
