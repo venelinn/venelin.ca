@@ -85,7 +85,7 @@ module.exports = {
         description: `Front-end developer | UI/UX`,
         display: `minimal-ui`,
         lang: `en-US`,
-        icon: `src/images/vca-icon.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}/src/images/vca-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

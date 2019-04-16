@@ -1,8 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql } from 'gatsby'
-import Icon from '../icons'
 import styles from './Social.module.scss'
-import SVG from '../../components/SVG';
+import SVG from '../SVG';
 
 const Social = () => (
   <StaticQuery
