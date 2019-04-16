@@ -93,38 +93,38 @@ class Contacts extends React.Component {
             </label>
           </p>
           <div className="form-field">
-            <label htmlFor="name" className="sr-only">Name</label>
-            <input
-              value={this.state.name}
-              onChange={this.handleInputChange}
-              required
-              name="name"
-              id="name"
-              type="text"
-              placeholder="Name" minLength="2" />
+            <label>
+              <input
+                value={this.state.name}
+                onChange={this.handleInputChange}
+                required
+                name="name"
+                type="text"
+                placeholder="Name" minLength="2" />
+            </label>
           </div>
           <div className="form-field">
-            <label htmlFor="email" className="sr-only">Email</label>
-            <input
-              name="email"
-              id="email"
-              type="email"
-              value={this.state.email}
-              onChange={this.handleInputChange}
-              required
-              placeholder="Email"  />
+            <label>
+              <input
+                name="email"
+                type="email"
+                value={this.state.email}
+                onChange={this.handleInputChange}
+                required
+                placeholder="Email"  />
+              </label>
           </div>
           <div className="form-field">
-            <label htmlFor="message" className="sr-only">Message</label>
+            <label>
             <textarea
               name="message"
-              id="message"
               placeholder="Message"
               value={this.state.message}
               onChange={this.handleInputChange}
               required
               rows="5"
               cols="5"></textarea>
+            </label>
           </div>
           <div className="form-field">
             <input className="submitform" name="submit" type="submit" value="Send" />
