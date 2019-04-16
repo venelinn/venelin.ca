@@ -92,7 +92,7 @@ class Contacts extends React.Component {
               <input name="bot" onChange={this.handleInputChange} />
             </label>
           </p>
-          <div className="form-field">
+          <p className="form-field">
             <label>
               <input
                 value={this.state.name}
@@ -102,8 +102,8 @@ class Contacts extends React.Component {
                 type="text"
                 placeholder="Name" minLength="2" />
             </label>
-          </div>
-          <div className="form-field">
+          </p>
+          <p className="form-field">
             <label>
               <input
                 name="email"
@@ -113,8 +113,8 @@ class Contacts extends React.Component {
                 required
                 placeholder="Email"  />
               </label>
-          </div>
-          <div className="form-field">
+          </p>
+          <p className="form-field">
             <label>
             <textarea
               name="message"
@@ -125,10 +125,10 @@ class Contacts extends React.Component {
               rows="5"
               cols="5"></textarea>
             </label>
-          </div>
-          <div className="form-field">
-            <input className="submitform" name="submit" type="submit" value="Send" />
-          </div>
+          </p>
+          <p className="form-field">
+            <button className="submitform" type="submit">Send</button>
+          </p>
           <Modal visible={this.state.showModal}>
             <p>
               Thank you for reaching out. I will get back to you as soon as
