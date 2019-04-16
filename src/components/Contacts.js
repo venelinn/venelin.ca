@@ -99,6 +99,7 @@ class Contacts extends React.Component {
               onChange={this.handleInputChange}
               required
               name="name"
+              id="name"
               type="text"
               placeholder="Name" minLength="2" />
           </div>
@@ -106,6 +107,7 @@ class Contacts extends React.Component {
             <label htmlFor="email" className="sr-only">Email</label>
             <input
               name="email"
+              id="email"
               type="email"
               value={this.state.email}
               onChange={this.handleInputChange}
@@ -116,6 +118,7 @@ class Contacts extends React.Component {
             <label htmlFor="message" className="sr-only">Message</label>
             <textarea
               name="message"
+              id="message"
               placeholder="Message"
               value={this.state.message}
               onChange={this.handleInputChange}
