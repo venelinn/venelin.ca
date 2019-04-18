@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade';
 //import 'whatwg-fetch'
 
 import "./Contacts.scss"
@@ -92,6 +93,7 @@ class Contacts extends React.Component {
               <input name="bot" onChange={this.handleInputChange} />
             </label>
           </p>
+          <Fade bottom>
           <p className="form-field">
             <label>
               <input
@@ -129,6 +131,7 @@ class Contacts extends React.Component {
           <p className="form-field">
             <button className="submitform" type="submit">Send</button>
           </p>
+          </Fade>
           <Modal visible={this.state.showModal}>
             <p>
               Thank you for reaching out. I will get back to you as soon as

@@ -1,4 +1,6 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal/Zoom';
 import SVG from './SVG';
 import './Resume.scss';
 
@@ -11,13 +13,18 @@ const Resume = props => {
         </div>
         <div className='timeline__wrap'>
           {props.jobs.map((job, index) => (
+            <Fade bottom>
             <div
               key={index}
               className={`timeline__block ${!job.position ? 'hidden' : ''}`}
             >
+
+              <Zoom delay={200}>
               <div className='timeline__ico'>
                 <SVG icon='bag' />
               </div>
+              </Zoom>
+
               <div className='timeline__header'>
                 <div className='timeline__pos'>{job.position}</div>
 
@@ -30,18 +37,22 @@ const Resume = props => {
                 <p>{job.description}</p>
               </div>
             </div>
+            </Fade>
           ))}
         </div>
       </div>
+      <Fade bottom>
       <div className='timeline'>
         <div className='resume__header'>
           <div className='timeline__exp'>Education</div>
         </div>
         <div className='timeline__wrap'>
           <div className='timeline__block'>
+            <Zoom delay={200}>
             <div className='timeline__ico'>
               <SVG icon='graduation' />
             </div>
+            </Zoom>
             <div className='timeline__header'>
               <div className='timeline__pos'>Bachelor Degree</div>
               <p>Sept 1998 - June 2001</p>
@@ -53,6 +64,7 @@ const Resume = props => {
           </div>
         </div>
       </div>
+      </Fade>
     </>
   );
 };

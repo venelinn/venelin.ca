@@ -1,5 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
+import Fade from 'react-reveal/Fade';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 
@@ -21,6 +22,7 @@ class Portfolio extends React.Component {
     return (
       <>
         <div className='portfolio-content'>
+          <Fade cascade bottom delay={600}>
           <div className='stack'>
             {items.map((item, index) => (
               <div className='bgrid folio-item' key={index}>
@@ -52,6 +54,7 @@ class Portfolio extends React.Component {
               </div>
             ))}
           </div>
+          </Fade>
         </div>
         {showLightbox && (
           <Dialog
