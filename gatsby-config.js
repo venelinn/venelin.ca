@@ -1,4 +1,3 @@
-const config = require('./src/utils/siteConfig')
 const path = require(`path`)
 require('dotenv').config();
 let env = process.env.NODE_ENV || 'development';
@@ -15,10 +14,10 @@ module.exports = {
     //image_url: `${config.siteUrl}${config.siteLogo}`,
     userTwitter: '@venelinn', // Change for Twitter Cards
     shortTitle: 'VNN', // Used for App manifest e.g. Mobile Home Screen
-    shareImage: '/logos/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
+    shareImage: '${__dirname}/images/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
     shareImageWidth: 900, // Change to the width of your default share image
     shareImageHeight: 600, // Change to the height of your default share image
-    siteLogo: '/logos/logo-512.png', // Logo used for SEO, RSS, and App manifest
+    siteLogo: '${__dirname}/images/favicons/favicon-512x512.png', // Logo used for SEO, RSS, and App manifest
     backgroundColor: '#e9e9e9', // Used for Offline Manifest
     themeColor: '#000000', // Used for Offline Manifest
   },
@@ -81,7 +80,7 @@ module.exports = {
         short_name: `Venelin`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#ff0100`,
+        theme_color: `#000000`,
         description: `Front-end developer | UI/UX`,
         display: `minimal-ui`,
         lang: `en-US`,

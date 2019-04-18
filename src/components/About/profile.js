@@ -5,7 +5,7 @@ const Profile = props => {
   const profile = props.info;
 	return (
 		<>
-		  <div className="about__label">Profile</div>
+		  <h4>Profile</h4>
       <ul className="about__info-list">
         <li>
           <strong>Name:</strong>

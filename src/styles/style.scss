@@ -4,15 +4,10 @@
 
 @import 'reset';
 
-html,
-body {
-	height: 100%;
-}
-
 body {
 	background-color: #fff;
 	font-family: var(--body-font);
-	font-size: 1rem;
+	font-size: 1.2rem;
 	font-weight: normal;
 	line-height: 1.4;
 	color: var(--color-light);
@@ -42,11 +37,10 @@ a:active {
  *
  * -------------------------------------------------------------------
  */
-h1, h2, h3, h4, h5, h6{
-	font-family: 'League Spartan',sans-serif;
+h2, h3, h4, h5, h6{
+	font-family: var(--header-font);
 	color: inherit;
 	font-style: normal;
-	text-rendering: optimizeLegibility;
 	margin-bottom: 1.5rem;
 }
 
