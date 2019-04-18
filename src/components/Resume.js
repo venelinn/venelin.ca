@@ -12,10 +12,9 @@ const Resume = props => {
           <div className='timeline__exp'>Work Experience</div>
         </div>
         <div className='timeline__wrap'>
+          <Fade bottom>
           {props.jobs.map((job, index) => (
-            <Fade bottom>
-            <div
-              key={index}
+            <div  key={index}
               className={`timeline__block ${!job.position ? 'hidden' : ''}`}
             >
 
@@ -37,8 +36,8 @@ const Resume = props => {
                 <p>{job.description}</p>
               </div>
             </div>
-            </Fade>
           ))}
+          </Fade>
         </div>
       </div>
       <Fade bottom>
