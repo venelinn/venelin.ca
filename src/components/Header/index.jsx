@@ -3,7 +3,7 @@ import Fade from 'react-reveal/Fade';
 //import { CSSTransition } from 'react-transition-group';
 import Hero from '../Hero';
 import Social from './Social';
-//import Menu from './Hamburger';
+import Menu from './Hamburger';
 import styles from './index.module.scss';
 
 import './header.scss';
@@ -48,6 +48,7 @@ const Header = props => {
       <Fade duration={1500} delay={1000}>
       <Social />
       </Fade>
+      <Menu />
     </section>
   );
 };
