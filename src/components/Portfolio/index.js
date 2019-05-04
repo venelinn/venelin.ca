@@ -72,16 +72,15 @@ class Portfolio extends React.Component {
                   rel='noopener noreferrer'
                   title='Visit'
                 >
-                  {moreData.name}
                 </a>
               </div>
               <p>{moreData.description}</p>
               <div className='modal__categories'>{moreData.types}</div>
             </div>
             <div className='modal__footer'>
-              <a href={moreData.url} target='_blank' rel='noopener noreferrer'>
-                Visit
-              </a>
+              {moreData.url ? (
+              <a href={moreData.url} target='_blank' rel='noopener noreferrer'>Visit</a>
+              ) : ''}
               <button
                 type='button'
                 onClick={() => this.setState({ showLightbox: false })}
