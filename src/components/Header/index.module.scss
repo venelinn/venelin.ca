@@ -22,8 +22,8 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: 60%;
-    background: linear-gradient(transparent, rgba(0,0,0,.8));
+		height: 100%;
+    background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.8));
 	}
 }
 
@@ -35,7 +35,7 @@
 	flex-direction: column;
 	justify-content: center;
 	h1 {
-		color: #111;
+		color: rgba(255,255,255,.9);
     line-height: 1.071;
     margin-top: 0;
     margin-bottom: .6rem;
@@ -46,7 +46,7 @@
     font-size: calc(16px + 8vw);
 	}
 	a {
-		color: #FFFFFF;
+		color: rgba(255, 255, 255, 0.8);
 		border-color: rgba(255, 255, 255, 0.3);
 		@include breakpoint(0 $small) {
 			padding: .7rem 1.5rem;
@@ -97,7 +97,7 @@
 .intro__position {
 	text-transform: uppercase;
 	letter-spacing: .1rem;
-	color: #111;
+	color: rgba(255, 255, 255, 0.7);
 	display: flex;
 	justify-content: center;
 	//text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
