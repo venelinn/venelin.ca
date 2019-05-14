@@ -5,8 +5,8 @@ require('dotenv').config({path: `./.env.${env}`});
 
 module.exports = {
   siteMetadata: {
-    title: `Venelin Nikolov • Frond-end Developer • UX/UI • PageSpeed`,
-    description: `Frond-end Developer, Performance specialist, SEO optimization, UX/UI`,
+    title: `Venelin Nikolov • Front-end Developer • UX/UI • PageSpeed`,
+    description: `Front-end Developer, Performance specialist, SEO optimization, UX/UI`,
     siteUrl: 'https://venelin.ca/', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
     author: 'Venelin Nikolov', // Author for RSS author segment and SEO schema
     authorJob: `Front-end Developer, UX/UI`,
