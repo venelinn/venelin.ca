@@ -96,6 +96,7 @@ class Contacts extends React.Component {
           <Fade bottom>
           <p className="form-field">
             <label>
+              <span>Name</span>
               <input
                 value={this.state.name}
                 onChange={this.handleInputChange}
@@ -107,6 +108,7 @@ class Contacts extends React.Component {
           </p>
           <p className="form-field">
             <label>
+              <span>Email</span>
               <input
                 name="email"
                 type="email"
@@ -118,14 +120,15 @@ class Contacts extends React.Component {
           </p>
           <p className="form-field">
             <label>
-            <textarea
-              name="message"
-              placeholder="Message"
-              value={this.state.message}
-              onChange={this.handleInputChange}
-              required
-              rows="5"
-              cols="5"></textarea>
+              <span>Message</span>
+              <textarea
+                name="message"
+                placeholder="Message"
+                value={this.state.message}
+                onChange={this.handleInputChange}
+                required
+                rows="5"
+                cols="5"></textarea>
             </label>
           </p>
           <p className="form-field">

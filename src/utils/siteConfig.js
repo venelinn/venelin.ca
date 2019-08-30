@@ -1,8 +1,8 @@
 module.exports = {
-  siteTitle: 'Venelin Nikolov • Frond-end Developer • UX/UI • PageSpeed',
-  siteTitleAlt: 'Frond-end Developer, Performance specialist, SEO optimization, UX/UI', // This allows an alternative site title for SEO schema.
+  siteTitle: 'Venelin Nikolov • Front-end Developer • UX/UI • PageSpeed',
+  siteTitleAlt: 'Front-end Developer, Performance specialist, SEO optimization, UX/UI', // This allows an alternative site title for SEO schema.
   publisher: 'Venelin Nikolov', // Organization name used for SEO schema
-  siteDescription: "Frond-end Developer, Performance specialist, SEO optimization, UX/UI",
+  siteDescription: "Front-end Developer, Performance specialist, SEO optimization, UX/UI",
   siteUrl: 'https://venelin.ca/', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
   author: 'Venelin Nikolov', // Author for RSS author segment and SEO schema
   authorUrl: 'https://venelin.ca', // URL used for author and publisher schema, can be a social profile or other personal site

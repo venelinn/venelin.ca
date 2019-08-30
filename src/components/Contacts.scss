@@ -53,6 +53,10 @@
 			border-bottom-color: var(--base-color);
 		}
 	}
+	span {
+		position: absolute;
+		text-indent: -9999px;
+	}
 	textarea {
 		min-height: 10rem;
 	}
