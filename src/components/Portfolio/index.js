@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Img from 'gatsby-image';
 import Fade from 'react-reveal/Fade';
 import { Dialog } from '@reach/dialog';
@@ -14,6 +14,10 @@ class Portfolio extends React.Component {
       selectedImage: null,
       moreData: null
     };
+    // const [isVisible, setIsVisible] = useState(false);
+    // const toggleVisible = () => {
+    //   setIsVisible(!isVisible);
+    // };
   }
 
   render() {
@@ -23,37 +27,37 @@ class Portfolio extends React.Component {
       <>
         <div className='portfolio-content'>
           <Fade cascade bottom delay={600}>
-          <div className='stack'>
-            {items.map((item, index) => (
-              <div className='bgrid folio-item' key={index}>
-                <div
-                  key={index}
-                  className='folio-item__link'
-                  type='button'
-                  onClick={() =>
-                    this.setState({
-                      showLightbox: true,
-                      selectedImage: item.image,
-                      moreData: {
-                        name: item.name,
-                        url: item.url,
-                        description: item.description,
-                        types: item.types
-                      }
-                    })
-                  }
-                >
-                  <Img fluid={item.image.fluid} />
-                  <span className='folio-item-table'>
-                    <span className='folio-item-cell'>
-                      <h3 className='folio-title'>{item.name}</h3>
-                      <span className='folio-types'>{item.types}</span>
+            <div className='stack'>
+              {items.map((item, index) => (
+                <div className='bgrid folio-item' key={index}>
+                  <div
+                    key={index}
+                    className='folio-item__link'
+                    type='button'
+                    onClick={() =>
+                      this.setState({
+                        showLightbox: true,
+                        selectedImage: item.image,
+                        moreData: {
+                          name: item.name,
+                          url: item.url,
+                          description: item.description,
+                          types: item.types
+                        }
+                      })
+                    }
+                  >
+                    <Img fluid={item.image.fluid} />
+                    <span className='folio-item-table'>
+                      <span className='folio-item-cell'>
+                        <h3 className='folio-title'>{item.name}</h3>
+                        <span className='folio-types'>{item.types}</span>
+                      </span>
                     </span>
-                  </span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
           </Fade>
         </div>
         {showLightbox && (
@@ -71,16 +75,23 @@ class Portfolio extends React.Component {
                   target='_blank'
                   rel='noopener noreferrer'
                   title='Visit'
-                >
-                </a>
+                ></a>
               </div>
               <p>{moreData.description}</p>
               <div className='modal__categories'>{moreData.types}</div>
             </div>
             <div className='modal__footer'>
               {moreData.url ? (
-              <a href={moreData.url} target='_blank' rel='noopener noreferrer'>Visit</a>
-              ) : ''}
+                <a
+                  href={moreData.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Visit
+                </a>
+              ) : (
+                ''
+              )}
               <button
                 type='button'
                 onClick={() => this.setState({ showLightbox: false })}
@@ -94,6 +105,5 @@ class Portfolio extends React.Component {
     );
   }
 }
-
 
 export default Portfolio;
