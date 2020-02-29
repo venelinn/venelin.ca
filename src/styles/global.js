@@ -1,23 +1,20 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
-import JostTTF from "../fonts/jost/Jost-400-Book.ttf"
-import JostWOFF2 from "../fonts/jost/Jost-400-Book.woff2"
-import LeagueSpartanOTF from "../fonts/LeagueSpartan/LeagueSpartan-Bold.otf"
-import LeagueSpartanWOFF2 from "../fonts/LeagueSpartan/LeagueSpartan-Bold.woff2"
+import JostTTF from '../fonts/jost/Jost-400-Book.ttf';
+import JostWOFF2 from '../fonts/jost/Jost-400-Book.woff2';
+import LeagueSpartanOTF from '../fonts/LeagueSpartan/LeagueSpartan-Bold.otf';
+import LeagueSpartanWOFF2 from '../fonts/LeagueSpartan/LeagueSpartan-Bold.woff2';
 
-export {
-  JostTTF,
-  JostWOFF2,
-  LeagueSpartanOTF,
-  LeagueSpartanWOFF2
-}
+export { JostTTF, JostWOFF2, LeagueSpartanOTF, LeagueSpartanWOFF2 };
 
 export default createGlobalStyle`
   :root {
     --base-color: #ff0100;
     --color-dark: #313131;
     --color-light: #444;
+    --color-white: 255,255,255;
     --page-max-width: 850px;
+    --text-in: cubic-bezier(.31,.11,.12,.99);
     --custom-ease-1: cubic-bezier(0.475,0.425,0,0.995);
     --custom-ease-2: cubic-bezier(0.835,-0.005,0.06,1);
     --custom-ease-3: cubic-bezier(0.19,1,0.22,1);
@@ -49,4 +46,4 @@ export default createGlobalStyle`
         url(${LeagueSpartanOTF}) format("otf"),
         url(${LeagueSpartanWOFF2}) format("woff2");
   }
-`
+`;

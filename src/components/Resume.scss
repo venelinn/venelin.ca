@@ -33,17 +33,13 @@
 }
 
 .timeline__exp {
-  color: var(--base-color);
+  opacity: 0.6;
   font-weight: bold;
   margin-bottom: 1.2rem;
-
-  @media (min-width: $smedium + 1) {
-    font-size: 1.7rem;
-  }
-
-  @media (max-width: $smedium) {
-    font-size: 1.4rem;
-  }
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 80%;
 }
 
 .timeline__block {

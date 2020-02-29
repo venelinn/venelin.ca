@@ -3,10 +3,18 @@ import React from 'react';
 import styles from './Section.module.scss';
 import Fade from 'react-reveal/Fade';
 
-const Section = ({ children, className, title, description, ...props }) => (
+const Section = ({
+  children,
+  className,
+  title,
+  theme,
+  description,
+  ...props
+}) => (
   <section
     id={`${className}`}
     className={`${styles.section} ${styles.section}--${className}`}
+    data-theme={theme}
     {...props}
   >
     <div className={`${styles.inner}`}>

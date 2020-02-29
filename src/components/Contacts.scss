@@ -1,6 +1,6 @@
 #contacts {
-  background-color: #151515;
-  color: #fff;
+  background-color: var(--theme-background);
+  color: var(--theme-color);
 }
 .section--contact {
   h3 {
@@ -26,6 +26,24 @@
   fieldset {
     border: none;
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0px 1000px #151515 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input::-ms-clear {
+  display: none;
 }
 
 .form-field {

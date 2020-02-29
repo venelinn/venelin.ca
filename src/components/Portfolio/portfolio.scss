@@ -124,50 +124,37 @@
  * ------------------------------------------------------------------
  */
 
-.modal__wrap {
-  position: fixed;
-  background-color: rgba(255, 255, 255, 0.25);
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 4;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s;
-  &:before {
-    content: '';
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  &:target {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
 [data-reach-dialog-overlay] {
   z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .modal {
   background: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 5;
   max-width: 600px;
   padding: 0;
+  position: relative;
   @media (min-width: $smedium + 1) {
     margin: 0 auto;
   }
   @media (max-width: $smedium) {
     width: 90%;
+  }
+  &[data-reach-dialog-content] {
+    animation: slide-down 1s ease;
   }
 }
 
@@ -220,7 +207,7 @@
     flex: 1;
     transition: all 0.3s ease-in-out;
     &:first-child {
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
     }
     &:hover {
       color: #fff;

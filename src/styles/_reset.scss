@@ -5,23 +5,24 @@
  * -------------------------------------------------------------------
  */
 
-body, html {
-	margin: 0;
-	padding: 0;
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
 
 a:active,
 a:hover {
-	outline: 0;
+  outline: 0;
 }
 
 b,
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 img {
-	border: 0;
+  border: 0;
 }
 
 button,
@@ -29,20 +30,19 @@ input,
 optgroup,
 select,
 textarea {
-	color: inherit;
-	font: inherit;
-	margin: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
 }
 
 button,
 select {
-	text-transform: none;
+  text-transform: none;
 }
 
 textarea {
-	overflow: auto;
+  overflow: auto;
 }
-
 
 /**
  * ===================================================================
@@ -54,21 +54,21 @@ textarea {
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	text-rendering: optimizeLegibility;
-	word-wrap: break-word;
-	-webkit-overflow-scrolling: touch;
-	-webkit-text-size-adjust: none;
+  text-rendering: optimizeLegibility;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: none;
 }
 
 body,
 input,
 button {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 /**
@@ -77,8 +77,8 @@ button {
  */
 img,
 video {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /**
@@ -88,7 +88,6 @@ video {
 ul,
 ol,
 li,
-h1,
 h2,
 h3,
 h4,
@@ -97,28 +96,28 @@ h6,
 pre,
 form,
 blockquote {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 em,
 i {
-	font-style: italic;
-	line-height: inherit;
+  font-style: italic;
+  line-height: inherit;
 }
 
 small {
-	font-size: 60%;
-	line-height: inherit;
+  font-size: 60%;
+  line-height: inherit;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 li {
-	display: block;
+  display: block;
 }
 
 /**
@@ -126,7 +125,6 @@ li {
  * -------------------------------------------------------------------
  */
 a {
-	text-decoration: none;
-	line-height: inherit;
+  text-decoration: none;
+  line-height: inherit;
 }
-

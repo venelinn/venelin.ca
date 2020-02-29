@@ -14,51 +14,54 @@ import Resume from '../components/Resume';
 import Contacts from '../components/Contacts';
 import Footer from '../components/Footer';
 
-class IndexPage extends React.Component {
-  render() {
-    const sections = this.props.data.sectionsData.edges[0].node;
-    const intro = this.props.data.headerData;
-    //sections.modules.forEach( i => console.log(i));
-    return (
-      <Layout>
-        <SEO
-          title={'Venelin.ca'}
-          keywords={[
-            `front-end`,
-            `ui`,
-            `react`,
-            'optimization',
-            'performance',
-            'flexbox'
-          ]}
-        />
-        <GlobalStyle />
-        <Header header={intro} />
-        {sections.modules.map((section, index) => (
-          <Section
-            key={index}
-            type={section.__typename}
-            className={section.slug}
-            title={section.title}
-            description={section.description}
-          >
-            {section.__typename === 'ContentfulAbout' && (
-              <About key={section.id} about={section} />
-            )}
-            {section.__typename === 'ContentfulPortfolioList' && (
-              <Portfolio key={section.id} folio={section} />
-            )}
-            {section.__typename === 'ContentfulExperienceList' && (
-              <Resume key={section.id} jobs={section.modules} />
-            )}
-            {section.__typename === 'ContentfulContacts' && <Contacts />}
-          </Section>
-        ))}
-        <Footer />
-      </Layout>
-    );
-  }
-}
+const IndexPage = props => {
+  const sections = props.data.sectionsData.edges[0].node;
+  const intro = props.data.headerData;
+  const social = props.data.socialData.edges;
+  const dark = 'dark';
+  //sections.modules.forEach( i => console.log(i));
+  return (
+    <Layout>
+      <SEO
+        title={'Venelin.ca'}
+        keywords={[
+          `front-end`,
+          `ui`,
+          `react`,
+          'optimization',
+          'performance',
+          'flexbox'
+        ]}
+      />
+      <GlobalStyle />
+      <Header header={intro} theme={dark} social={social} />
+      {sections.modules.map((section, index) => (
+        <Section
+          key={index}
+          type={section.__typename}
+          className={section.slug}
+          title={section.title}
+          description={section.description}
+          data-theme={
+            section.__typename === 'ContentfulContacts' ? 'dark' : 'light'
+          }
+        >
+          {section.__typename === 'ContentfulAbout' && (
+            <About key={section.id} about={section} />
+          )}
+          {section.__typename === 'ContentfulPortfolioList' && (
+            <Portfolio key={section.id} folio={section} />
+          )}
+          {section.__typename === 'ContentfulExperienceList' && (
+            <Resume key={section.id} jobs={section.modules} />
+          )}
+          {section.__typename === 'ContentfulContacts' && <Contacts />}
+        </Section>
+      ))}
+      <Footer theme={dark} />
+    </Layout>
+  );
+};
 
 export default IndexPage;
 
@@ -149,6 +152,15 @@ export const query = graphql`
               slug
             }
           }
+        }
+      }
+    }
+    socialData: allContentfulSocial(sort: { fields: [name], order: ASC }) {
+      edges {
+        node {
+          name
+          url
+          icon
         }
       }
     }
