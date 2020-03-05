@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
@@ -20,6 +20,11 @@ const IndexPage = props => {
   const social = props.data.socialData.edges;
   const dark = 'dark';
   //sections.modules.forEach( i => console.log(i));
+  // const [theme, setTheme] = useState(
+  //   console.log('setTheme enter')
+  //   // index % 2 ? 'even' : 'odd'
+  // );
+
   return (
     <Layout>
       <SEO
@@ -35,6 +40,7 @@ const IndexPage = props => {
       />
       <GlobalStyle />
       <Header header={intro} theme={dark} social={social} />
+      {/* All sections */}
       {sections.modules.map((section, index) => (
         <Section
           key={index}
@@ -42,9 +48,7 @@ const IndexPage = props => {
           className={section.slug}
           title={section.title}
           description={section.description}
-          data-theme={
-            section.__typename === 'ContentfulContacts' ? 'dark' : 'light'
-          }
+          data-theme={section.__typename === 'ContentfulContacts' ? 'dark' : ''}
         >
           {section.__typename === 'ContentfulAbout' && (
             <About key={section.id} about={section} />
