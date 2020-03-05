@@ -72,22 +72,22 @@ module.exports = {
         head: true
       }
     }
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `Venelin.ca`,
-    //     short_name: `Venelin`,
-    //     start_url: `/`,
-    //     background_color: `#ffffff`,
-    //     theme_color: `#000000`,
-    //     description: `Front-end developer | UI/UX`,
-    //     display: `minimal-ui`,
-    //     lang: `en-US`,
-    //     icon: `${__dirname}/src/images/vca-icon.png` // This path is relative to the root of the site.
-    //   }
-    // }
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Venelin.ca`,
+        short_name: `Venelin`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#000000`,
+        description: `Front-end developer | UI/UX`,
+        display: `minimal-ui`,
+        lang: `en-US`,
+        icon: `${__dirname}/src/images/vca-icon.png` // This path is relative to the root of the site.
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
-    //'gatsby-plugin-offline'
+    'gatsby-plugin-offline'
   ]
 };
