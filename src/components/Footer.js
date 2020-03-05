@@ -1,15 +1,16 @@
-import React from "react"
+import React from 'react';
 import Fade from 'react-reveal/Fade';
-import classes from "./Footer.module.scss";
+import classes from './Footer.module.scss';
 
-const Footer = () => (
-  <footer className={classes.footer}>
+const Footer = ({ theme }) => (
+  <footer className={classes.footer} data-theme={theme}>
     <Fade delay={300}>
-      <div className={classes.copyright}>© {new Date().getFullYear()}, Built with Gatsby. I love you Lea!</div>
+      <div className={classes.copyright}>
+        © {new Date().getFullYear()}, Built with Gatsby. I love you Lea!
+      </div>
     </Fade>
     {` `}
   </footer>
-)
+);
 
-export default Footer
-
+export default Footer;

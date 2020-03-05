@@ -1,7 +1,9 @@
-const path = require(`path`)
-require('dotenv').config();
-let env = process.env.NODE_ENV || 'development';
-require('dotenv').config({path: `./.env.${env}`});
+// const path = require(`path`);
+// let env = process.env.NODE_ENV || 'development';
+// require('dotenv').config({ path: `./.env.${env}` });
+
+const path = require(`path`);
+require('dotenv').config({ path: `./.env` });
 
 module.exports = {
   siteMetadata: {
@@ -11,7 +13,6 @@ module.exports = {
     author: 'Venelin Nikolov', // Author for RSS author segment and SEO schema
     authorJob: `Front-end Developer, UX/UI`,
     copyright: 'Copyright © 2019 Venelin Nikolov', // Copyright string for the RSS feed
-    //image_url: `${config.siteUrl}${config.siteLogo}`,
     userTwitter: '@venelinn', // Change for Twitter Cards
     shortTitle: 'VNN', // Used for App manifest e.g. Mobile Home Screen
     shareImage: '${__dirname}/images/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
@@ -19,7 +20,7 @@ module.exports = {
     shareImageHeight: 600, // Change to the height of your default share image
     siteLogo: '${__dirname}/images/favicons/favicon-512x512.png', // Logo used for SEO, RSS, and App manifest
     backgroundColor: '#e9e9e9', // Used for Offline Manifest
-    themeColor: '#000000', // Used for Offline Manifest
+    themeColor: '#000000' // Used for Offline Manifest
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -28,41 +29,39 @@ module.exports = {
       resolve: `gatsby-plugin-sass`,
       options: {
         data: '@import "src/styles/global.scss";',
-        includePaths: [
-          'src/styles',
-        ],
-      },
+        includePaths: ['src/styles']
+      }
     },
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`),
-      },
+        path: path.join(__dirname, `src`, `images`)
+      }
     },
-    'gatsby-plugin-netlify',
+    //'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: `${process.env.CONTENTFUL_SPACE_ID}`,
-        accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-      },
+        accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`
+      }
     },
     `@contentful/gatsby-transformer-contentful-richtext`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/src/data`,
-      },
+        path: `${__dirname}/src/data`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
-        path: `${__dirname}/src`,
-      },
+        path: `${__dirname}/src`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -70,9 +69,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS,
-        head: true,
-      },
-    },
+        head: true
+      }
+    }
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -84,11 +83,11 @@ module.exports = {
         description: `Front-end developer | UI/UX`,
         display: `minimal-ui`,
         lang: `en-US`,
-        icon: `${__dirname}/src/images/vca-icon.png`, // This path is relative to the root of the site.
-      },
+        icon: `${__dirname}/src/images/vca-icon.png` // This path is relative to the root of the site.
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
-    'gatsby-plugin-offline',
-  ],
-}
+    'gatsby-plugin-offline'
+  ]
+};

@@ -1,53 +1,50 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
-//import { CSSTransition } from 'react-transition-group';
 import Hero from '../Hero';
 import Social from './Social';
-//import Menu from './Hamburger';
-import styles from './index.module.scss';
+import Rellax from 'react-rellax';
 
 import './header.scss';
 
-const Header = props => {
+const Header = ({ header, theme, social }) => {
   return (
-    <section className={`${styles.intro} ${styles.introGradient}`}>
-      <Hero data={props.header.modules[0]} />
-      <div className={styles.intro__content}>
-        <Fade duration={1000} delay={300}>
-          <span className={styles.intro__msg}>{props.header.sectionTitle}</span>
-        </Fade>
-        <Fade duration={2000} delay={400}>
-          <h1>{props.header.title}</h1>
-        </Fade>
-        <Fade duration={1000} delay={500}>
-          <p className={styles.intro__position}>{props.header.description}</p>
-        </Fade>
-        <Fade duration={2000} delay={800}>
-        <ul className={`${styles.intro__cta} btn__group`}>
-          <li>
-            <a
-              className='button jsSmoothScroll'
-              href='#about'
-              title='More About Venelin'
-            >
-              About Me
-            </a>
-          </li>
-          <li>
-            <a
-              className='button jsSmoothScroll'
-              href='#portfolio'
-              title="Venelin's Portfolio"
-            >
-              Portfolio
-            </a>
-          </li>
-        </ul>
-        </Fade>
+    <section className='intro intro--gradient' data-theme={theme}>
+      <Hero data={header.modules[0]} />
+      <div className='intro__content'>
+        <Rellax speed={5}>
+          <div className='intro__msg title--h2'>{header.sectionTitle}</div>
+        </Rellax>
+        <Rellax speed={4}>
+          <h1 className='intro__title title title--h1'>{header.title}</h1>
+        </Rellax>
+        <Rellax speed={3}>
+          <p className='intro__position'>
+            <span>{header.description}</span>
+          </p>
+        </Rellax>
+        <Rellax speed={2}>
+          <ul className='intro__cta btn__group'>
+            <li>
+              <a
+                className='button jsSmoothScroll'
+                href='#about'
+                title='More About Venelin'
+              >
+                About Me
+              </a>
+            </li>
+            <li>
+              <a
+                className='button jsSmoothScroll'
+                href='#portfolio'
+                title="Venelin's Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+          </ul>
+        </Rellax>
       </div>
-      <Fade duration={1500} delay={1000}>
-      <Social />
-      </Fade>
+      <Social data={social} />
     </section>
   );
 };

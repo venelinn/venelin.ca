@@ -1,9 +1,15 @@
+import React, { useState, useRef } from 'react';
 
-import React, { useState, useRef } from "react";
+import classes from './AnimatedText.module.scss';
 
-import classes from "./AnimatedText.module.scss";
-
-const AnimatedText = ({ type, textColor, overlayColor, text, children, ...props }) => {
+const AnimatedText = ({
+  type,
+  textColor,
+  overlayColor,
+  text,
+  children,
+  ...props
+}) => {
   const containerElem = useRef(null);
   const initialMousePos = { x: 0, y: 0 };
 
@@ -27,18 +33,15 @@ const AnimatedText = ({ type, textColor, overlayColor, text, children, ...props 
     <section
       className={classes.animatedTextContainer}
       style={{
-        "--maskX": mousePos.x,
-        "--maskY": mousePos.y
+        '--maskX': mousePos.x,
+        '--maskY': mousePos.y
       }}
       onMouseMove={handleMouseMove}
       onMouseOut={handleMouseOut}
       ref={containerElem}
       {...props}
     >
-      <h1
-        style={{ color: textColor }}
-        className={classes.animatedTextContent}
-      >
+      <h1 style={{ color: textColor }} className={classes.animatedTextContent}>
         {text}
       </h1>
       <h1

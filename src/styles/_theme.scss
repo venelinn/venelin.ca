@@ -1,0 +1,21 @@
+$themes-colors: (
+  default: (
+    color var(--color-light)
+  ),
+  dark: (
+    color: #fff,
+    background: #151515
+  )
+);
+
+@mixin outputColorsVars($colors) {
+  @each $var, $val in $colors {
+    --theme-#{$var}: #{$val};
+  }
+}
+
+@each $theme, $colors in $themes-colors {
+  [data-theme="#{$theme}"] {
+    @include outputColorsVars($colors);
+  }
+}

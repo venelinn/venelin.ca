@@ -1,16 +1,29 @@
-
 //@import 'fonts';
 @import 'animation';
+@import 'theme';
 
 @import 'reset';
 
+@media (prefers-color-scheme: light) {
+  body {
+    //background-color: #0f0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    //background-color: #0f0;
+    // color: #e3e3e3
+  }
+}
+
 body {
-	background-color: #fff;
-	font-family: var(--body-font);
-	font-size: 1.2rem;
-	font-weight: normal;
-	line-height: 1.4;
-	color: var(--color-light);
+  background-color: #fff;
+  font-family: var(--body-font);
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 1.4;
+  color: var(--color-light);
 }
 
 /**
@@ -21,14 +34,13 @@ body {
  */
 
 a {
-	color: #000;
-	transition: all 0.3s ease-in-out;
+  color: inherit;
+  transition: all 0.3s ease-in-out;
 }
 a:hover,
 a:focus,
 a:active {
-	color: var(--base-color);
-	outline: 0;
+  outline: 0;
 }
 
 /**
@@ -37,74 +49,74 @@ a:active {
  *
  * -------------------------------------------------------------------
  */
-h2, h3, h4, h5, h6{
-	font-family: var(--header-font);
-	color: inherit;
-	font-style: normal;
-	margin-bottom: 1.5rem;
+
+h1,
+.title--h1 {
+  @include h1;
 }
 
-h2 {
-	text-transform: uppercase;
-	color: var(--base-color);
-	letter-spacing: .2rem;
-	white-space: nowrap;
-	font-size: inherit;
+h2,
+.title--h2 {
+  @include h2;
 }
 
-h3 {
-	@include breakpoint($smedium + 1) {
-		font-size: 2rem;
-	}
-	@include breakpoint(0 $smedium) {
-		font-size: 1.5rem;
-	}
+h3,
+.title--h3 {
+  @include h3;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--header-font);
+  margin-bottom: 1.5rem;
 }
 
 .button {
-	text-decoration: none;
+  text-decoration: none;
   text-align: center;
   white-space: nowrap;
   display: inline-block;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   font-weight: bold;
   border-radius: 44px;
-	text-transform: uppercase;
-	font-size: .85rem;
-	border: 3px solid transparent;
-	padding: 1rem 2rem;
-	&:hover,
-	&:focus {
-		border-color: var(--base-color);
-		color: var(--base-color);
-	}
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border: 2px solid transparent;
+  padding: 1rem 2rem;
+  &:hover,
+  &:focus {
+    border-color: var(--base-color);
+    color: var(--base-color);
+  }
 }
 
 .btn__group {
-	display: flex;
-	justify-content: center;
-	margin-top: .6rem;
-	li {
-		+ li {
-			margin-left: -3px;
-			position: relative;
-		}
-		&:nth-last-child(2),
-      &:nth-last-child(2)~li {
-			&:first-child {
-				.button {
-					border-top-right-radius: 0;
-					border-bottom-right-radius: 0;
-				}
-			}
-			&:last-child {
-				.button {
-					border-top-left-radius: 0;
-					border-bottom-left-radius: 0;
-				}
-			}
+  display: flex;
+  justify-content: center;
+  li {
+    + li {
+      margin-left: -2px;
+      position: relative;
     }
-	}
+    &:nth-last-child(2),
+    &:nth-last-child(2) ~ li {
+      &:first-child {
+        .button {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+      &:last-child {
+        .button {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+  }
 }
 
 /// HERO
@@ -114,7 +126,7 @@ h3 {
   overflow: hidden;
   width: 100%;
   z-index: -1;
-	height: 100vh;
+  height: 100vh;
 }
 
 .hero__image {
@@ -137,102 +149,79 @@ h3 {
 
 .hide,
 .hidden {
-	display: none;
+  display: none;
 }
 
 .invisible {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 .antialiased {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.text-center {
-	text-align: center;
-}
-
-.text-left {
-	text-align: left;
-}
-
-.text-right {
-	text-align: right;
-}
-
-.pull-left {
-	float: left;
-}
-
-.pull-right {
-	float: right;
-}
-
-.align-center {
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button {
-	border: 0;
-	background: none;
-	outline: none;
-	padding: 0;
-	-webkit-appearance: button;
+  border: 0;
+  background: none;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: button;
 }
 
 .sr-only {
-	position:absolute;
-	width:1px;
-	height:1px;
-	padding:0;
-	margin:-1px;
-	overflow:hidden;
-	clip:rect(0,0,0,0);
-	border:0
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
-
 
 /**
  * loader animation
  * ---------------------------------------------------------------
  */
 .s-loader {
-	margin: 1.2rem auto 3rem;
-	width: 70px;
-	text-align: center;
-	transform: translateX(0.45rem);
-	> div {
-		width: 1rem;
-		height: 1rem;
-		background-color: #FFFFFF;
-		border-radius: 100%;
-		display: inline-block;
-		margin-right: .9rem;
-		animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-	}
-	.bounce1 {
-		animation-delay: -0.32s;
-	}
-	.bounce2 {
-		animation-delay: -0.16s;
-	}
+  margin: 1.2rem auto 3rem;
+  width: 70px;
+  text-align: center;
+  transform: translateX(0.45rem);
+  > div {
+    width: 1rem;
+    height: 1rem;
+    background-color: #ffffff;
+    border-radius: 100%;
+    display: inline-block;
+    margin-right: 0.9rem;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  }
+  .bounce1 {
+    animation-delay: -0.32s;
+  }
+  .bounce2 {
+    animation-delay: -0.16s;
+  }
 }
 @-webkit-keyframes sk-bouncedelay {
-	0%, 80%, 100% {
-		transform: scale(0);
-	}
-	40% {
-		transform: scale(1);
-	}
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
 }
 @keyframes sk-bouncedelay {
-	0%, 80%, 100% {
-		transform: scale(0);
-	}
-	40% {
-		transform: scale(1);
-	}
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
 }
