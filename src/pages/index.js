@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
@@ -19,11 +19,6 @@ const IndexPage = props => {
   const intro = props.data.headerData;
   const social = props.data.socialData.edges;
   const dark = 'dark';
-  //sections.modules.forEach( i => console.log(i));
-  // const [theme, setTheme] = useState(
-  //   console.log('setTheme enter')
-  //   // index % 2 ? 'even' : 'odd'
-  // );
 
   return (
     <Layout>
