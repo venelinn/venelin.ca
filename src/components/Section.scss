@@ -2,14 +2,10 @@
   padding: 3rem 1rem;
   background-color: var(--theme-background);
   &:nth-child(odd) {
-    --theme-background: #fff;
+    --theme-background: var(--bg-odd);
   }
   &:nth-child(even) {
-    --theme-background: #f5f5f5;
-  }
-  &[data-theme='dark'] {
-    color: var(--theme-color);
-    --theme-background: #151515;
+    --theme-background: var(--bg-even);
   }
 }
 

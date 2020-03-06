@@ -7,7 +7,7 @@ import './header.scss';
 
 const Header = ({ header, theme, social }) => {
   return (
-    <section className='intro intro--gradient' data-theme={theme}>
+    <section className='intro' data-theme={theme}>
       <Hero data={header.modules[0]} />
       <div className='intro__content'>
         <Rellax speed={5}>
