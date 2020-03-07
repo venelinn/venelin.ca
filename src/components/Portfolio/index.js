@@ -10,41 +10,42 @@ const Portfolio = props => {
   const items = props.folio.projects;
 
   const [state, setState] = useState({
-    selectedImage: null,
-    moreData: null
+    image: null,
+    name: null,
+    url: null,
+    description: null,
+    types: null
   });
   const [modal, setModal] = useState(false);
 
   const openModal = item => {
     setModal(true);
     setState({
-      selectedImage: item.image,
-      moreData: {
-        name: item.name,
-        url: item.url,
-        description: item.description,
-        types: item.types
-      }
+      image: item.image,
+      name: item.name,
+      url: item.url,
+      description: item.description,
+      types: item.types
     });
   };
 
   return (
     <>
-      <div className='portfolio-content'>
+      <div className='portfolio'>
         <Fade cascade bottom delay={600}>
-          <div className='stack'>
+          <div className='portfolio__grid'>
             {items.map((item, index) => (
-              <div className='folio-item' key={index}>
+              <div className='folio' key={index}>
                 <div
-                  className='folio-item__link'
+                  className='folio__link'
                   type='button'
                   onClick={() => openModal(item)}
                 >
                   <Img fluid={item.image.fluid} />
-                  <span className='folio-item-table'>
-                    <span className='folio-item-cell'>
-                      <h3 className='folio-title'>{item.name}</h3>
-                      <span className='folio-types'>{item.types}</span>
+                  <span className='folio__item'>
+                    <span className='folio__item__cell'>
+                      <h3 className='folio__item__title'>{item.name}</h3>
+                      <span className='folio__item__types'>{item.types}</span>
                     </span>
                   </span>
                 </div>
@@ -61,27 +62,29 @@ const Portfolio = props => {
           onDismiss={() => setModal(false)}
         >
           <div className='modal__header'>
-            <Img fluid={state.selectedImage.fluid} />
+            <Img fluid={state.image.fluid} />
           </div>
           <div className='modal__content'>
             <div className='modal__content__name'>
-              <a
-                href={state.moreData.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                title='Visit'
-              ></a>
+              {state.url ? (
+                <a
+                  href={state.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  title='Visit'
+                >
+                  {state.name}
+                </a>
+              ) : (
+                <span>{state.name}</span>
+              )}
             </div>
-            <p>{state.moreData.description}</p>
-            <div className='modal__categories'>{state.moreData.types}</div>
+            <p>{state.description}</p>
+            <div className='modal__categories'>{state.types}</div>
           </div>
           <div className='modal__footer'>
-            {state.moreData.url ? (
-              <a
-                href={state.moreData.url}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
+            {state.url ? (
+              <a href={state.url} target='_blank' rel='noopener noreferrer'>
                 Visit
               </a>
             ) : (

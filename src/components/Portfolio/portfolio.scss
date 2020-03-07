@@ -1,36 +1,38 @@
-.portfolio-content {
+.portfolio {
   @media (min-width: $smedium + 1) {
+    max-width: 1400px;
     padding-left: 2rem;
     padding-right: 2rem;
-    margin: 2rem;
+    margin: 2rem auto;
   }
-}
-.stack {
-  position: relative;
-  display: grid;
-  grid-gap: 15px;
-  @media (min-width: $smedium + 1) {
-    grid-template-columns: repeat(auto-fit, 320px);
-    justify-content: center;
+  &__grid {
+    display: grid;
+    grid-gap: 1rem;
+    @media (min-width: $smedium + 1) {
+      grid-template-columns: repeat(auto-fit, 320px);
+      justify-content: center;
+      grid-auto-rows: 1fr;
+    }
   }
 }
 
-.folio-item {
+.folio {
   padding: 0;
   height: 100%;
+  .gatsby-image-wrapper {
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
+  }
   img {
     display: block;
     object-fit: cover;
     width: 100%;
     height: 100%;
   }
-}
-
-.folio-item__link {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  @media (min-width: $smedium + 1) {
+  &__link {
+    display: block;
+    position: relative;
+    cursor: pointer;
     overflow: hidden;
     &:before {
       transition: all 0.5s ease-in-out;
@@ -43,39 +45,54 @@
       height: 100%;
       z-index: 1;
     }
-    &:hover {
-      .gatsby-image-wrapper {
-        transform: scale(1.05);
+
+    @media (any-hover: hover) {
+      &:hover {
+        .gatsby-image-wrapper {
+          transform: scale(1.05);
+        }
+        &:before {
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+        .folio__item__cell {
+          left: 0;
+        }
       }
+    }
+    @media (any-hover: none) {
       &:before {
-        background-color: rgba(0, 0, 0, 0.7);
+        background: linear-gradient(
+          rgba(0, 0, 0, 0.1) 50%,
+          rgba(0, 0, 0, 0.9) 100%
+        );
       }
-      .folio-item-cell {
+      .folio__item__cell {
         left: 0;
       }
     }
-    .gatsby-image-wrapper {
-      transition: all 0.5s ease-in-out;
-      transform: scale(1);
-    }
   }
 }
 
-.folio-item-table {
+.folio__item {
   display: flex;
-  align-items: center;
   justify-content: center;
-  @media (min-width: $smedium + 1) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  color: #fff;
+  @media (any-hover: hover) {
+    align-items: center;
+  }
+  @media (any-hover: none) {
+    align-items: flex-end;
+    padding-bottom: 1rem;
   }
 }
 
-.folio-item-cell {
+.folio__item__cell {
   text-align: center;
   position: relative;
   @media (min-width: $smedium + 1) {
@@ -87,25 +104,18 @@
   }
 }
 
-.folio-title {
+.folio__item__title {
   margin-bottom: 0;
+  padding: 0 2rem;
   @media (min-width: $medium + 1) {
-    padding: 0 2rem;
     font-size: 2rem;
   }
   @media (max-width: $medium) {
-    font-size: 0.8rem;
-  }
-  @media (min-width: $smedium + 1) {
-    color: #fff;
-  }
-  @media (max-width: $smedium) {
-    color: var(--color-dark);
-    font-weight: normal;
+    font-size: 1.5rem;
   }
 }
 
-.folio-types {
+.folio__item__types {
   margin: 0;
   padding: 0 1rem;
   color: rgba(var(--color-white), 0.6);
@@ -113,9 +123,6 @@
   @media (min-width: $medium + 1) {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-  }
-  @media (max-width: $medium) {
-    display: none;
   }
 }
 
@@ -144,13 +151,13 @@
 .modal {
   background: #fff;
   z-index: 5;
-  max-width: 600px;
   padding: 0;
   position: relative;
-  @media (min-width: $smedium + 1) {
+  @media (min-width: $medium + 1) {
+    max-width: 600px;
     margin: 0 auto;
   }
-  @media (max-width: $smedium) {
+  @media (max-width: $medium) {
     width: 90%;
   }
   &[data-reach-dialog-content] {
@@ -165,11 +172,10 @@
 
   &__content {
     padding: 2rem;
-    &__content__name {
+    &__name {
       font-size: 1.3rem;
       font-weight: bold;
       color: var(--base-color);
-      margin-bottom: 0.6rem;
       a {
         color: inherit;
         &:hover {
