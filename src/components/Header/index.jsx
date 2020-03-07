@@ -2,7 +2,6 @@ import React from 'react';
 import Hero from '../Hero';
 import Social from './Social';
 import Rellax from 'react-rellax';
-
 import './header.scss';
 
 const Header = ({ header, theme, social }) => {
