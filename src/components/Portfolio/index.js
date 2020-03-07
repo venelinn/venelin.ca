@@ -5,19 +5,19 @@ import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 
 import './portfolio.scss';
-// https://416serg.me/building-a-custom-accessible-image-lightbox-in-gatsbyjs/
+
 const Portfolio = props => {
   const items = props.folio.projects;
 
   const [state, setState] = useState({
-    showLightbox: false,
     selectedImage: null,
     moreData: null
   });
+  const [modal, setModal] = useState(false);
 
   const openModal = item => {
+    setModal(true);
     setState({
-      showLightbox: true,
       selectedImage: item.image,
       moreData: {
         name: item.name,
@@ -28,22 +28,14 @@ const Portfolio = props => {
     });
   };
 
-  const closeModal = () => {
-    setState({
-      ...state,
-      showLightbox: false
-    });
-  };
-
   return (
     <>
       <div className='portfolio-content'>
         <Fade cascade bottom delay={600}>
           <div className='stack'>
             {items.map((item, index) => (
-              <div className='bgrid folio-item' key={index}>
+              <div className='folio-item' key={index}>
                 <div
-                  key={index}
                   className='folio-item__link'
                   type='button'
                   onClick={() => openModal(item)}
@@ -62,8 +54,12 @@ const Portfolio = props => {
         </Fade>
       </div>
 
-      {state.showLightbox && (
-        <Dialog className='modal' onDismiss={() => closeModal()}>
+      {modal && (
+        <Dialog
+          data-theme='light'
+          className='modal'
+          onDismiss={() => setModal(false)}
+        >
           <div className='modal__header'>
             <Img fluid={state.selectedImage.fluid} />
           </div>
@@ -91,7 +87,7 @@ const Portfolio = props => {
             ) : (
               ''
             )}
-            <button type='button' onClick={() => closeModal()}>
+            <button type='button' onClick={() => setModal(false)}>
               Close
             </button>
           </div>

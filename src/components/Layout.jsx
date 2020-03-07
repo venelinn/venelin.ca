@@ -1,22 +1,16 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "../styles/style.scss"
+import '../styles/style.scss';
 
 if (typeof window !== 'undefined') {
-  // Make scroll behavior of internal links smooth
-  // eslint-disable-next-line global-require
-  require('smooth-scroll')('.jsSmoothScroll');
+  require('smooth-scroll')("[data-href='smooth']");
 }
 
-const Layout = ({ children }) => (
-  <>
-    { children }
-  </>
-)
+const Layout = ({ children }) => <>{children}</>;
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired
+};
 
-export default Layout
+export default Layout;

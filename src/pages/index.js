@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { useTheme, ThemeProvider } from '../theme';
 
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
@@ -14,50 +16,78 @@ import Resume from '../components/Resume';
 import Contacts from '../components/Contacts';
 import Footer from '../components/Footer';
 
+const ChangeThemeButton = ({ children, theme }) => {
+  const [currentTheme, setTheme] = useTheme();
+  const changeTheme = useCallback(() => setTheme(theme), [theme, setTheme]);
+  return (
+    <button
+      className={theme === currentTheme ? 'active' : ''}
+      onClick={changeTheme}
+    >
+      {children}
+    </button>
+  );
+};
+
+const ThemeClassOnBody = () => {
+  const [theme] = useTheme();
+  return (
+    <Helmet>
+      <body data-theme={theme} />
+    </Helmet>
+  );
+};
+
 const IndexPage = props => {
   const sections = props.data.sectionsData.edges[0].node;
   const intro = props.data.headerData;
   const social = props.data.socialData.edges;
-  const dark = 'dark';
 
   return (
     <Layout>
-      <SEO
-        title={'Venelin.ca'}
-        keywords={[
-          `front-end`,
-          `ui`,
-          `react`,
-          'optimization',
-          'performance',
-          'flexbox'
-        ]}
-      />
-      <GlobalStyle />
-      <Header header={intro} theme={dark} social={social} />
-      {/* All sections */}
-      {sections.modules.map((section, index) => (
-        <Section
-          key={index}
-          type={section.__typename}
-          className={section.slug}
-          title={section.title}
-          description={section.description}
-          data-theme={section.__typename === 'ContentfulContacts' ? 'dark' : ''}
-        >
-          {section.__typename === 'ContentfulAbout' && (
-            <About key={section.id} about={section} />
-          )}
-          {section.__typename === 'ContentfulPortfolioList' && (
-            <Portfolio key={section.id} folio={section} />
-          )}
-          {section.__typename === 'ContentfulExperienceList' && (
-            <Resume key={section.id} jobs={section.modules} />
-          )}
-          {section.__typename === 'ContentfulContacts' && <Contacts />}
-        </Section>
-      ))}
-      <Footer theme={dark} />
+      <ThemeProvider>
+        <SEO
+          title={'Venelin.ca'}
+          keywords={[
+            `front-end`,
+            `ui`,
+            `react`,
+            'optimization',
+            'performance',
+            'flexbox'
+          ]}
+        />
+        <GlobalStyle />
+        <ThemeClassOnBody />
+        <Header header={intro} theme={'dark'} social={social} />
+        {/* <ChangeThemeButton theme='dark'>Dark theme</ChangeThemeButton>
+        <ChangeThemeButton theme='light'>Light theme</ChangeThemeButton> */}
+        {/* All sections */}
+        {sections.modules.map((section, index) => (
+          <Section
+            key={index}
+            type={section.__typename}
+            className={section.slug}
+            title={section.title}
+            description={section.description}
+            data-theme={
+              section.__typename === 'ContentfulContacts' ? 'dark' : ''
+            }
+          >
+            {section.__typename === 'ContentfulAbout' && (
+              <About key={section.id} about={section} />
+            )}
+            {section.__typename === 'ContentfulPortfolioList' && (
+              <Portfolio key={section.id} folio={section} />
+            )}
+            {section.__typename === 'ContentfulExperienceList' && (
+              <Resume key={section.id} jobs={section.modules} />
+            )}
+            {section.__typename === 'ContentfulContacts' && <Contacts />}
+          </Section>
+        ))}
+        <Footer theme={'dark'} />
+      </ThemeProvider>
     </Layout>
   );
 };

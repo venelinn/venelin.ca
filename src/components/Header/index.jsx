@@ -2,7 +2,6 @@ import React from 'react';
 import Hero from '../Hero';
 import Social from './Social';
 import Rellax from 'react-rellax';
-
 import './header.scss';
 
 const Header = ({ header, theme, social }) => {
@@ -25,18 +24,20 @@ const Header = ({ header, theme, social }) => {
           <ul className='intro__cta btn__group'>
             <li>
               <a
-                className='button jsSmoothScroll'
+                className='button'
                 href='#about'
                 title='More About Venelin'
+                data-href='smooth'
               >
                 About Me
               </a>
             </li>
             <li>
               <a
-                className='button jsSmoothScroll'
+                className='button'
                 href='#portfolio'
                 title="Venelin's Portfolio"
+                data-href='smooth'
               >
                 Portfolio
               </a>
