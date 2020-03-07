@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
-//import 'whatwg-fetch'
 
 import './Contacts.scss';
 
@@ -25,20 +24,10 @@ const Modal = styled.div`
   opacity: ${props => (props.visible ? '1' : '0')};
   visibility: ${props => (props.visible ? 'visible' : 'hidden')};
 `;
-// const encode = data => {
-//   return Object.keys(data)
-//     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-//     .join('&');
-// };
-
 const encode = data => {
-  //  console.log('encode data: ', data);
-  const formData = new FormData();
-  Object.keys(data).forEach(k => {
-    formData.append(k, data[k]);
-  });
-  //console.log('encode: ', formData);
-  return formData;
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
 };
 
 const Contacts = props => {
@@ -50,12 +39,9 @@ const Contacts = props => {
 
   const handleSubmit = e => {
     const data = { 'form-name': 'contact', name, email, message };
-    // console.log('data: ', data);
     fetch('/', {
       method: 'POST',
-      //headers: { 'Content-Type': 'multipart/form-data; boundary=random' },
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      //body: encode({ 'form-name': 'contact', name, email, message })
       body: encode(data)
     })
       .then(handleSuccess(true))
