@@ -165,13 +165,22 @@
   }
   &__header {
     padding: 0.3rem 0.3rem 0;
+    &[data-slider] > div {
+      height: var(--slider-height, 560px);
+      @media (max-width: $medium) {
+        --slider-height: 310px;
+      }
+    }
     img {
       width: 100%;
     }
   }
 
   &__content {
-    padding: 2rem;
+    padding: var(--modal-content, 2rem);
+    @media (max-width: $medium) {
+      --modal-content: 1.5rem;
+    }
     &__name {
       font-size: 1.3rem;
       font-weight: bold;
@@ -181,6 +190,11 @@
         &:hover {
           text-decoration: underline;
         }
+      }
+    }
+    p {
+      @media (max-width: $smedium) {
+        font-size: 80%;
       }
     }
   }

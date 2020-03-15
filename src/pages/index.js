@@ -39,7 +39,7 @@ const ThemeClassOnBody = () => {
 };
 
 const IndexPage = props => {
-  const sections = props.data.sectionsData.edges[0].node;
+  const sections = props.data.sectionsData.edges[0].node.modules;
   const intro = props.data.headerData;
   const social = props.data.socialData.edges;
 
@@ -63,7 +63,7 @@ const IndexPage = props => {
         {/* <ChangeThemeButton theme='dark'>Dark theme</ChangeThemeButton>
         <ChangeThemeButton theme='light'>Light theme</ChangeThemeButton> */}
         {/* All sections */}
-        {sections.modules.map((section, index) => (
+        {sections.map((section, index) => (
           <Section
             key={index}
             type={section.__typename}
@@ -152,7 +152,7 @@ export const query = graphql`
                   url
                   types
                   description
-                  image {
+                  media {
                     fluid(maxWidth: 500, quality: 80) {
                       ...GatsbyContentfulFluid_withWebp_noBase64
                     }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Img from 'gatsby-image';
 import Fade from 'react-reveal/Fade';
+import Slider from '@farbenmeer/react-spring-slider';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 
@@ -10,22 +11,22 @@ const Portfolio = props => {
   const items = props.folio.projects;
 
   const [state, setState] = useState({
-    image: null,
     name: null,
     url: null,
     description: null,
-    types: null
+    types: null,
+    media: null
   });
   const [modal, setModal] = useState(false);
 
   const openModal = item => {
     setModal(true);
     setState({
-      image: item.image,
       name: item.name,
       url: item.url,
       description: item.description,
-      types: item.types
+      types: item.types,
+      media: item.media.map(img => img)
     });
   };
 
@@ -41,7 +42,7 @@ const Portfolio = props => {
                   type='button'
                   onClick={() => openModal(item)}
                 >
-                  <Img fluid={item.image.fluid} />
+                  <Img fluid={item.media[0].fluid} />
                   <span className='folio__item'>
                     <span className='folio__item__cell'>
                       <h3 className='folio__item__title'>{item.name}</h3>
@@ -61,8 +62,18 @@ const Portfolio = props => {
           className='modal'
           onDismiss={() => setModal(false)}
         >
-          <div className='modal__header'>
-            <Img fluid={state.image.fluid} />
+          <div className="modal__header" data-slider={state.media.length > 1 ? 'true' : null }>
+            {state.media.length > 1 ? (
+              <Slider hasArrows>
+                {state.media.map((item, index) => (
+                  <Img key={index} fluid={item.fluid} />
+                ))}
+              </Slider>
+            ) : (
+              state.media.map((item, index) => (
+                <Img key={index} fluid={item.fluid} />
+              ))
+            )}
           </div>
           <div className='modal__content'>
             <div className='modal__content__name'>
@@ -87,9 +98,7 @@ const Portfolio = props => {
               <a href={state.url} target='_blank' rel='noopener noreferrer'>
                 Visit
               </a>
-            ) : (
-              ''
-            )}
+            ) : null}
             <button type='button' onClick={() => setModal(false)}>
               Close
             </button>
