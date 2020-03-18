@@ -116,6 +116,12 @@ export const query = graphql`
               ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
+          media {
+            id
+            fluid(maxWidth: 1400, quality: 90) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
+            }
+          }
         }
       }
     }
