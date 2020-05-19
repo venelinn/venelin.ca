@@ -1,12 +1,9 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { useTheme, ThemeProvider } from '../theme';
 
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
-import GlobalStyle from '../styles/global';
 import Section from '../components/Section';
 
 import Header from '../components/Header';
@@ -16,27 +13,6 @@ import Resume from '../components/Resume';
 import Contacts from '../components/Contacts';
 import Footer from '../components/Footer';
 
-const ChangeThemeButton = ({ children, theme }) => {
-  const [currentTheme, setTheme] = useTheme();
-  const changeTheme = useCallback(() => setTheme(theme), [theme, setTheme]);
-  return (
-    <button
-      className={theme === currentTheme ? 'active' : ''}
-      onClick={changeTheme}
-    >
-      {children}
-    </button>
-  );
-};
-
-const ThemeClassOnBody = () => {
-  const [theme] = useTheme();
-  return (
-    <Helmet>
-      <body data-theme={theme} />
-    </Helmet>
-  );
-};
 
 const IndexPage = props => {
   const sections = props.data.sectionsData.edges[0].node.modules;
@@ -44,8 +20,7 @@ const IndexPage = props => {
   const social = props.data.socialData.edges;
 
   return (
-    <Layout>
-      <ThemeProvider>
+    <Layout bodyClass="home">
         <SEO
           title={'Venelin.ca'}
           keywords={[
@@ -57,12 +32,11 @@ const IndexPage = props => {
             'flexbox'
           ]}
         />
-        <GlobalStyle />
-        <ThemeClassOnBody />
-        <Header header={intro} theme={'dark'} social={social} />
-        {/* <ChangeThemeButton theme='dark'>Dark theme</ChangeThemeButton>
-        <ChangeThemeButton theme='light'>Light theme</ChangeThemeButton> */}
-        {/* All sections */}
+        <Header
+          header={intro}
+          theme={'dark'}
+          social={social}
+        />
         {sections.map((section, index) => (
           <Section
             key={index}
@@ -87,7 +61,6 @@ const IndexPage = props => {
           </Section>
         ))}
         <Footer theme={'dark'} />
-      </ThemeProvider>
     </Layout>
   );
 };
@@ -112,6 +85,13 @@ export const query = graphql`
         ... on ContentfulHero {
           title
           image {
+            fluid(maxWidth: 1400, quality: 90) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
+            }
+          }
+          media {
+            title
+            description
             fluid(maxWidth: 1400, quality: 90) {
               ...GatsbyContentfulFluid_withWebp_noBase64
             }

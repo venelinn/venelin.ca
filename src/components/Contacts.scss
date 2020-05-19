@@ -50,7 +50,7 @@ input::-ms-clear {
     outline: none;
     max-width: 100%;
     background: transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid currentColor;
     transition: all 0.3s ease-in-out;
     width: 100%;
     color: rgba(255, 255, 255, 0.7);

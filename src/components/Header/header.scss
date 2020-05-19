@@ -1,5 +1,6 @@
 .intro {
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   display: flex;
   text-align: center;
   align-items: center;

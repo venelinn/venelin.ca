@@ -125,6 +125,32 @@ h6 {
   }
 }
 
+.not-found {
+  height: 100vh;
+  height: -webkit-fill-available;
+  background-color: var(--bg-even);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    font-size: calc(16px + 32vw)
+  }
+  p {
+    opacity: .5;
+  }
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+}
+
 /**
  * ===================================================================
  * Misc Helper Styles

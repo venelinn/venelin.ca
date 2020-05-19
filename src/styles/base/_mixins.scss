@@ -64,6 +64,12 @@
 	#{$property}: calc(#{$expression});
 }
 
+
+@mixin fluid-type($min, $max, $ls: 0) {
+  font-size: calc(#{$min}px + (#{$max} - #{$min}) * ((100vw - 320px) / (1600 - 320)));
+  letter-spacing: $ls;
+}
+
 // FONTS
 
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
