@@ -84,10 +84,10 @@ const Contacts = props => {
         overlay={setModal}
         onClick={() => setModal(false)}
       >
-        <input type='hidden' name='form-name' value='contact' />
+        <input type='hidden' name='form-name' value='contact' aria-label='form-name' />
         <p hidden>
           <label>
-            Don’t fill this out: <input name='bot' onChange={handleChange} />
+            Don’t fill this out: <input name='bot' aria-label='bot' onChange={handleChange} />
           </label>
         </p>
         <Fade bottom>
@@ -97,6 +97,7 @@ const Contacts = props => {
               <input
                 value={name}
                 onChange={handleChange}
+                aria-label='Name'
                 required
                 name='name'
                 type='text'
@@ -113,6 +114,7 @@ const Contacts = props => {
                 type='email'
                 value={email}
                 onChange={handleChange}
+                aria-label='Email'
                 required
                 placeholder='Email'
               />
@@ -124,6 +126,7 @@ const Contacts = props => {
               <textarea
                 name='message'
                 placeholder='Message'
+                aria-label='Message'
                 value={message}
                 onChange={handleChange}
                 required
