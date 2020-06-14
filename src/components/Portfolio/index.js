@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Img from 'gatsby-image';
 import Fade from 'react-reveal/Fade';
-import Slider from '@farbenmeer/react-spring-slider';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 
@@ -64,11 +63,38 @@ const Portfolio = props => {
         >
           <div className="modal__header" data-slider={state.media.length > 1 ? 'true' : null }>
             {state.media.length > 1 ? (
-              <Slider hasArrows>
+              <section className="carousel" aria-label="Gallery">
+                <ol className="carousel__viewport">
                 {state.media.map((item, index) => (
-                  <Img key={index} fluid={item.fluid} />
-                ))}
-              </Slider>
+                  <li
+                    key={index}
+                    id={`carousel__slide${index}`}
+                    tabIndex="0"
+                    className="carousel__slide"
+                  >
+                    <Img  fluid={item.fluid} />
+                    <span className="carousel__snapper">
+                      {index !== 0 &&
+                        <a
+                          href={`#carousel__slide${index - 1}`}
+                          className="carousel__nav carousel__nav--prev"
+                          >
+                          Go to previous
+                        </a>
+                      }
+                      {index === index.length - 1 || index === 0 &&
+                        <a
+                          href={`#carousel__slide${index + 1}`}
+                          className="carousel__nav carousel__nav--next"
+                          >
+                            Go to next
+                        </a>
+                      }
+                    </span>
+                  </li>
+                  ))}
+                </ol>
+              </section>
             ) : (
               state.media.map((item, index) => (
                 <Img key={index} fluid={item.fluid} />

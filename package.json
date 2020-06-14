@@ -7,7 +7,6 @@
   "dependencies": {
     "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^13.4.0",
-    "@farbenmeer/react-spring-slider": "^1.1.1",
     "@reach/dialog": "^0.2.9",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^7.0.0",
