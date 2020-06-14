@@ -15,7 +15,7 @@ module.exports = {
     copyright: 'Copyright © 2019 Venelin Nikolov', // Copyright string for the RSS feed
     userTwitter: '@venelinn', // Change for Twitter Cards
     shortTitle: 'VNN', // Used for App manifest e.g. Mobile Home Screen
-    shareImage: '${__dirname}/images/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
+    shareImage: '/images/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
     shareImageWidth: 900, // Change to the width of your default share image
     shareImageHeight: 600, // Change to the height of your default share image
     siteLogo: '${__dirname}/images/favicons/favicon-512x512.png', // Logo used for SEO, RSS, and App manifest

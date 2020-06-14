@@ -23,6 +23,10 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: metaDescription,
               },
               {
+                property: `og:image`,
+                content: shareImage,
+              },
+              {
                 property: `og:title`,
                 content: title,
               },
@@ -90,6 +94,7 @@ const detailsQuery = graphql`
         title
         description
         author
+        shareImage
       }
     }
   }
