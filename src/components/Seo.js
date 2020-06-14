@@ -24,7 +24,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:image`,
-                content: shareImage,
+                content: data.site.siteMetadata.shareImage,
               },
               {
                 property: `og:title`,
@@ -83,6 +83,7 @@ SEO.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  shareImage: PropTypes.string
 }
 
 export default SEO
