@@ -1,12 +1,14 @@
 .intro {
   min-height: 100vh;
-  min-height: -webkit-fill-available;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: var(--text-color);
+  @media (max-width: $smedium) {
+    min-height: -webkit-fill-available;
+  }
   &--gradient {
     &:before {
       content: '';
