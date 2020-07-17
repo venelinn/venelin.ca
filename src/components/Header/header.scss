@@ -6,9 +6,9 @@
   justify-content: center;
   flex-direction: column;
   color: var(--text-color);
-  @media (max-width: $smedium) {
-    min-height: -webkit-fill-available;
-  }
+  // @media (max-width: $smedium) {
+  //   min-height: -webkit-fill-available;
+  // }
   &--gradient {
     &:before {
       content: '';
