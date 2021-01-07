@@ -1,6 +1,5 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
-import Zoom from 'react-reveal/Zoom';
+import { Fade, Zoom } from 'react-awesome-reveal';
 import SVG from './SVG';
 import './Resume.scss';
 
@@ -12,7 +11,7 @@ const Resume = props => {
           <div className='timeline__exp'>Work Experience</div>
         </div>
         <div className='timeline__wrap'>
-          <Fade bottom>
+          <Fade triggerOnce direction="up">
           {props.jobs.map((job, index) => (
             <div  key={index}
               className={`timeline__block ${!job.position ? 'hidden' : ''}`}
@@ -40,7 +39,7 @@ const Resume = props => {
           </Fade>
         </div>
       </div>
-      <Fade bottom>
+      <Fade triggerOnce direction="up">
       <div className='timeline'>
         <div className='resume__header'>
           <div className='timeline__exp'>Education</div>

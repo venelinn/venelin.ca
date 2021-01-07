@@ -14,6 +14,11 @@
       grid-auto-rows: 1fr;
       --portfolio-gap: 1rem;
     }
+    @media (max-width: $smedium) {
+      // &.react-reveal {
+      //   opacity: 1;
+      // }
+    }
   }
 }
 

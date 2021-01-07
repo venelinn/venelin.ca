@@ -18,7 +18,6 @@ const IndexPage = props => {
   const sections = props.data.sectionsData.edges[0].node.modules;
   const intro = props.data.headerData;
   const social = props.data.socialData.edges;
-
   return (
     <Layout bodyClass="home">
         <SEO

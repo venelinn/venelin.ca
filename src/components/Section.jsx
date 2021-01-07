@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Fade from 'react-reveal/Fade';
+//import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 
 import './Section.scss';
 
@@ -19,7 +20,7 @@ const Section = ({
     {...props}
   >
     <div className='section__inner'>
-      <Fade delay={300}>
+      <Fade triggerOnce delay={300}>
         <h2>{title}</h2>
         <h3>{description}</h3>
       </Fade>

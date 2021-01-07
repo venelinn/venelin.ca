@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Fade from 'react-reveal/Fade';
+//import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 
 import './Contacts.scss';
 
@@ -90,11 +91,10 @@ const Contacts = props => {
             Don’t fill this out: <input name='bot' aria-label='bot' onChange={handleChange} />
           </label>
         </p>
-        <Fade bottom>
+        <Fade triggerOnce direction="up">
           <p className='form-field'>
-            <label>
-              <span>Name</span>
-              <input
+            <label><span>Name</span></label>
+            <input
                 value={name}
                 onChange={handleChange}
                 aria-label='Name'
@@ -104,12 +104,10 @@ const Contacts = props => {
                 placeholder='Name'
                 minLength='2'
               />
-            </label>
           </p>
           <p className='form-field'>
-            <label>
-              <span>Email</span>
-              <input
+            <label><span>Email</span></label>
+            <input
                 name='email'
                 type='email'
                 value={email}
@@ -118,12 +116,10 @@ const Contacts = props => {
                 required
                 placeholder='Email'
               />
-            </label>
           </p>
           <p className='form-field'>
-            <label>
-              <span>Message</span>
-              <textarea
+            <label><span>Message</span></label>
+            <textarea
                 name='message'
                 placeholder='Message'
                 aria-label='Message'
@@ -133,7 +129,6 @@ const Contacts = props => {
                 rows='5'
                 cols='5'
               ></textarea>
-            </label>
           </p>
           <p className='form-field'>
             <button className='submitform' type='submit'>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Profile from './profile';
-import Fade from 'react-reveal/Fade';
+//import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 //import CTA from './cta';
 
 import './about.scss';
@@ -8,7 +9,7 @@ import './about.scss';
 const About = props => {
   return (
     <>
-      <Fade delay={500}>
+      <Fade triggerOnce delay={500}>
         <div
           className='about__intro'
           dangerouslySetInnerHTML={{

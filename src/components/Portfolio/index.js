@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Img from 'gatsby-image';
-import Fade from 'react-reveal/Fade';
+//import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
 
@@ -32,27 +33,27 @@ const Portfolio = props => {
   return (
     <>
       <div className='portfolio'>
-        <Fade cascade bottom delay={600}>
-          <div className='portfolio__grid'>
-            {items.map((item, index) => (
-              <div className='folio' key={index}>
-                <div
-                  className='folio__link'
-                  type='button'
-                  onClick={() => openModal(item)}
-                >
-                  <Img fluid={item.media[0].fluid} />
-                  <span className='folio__item'>
-                    <span className='folio__item__cell'>
-                      <h3 className='folio__item__title'>{item.name}</h3>
-                      <span className='folio__item__types'>{item.types}</span>
+        <div className="portfolio__grid">
+          <Fade cascade triggerOnce damping={0.1} direction={"up"} >
+              {items.map((item, index) => (
+                <div className='folio' key={index}>
+                  <div
+                    className='folio__link'
+                    type='button'
+                    onClick={() => openModal(item)}
+                  >
+                    <Img fluid={item.media[0].fluid} />
+                    <span className='folio__item'>
+                      <span className='folio__item__cell'>
+                        <h3 className='folio__item__title'>{item.name}</h3>
+                        <span className='folio__item__types'>{item.types}</span>
+                      </span>
                     </span>
-                  </span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </Fade>
+              ))}
+          </Fade>
+        </div>
       </div>
 
       {modal && (
