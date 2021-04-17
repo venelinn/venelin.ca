@@ -6,10 +6,6 @@ import GlobalStyle from '../styles/global';
 
 import '../styles/style.scss';
 
-if (typeof window !== 'undefined') {
-  require('smooth-scroll')("[data-href='smooth']");
-}
-
 const ChangeThemeButton = ({ children, theme }) => {
   const [currentTheme, setTheme] = useTheme();
   const changeTheme = useCallback(() => setTheme(theme), [theme, setTheme]);
