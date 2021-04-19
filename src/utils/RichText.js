@@ -1,11 +1,10 @@
 import React from "react";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { func, object, string } from "prop-types";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 const RichText = ({ data, className, listClassName, renderComponents }) => {
-	// eslint-disable-next-line react/prop-types
-	const Text = ({ children }) => <p>{children}</p>;
+		const Text = ({ children }) => <p>{children}</p>;
 
 	const options = {
 		renderNode: {
@@ -24,7 +23,7 @@ const RichText = ({ data, className, listClassName, renderComponents }) => {
 		},
 		renderText: text => text.split("\n").flatMap((_text, i) => [i > 0 && <br />, _text]),
 	};
-	return <div className={className}>{documentToReactComponents(data, options)}</div>;
+	return <div className={className}>{renderRichText(data, options)}</div>;
 };
 
 RichText.propTypes = {

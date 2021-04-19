@@ -23,13 +23,16 @@ module.exports = {
     themeColor: '#000000' // Used for Offline Manifest
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
-        data: '@import "src/styles/global.scss";',
-        includePaths: ['src/styles']
+        sassOptions: {
+          includePaths: [path.resolve(__dirname, 'src/styles')],
+        },
+        additionalData: `@import "${__dirname}/src/styles/global.scss";`,
       }
     },
     `gatsby-transformer-json`,
@@ -39,6 +42,7 @@ module.exports = {
         name: `images`,
         path: path.join(__dirname, `src`, `images`)
       }
+
     },
     //'gatsby-plugin-netlify',
     {
@@ -48,7 +52,7 @@ module.exports = {
         accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`
       }
     },
-    `@contentful/gatsby-transformer-contentful-richtext`,
+    // `@contentful/gatsby-transformer-contentful-richtext`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
