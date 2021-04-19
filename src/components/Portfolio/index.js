@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Img from 'gatsby-image';
-//import Fade from 'react-reveal/Fade';
 import { Fade } from 'react-awesome-reveal';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
