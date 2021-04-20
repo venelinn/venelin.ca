@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Img from 'gatsby-image';
-//import Fade from 'react-reveal/Fade';
 import { Fade } from 'react-awesome-reveal';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
@@ -73,7 +72,7 @@ const Portfolio = props => {
                     tabIndex="0"
                     className="carousel__slide"
                   >
-                    <Img  fluid={item.fluid} />
+                    <Img fluid={item.fluid} />
                     <span className="carousel__snapper">
                       {index !== 0 &&
                         <a
@@ -83,7 +82,7 @@ const Portfolio = props => {
                           Go to previous
                         </a>
                       }
-                      {index === index.length - 1 || index === 0 &&
+                      {(index === index.length - 1 || index === 0) &&
                         <a
                           href={`#carousel__slide${index + 1}`}
                           className="carousel__nav carousel__nav--next"

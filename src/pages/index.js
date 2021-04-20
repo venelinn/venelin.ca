@@ -36,6 +36,7 @@ const IndexPage = props => {
           theme={'dark'}
           social={social}
         />
+
         {sections.map((section, index) => (
           <Section
             key={index}
@@ -66,12 +67,12 @@ const IndexPage = props => {
 
 export default IndexPage;
 
-IndexPage.propTypes = {
-  data: PropTypes.object,
-  about: PropTypes.object,
-  folio: PropTypes.object,
-  jobs: PropTypes.object
-};
+// IndexPage.propTypes = {
+//   data: PropTypes.object,
+//   about: PropTypes.object,
+//   folio: PropTypes.object,
+//   jobs: PropTypes.object
+// };
 
 export const query = graphql`
   query Index {
@@ -109,9 +110,7 @@ export const query = graphql`
               description
               slug
               content {
-                childContentfulRichText {
-                  html
-                }
+                raw
               }
               modules {
                 ... on ContentfulProfile {

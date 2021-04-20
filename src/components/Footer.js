@@ -1,12 +1,12 @@
 import React from 'react';
 //import Fade from 'react-reveal/Fade';
 import { Fade } from 'react-awesome-reveal';
-import classes from './Footer.module.scss';
+import './Footer.scss';
 
 const Footer = ({ theme }) => (
-  <footer className={classes.footer} data-theme={theme}>
+  <footer className="footer" data-theme={theme}>
     <Fade delay={300}>
-      <div className={classes.copyright}>
+      <div className="footer__copyright">
         © {new Date().getFullYear()}, Built with Gatsby. I love you Lea!
       </div>
     </Fade>
