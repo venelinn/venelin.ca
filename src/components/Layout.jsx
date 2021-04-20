@@ -35,9 +35,12 @@ const Layout = props => {
     <ThemeProvider>
       <GlobalStyle />
       <ThemeClassOnBody bodyClass={props.bodyClass} />
-        {/* <ChangeThemeButton theme='dark'>Dark theme</ChangeThemeButton>
+      {/* <div className="theme-toggle">
+        <ChangeThemeButton theme='dark'>Dark theme</ChangeThemeButton>
         <ChangeThemeButton theme='light'>Light theme</ChangeThemeButton>
-        */}
+      </div> */}
+
+
 
       { props.children }
     </ThemeProvider>
