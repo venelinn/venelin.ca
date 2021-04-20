@@ -116,6 +116,8 @@ h6 {
   width: 100%;
   z-index: -1;
   height: 100vh;
+  animation: hue 15s infinite ease-in-out both;
+
 }
 
 .hero__image {
@@ -196,6 +198,13 @@ button {
   border: 0;
 }
 
+.theme-toggle {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  color: #fff;
+}
+
 /**
  * loader animation
  * ---------------------------------------------------------------
@@ -239,5 +248,18 @@ button {
   }
   40% {
     transform: scale(1);
+  }
+}
+
+
+@keyframes hue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(100deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
   }
 }

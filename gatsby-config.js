@@ -18,7 +18,7 @@ module.exports = {
     shareImage: '/images/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
     shareImageWidth: 900, // Change to the width of your default share image
     shareImageHeight: 600, // Change to the height of your default share image
-    siteLogo: '${__dirname}/images/favicons/favicon-512x512.png', // Logo used for SEO, RSS, and App manifest
+    siteLogo: `${__dirname}/images/favicons/favicon-512x512.png`, // Logo used for SEO, RSS, and App manifest
     backgroundColor: '#e9e9e9', // Used for Offline Manifest
     themeColor: '#000000' // Used for Offline Manifest
   },
@@ -33,6 +33,16 @@ module.exports = {
           includePaths: [path.resolve(__dirname, 'src/styles')],
         },
         additionalData: `@import "${__dirname}/src/styles/global.scss";`,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        purgeCSSOptions: {
+          // https://purgecss.com/configuration.html#options
+          safelist: [/^folio/, /^data-reach/], // Don't remove this selector
+        },
       }
     },
     `gatsby-transformer-json`,
