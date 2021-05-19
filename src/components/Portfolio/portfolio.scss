@@ -197,8 +197,6 @@
 
   ol, li {
     list-style: none;
-    margin: 0;
-    padding: 0;
   }
   position: relative;
   padding-top: 100%;
@@ -266,7 +264,6 @@
     animation-name: tonext, snap;
     animation-timing-function: ease;
     animation-duration: 4s;
-    z-index: 1;
     animation-iteration-count: infinite;
   }
 

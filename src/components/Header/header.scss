@@ -67,6 +67,7 @@
   &__cta {
     animation: textIn 2s both var(--text-in);
     animation-delay: 1s;
+    list-style: none;
   }
 
   &__social {

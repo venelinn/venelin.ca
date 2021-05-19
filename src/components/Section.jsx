@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-//import Fade from 'react-reveal/Fade';
 import { Fade } from 'react-awesome-reveal';
 
 import './Section.scss';
@@ -33,7 +32,8 @@ Section.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   title: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  theme: PropTypes.string
 };
 
 Section.defaultProps = {

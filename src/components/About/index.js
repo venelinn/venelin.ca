@@ -1,10 +1,10 @@
 import React from 'react';
 import Profile from './profile';
 import { Fade } from 'react-awesome-reveal';
+import RichText from '../../utils/RichText';
 //import CTA from './cta';
 
 import './about.scss';
-import RichText from '../../utils/RichText';
 
 const About = props => {
   return (
