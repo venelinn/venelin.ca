@@ -47,7 +47,13 @@
     "start": "npm run develop",
     "start:lan": "npm run develop --host=0.0.0.0",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "lint": "npm run lint:js; npm run lint:css",
+    "lint:fix": "npm run lint:js:fix; npm run lint:css:fix",
+    "lint:js": "eslint 'src/**/*.{js,jsx}'",
+    "lint:js:fix": "prettier-eslint 'src/**/*.{js,jsx}' --write",
+    "lint:css": "stylelint 'src/**/*.{js,jsx,mdx,scss}'",
+    "lint:css:fix": "stylelint 'src/**/*.{js,jsx,mdx,scss}' --fix",
+    "stylelint-check": "stylelint-config-prettier-check"
   },
   "repository": {
     "type": "git",
@@ -64,11 +70,25 @@
   ],
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.24.0",
+    "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-babel": "^9.0.0",
     "eslint-config-prettier": "^8.2.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-react": "^7.23.2"
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-json": "^3.0.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "gatsby-plugin-eslint": "^3.0.0",
+    "gatsby-plugin-stylelint": "^3.2.0",
+    "prettier": "^2.3.0",
+    "prettier-eslint": "^12.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended": "^5.0.0",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-prettier": "^1.2.0",
+    "stylelint-webpack-plugin": "^2.1.1"
   }
 }

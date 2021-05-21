@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "stylelint-config-prettier",
+  ],
+  "defaultSeverity": "warning",
+  "rules": {
+    "color-no-invalid-hex": true,
+    "color-hex-case": [
+      "lower",
+      {
+        "message": "Lowercase letters are easier to distinguish from numbers"
+      }
+    ],
+    "string-quotes": "double",
+		"max-nesting-depth": 4,
+    "max-empty-lines": 2,
+		"at-rule-semicolon-newline-after": "always",
+    "block-closing-brace-empty-line-before": "never",
+    "block-closing-brace-newline-after": "always",
+    "block-closing-brace-newline-before": "always-multi-line",
+    "block-closing-brace-space-before": "always-single-line",
+    "block-opening-brace-newline-after": "always-multi-line",
+    "block-opening-brace-space-after": "always-single-line",
+    "block-opening-brace-space-before": "always",
+  }
+}

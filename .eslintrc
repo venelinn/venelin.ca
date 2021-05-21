@@ -1,0 +1,53 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"parser": "babel-eslint",
+	"extends": ["plugin:react/recommended", "airbnb", "prettier/react"],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"plugins": ["react", "prettier"],
+	"rules": {
+		"jsx-a11y/aria-role": [
+			2,
+			{
+				"ignoreNonDOM": true
+			}
+		],
+		"arrow-body-style": "off",
+		"no-console": ["warn", { "allow": ["warn"] }],
+		// "no-shadow": ["error", { "allow": ["index"] }],
+		"no-shadow": "off", // TODO
+		"prettier/prettier": "error",
+		"indent": "off",
+		"react/destructuring-assignment": "off",
+		"react/forbid-prop-types": "off",
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+		"react/state-in-constructor": "off",
+		"react/prop-types": ["warn"],
+		"react/no-array-index-key": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/jsx-boolean-value": "off",
+		"react/require-default-props": "off", // TODO
+		"react/jsx-closing-bracket-location": "off",
+		"no-underscore-dangle": [
+			"off",
+			{
+				"allow": [],
+				"allowAfterThis": false,
+				"allowAfterSuper": false,
+				"enforceInMethodNames": true
+			}
+		]
+	}
+}

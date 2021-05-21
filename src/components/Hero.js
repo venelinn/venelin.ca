@@ -1,11 +1,11 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import Plx from 'react-plx'
-//import styles from './Hero.module.scss'
+// import styles from './Hero.module.scss'
 
-//import "./Hero.module.scss"
+// import "./Hero.module.scss"
 
-const Hero = props => {
+const Hero = (props) => {
   return (
     <div className="hero">
       <Plx
@@ -17,7 +17,7 @@ const Hero = props => {
               {
                 startValue: 1,
                 endValue: 1.3,
-                property: "scale"
+                property: 'scale',
               },
             ],
           },

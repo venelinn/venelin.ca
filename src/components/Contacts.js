@@ -1,137 +1,158 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-//import Fade from 'react-reveal/Fade';
-import { Fade } from 'react-awesome-reveal';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+// import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal'
 
-import './Contacts.scss';
+import './Contacts.scss'
 
 const Form = styled.form`
   &::before {
     content: '';
     transition: 0.2s all;
-    opacity: ${props => (props.overlay ? '.8' : '0')};
-    visibility: ${props => (props.overlay ? 'visible' : 'hidden')};
+    opacity: ${(props) => (props.overlay ? '.8' : '0')};
+    visibility: ${(props) => (props.overlay ? 'visible' : 'hidden')};
   }
-`;
+`
 
 const Modal = styled.div`
   background: #f1f1f1;
-  color: ${props => (props.status ? 'green' : 'red')};
+  color: ${(props) => (props.status ? 'green' : 'red')};
   padding: 2em;
   border-radius: 2px;
   transition: 0.2s all;
   text-align: center;
   margin-top: 2rem;
-  opacity: ${props => (props.visible ? '1' : '0')};
-  visibility: ${props => (props.visible ? 'visible' : 'hidden')};
-`;
-const encode = data => {
+  opacity: ${(props) => (props.visible ? '1' : '0')};
+  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
+`
+const encode = (data) => {
   return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-};
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&')
+}
 
-const Contacts = props => {
-  const [status, setStatus] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [modal, setModal] = useState(false);
+const Contacts = () => {
+  const [status, setStatus] = useState(false)
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [modal, setModal] = useState(false)
 
-  const handleSubmit = e => {
-    const data = { 'form-name': 'contact', name, email, message };
+  const handleSubmit = (e) => {
+    const handleSuccess = (status) => {
+      setStatus(status)
+      setModal(true)
+      setName('')
+      setEmail('')
+      setMessage('')
+      setTimeout(() => {
+        setModal(false)
+      }, 5000)
+    }
+
+    const data = { 'form-name': 'contact', name, email, message }
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode(data)
+      body: encode(data),
     })
       .then(handleSuccess(true))
-      .catch(error => handleSuccess(false));
+      .catch(() => handleSuccess(false))
 
-    e.preventDefault();
-  };
+    e.preventDefault()
+  }
 
-  const handleChange = e => {
-    const { name, value } = e.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target
     if (name === 'name') {
-      return setName(value);
+      return setName(value)
     }
     if (name === 'email') {
-      return setEmail(value);
+      return setEmail(value)
     }
     if (name === 'message') {
-      return setMessage(value);
+      return setMessage(value)
     }
-  };
-
-  const handleSuccess = status => {
-    setStatus(status);
-    setModal(true);
-    setName('');
-    setEmail('');
-    setMessage('');
-    setTimeout(() => {
-      setModal(false);
-    }, 5000);
-  };
+    return name
+  }
 
   return (
-    <div className='contact-form'>
+    <div className="contact-form">
       <Form
-        name='contact'
+        name="contact"
         onSubmit={handleSubmit}
-        data-netlify='true'
-        data-netlify-honeypot='bot'
+        data-netlify="true"
+        data-netlify-honeypot="bot"
         overlay={setModal}
         onClick={() => setModal(false)}
       >
-        <input type='hidden' name='form-name' value='contact' aria-label='form-name' />
+        <input
+          type="hidden"
+          name="form-name"
+          value="contact"
+          aria-label="form-name"
+        />
         <p hidden>
-          <label>
-            Don’t fill this out: <input name='bot' aria-label='bot' onChange={handleChange} />
+          <label htmlFor="noedit">
+            Don’t fill this out:{' '}
+            <input
+              id="noedit"
+              name="bot"
+              aria-label="bot"
+              onChange={handleChange}
+            />
           </label>
         </p>
         <Fade triggerOnce direction="up">
-          <p className='form-field'>
-            <label><span>Name</span></label>
-            <input
+          <p className="form-field">
+            <label htmlFor="name">
+              <span>Name</span>
+              <input
                 value={name}
                 onChange={handleChange}
-                aria-label='Name'
+                aria-label="Name"
                 required
-                name='name'
-                type='text'
-                placeholder='Name'
-                minLength='2'
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Name"
+                minLength="2"
               />
+            </label>
           </p>
-          <p className='form-field'>
-            <label><span>Email</span></label>
-            <input
-                name='email'
-                type='email'
+          <p className="form-field">
+            <label htmlFor="email">
+              <span>Email</span>
+              <input
+                name="email"
+                id="email"
+                type="email"
                 value={email}
                 onChange={handleChange}
-                aria-label='Email'
+                aria-label="Email"
                 required
-                placeholder='Email'
+                placeholder="Email"
               />
+            </label>
           </p>
-          <p className='form-field'>
-            <label><span>Message</span></label>
-            <textarea
-                name='message'
-                placeholder='Message'
-                aria-label='Message'
+          <p className="form-field">
+            <label htmlFor="message">
+              <span>Message</span>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Message"
+                aria-label="Message"
                 value={message}
                 onChange={handleChange}
                 required
-                rows='5'
-                cols='5'
-              ></textarea>
+                rows="5"
+                cols="5"
+              />
+            </label>
           </p>
-          <p className='form-field'>
-            <button className='submitform' type='submit'>
+          <p className="form-field">
+            <button className="submitform" type="submit">
               Send
             </button>
           </p>
@@ -145,7 +166,7 @@ const Contacts = props => {
         </Modal>
       </Form>
     </div>
-  );
-};
+  )
+}
 
-export default Contacts;
+export default Contacts

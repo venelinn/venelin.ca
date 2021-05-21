@@ -1,11 +1,10 @@
-import React from "react"
+import React from 'react'
 
-
-const Profile = props => {
-  const profile = props.info;
-	return (
-		<>
-		  <h4>Profile</h4>
+const Profile = (props) => {
+  const profile = props.info
+  return (
+    <>
+      <h4>Profile</h4>
       <ul className="about__info-list">
         <li>
           <strong>Name:</strong>
@@ -20,8 +19,8 @@ const Profile = props => {
           <span>{profile.website}</span>
         </li>
       </ul>
-	  </>
-	)
+    </>
+  )
 }
 
 export default Profile

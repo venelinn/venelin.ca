@@ -3,70 +3,74 @@ import React, {
   useState,
   createContext,
   useContext,
-  useCallback
-} from 'react';
+  useCallback,
+} from 'react'
 
 const getMql = () =>
-  window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')
 
 const getBrowserTheme = () => {
-  const mql = getMql();
-  return mql && mql.matches ? 'dark' : 'light';
-};
+  const mql = getMql()
+  return mql && mql.matches ? 'dark' : 'light'
+}
 
-const onBrowserThemeChanged = callback => {
-  const mql = getMql();
-  const mqlListener = e => callback(e.matches ? 'dark' : 'light');
-  mql && mql.addListener(mqlListener);
-  return () => mql && mql.removeListener(mqlListener);
-};
+const onBrowserThemeChanged = (callback) => {
+  const mql = getMql()
+  if (!mql) return
+  const mqlListener = (e) => callback(e.matches ? 'dark' : 'light')
+  mql.addEventListener('change', mqlListener)
+  // eslint-disable-next-line consistent-return
+  return () => mql.removeEventListener('change', mqlListener)
+}
 
 const getLocalStorageTheme = () => {
   try {
-    const localTheme = localStorage && localStorage.getItem('theme');
+    const localTheme = localStorage && localStorage.getItem('theme')
     if (localTheme && ['light', 'dark'].includes(localTheme)) {
-      return localTheme;
+      return localTheme
     }
   } catch (err) {
-    console.warn('Can’t access local storage:', err.message);
+    console.warn('Can’t access local storage:', err.message)
   }
-};
+  return null
+}
 
-const setLocalStorageTheme = theme => {
+const setLocalStorageTheme = (theme) => {
   try {
-    localStorage && localStorage.setItem('theme', theme);
+    // eslint-disable-next-line no-unused-expressions
+    localStorage && localStorage.setItem('theme', theme)
   } catch (err) {
-    console.warn('Can’t write to local storage:', err.message);
+    console.warn('Can’t write to local storage:', err.message)
   }
-};
+}
 
-const ThemeContext = createContext();
+const ThemeContext = createContext()
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(null);
+  const [theme, setTheme] = useState(null)
 
   const updateTheme = useCallback(
-    newTheme => {
+    (newTheme) => {
       if (typeof newTheme === 'function') {
-        setTheme(currentTheme => {
-          const actualNewTheme = newTheme(currentTheme);
-          setLocalStorageTheme(actualNewTheme);
-          return actualNewTheme;
-        });
+        setTheme((currentTheme) => {
+          const actualNewTheme = newTheme(currentTheme)
+          setLocalStorageTheme(actualNewTheme)
+          return actualNewTheme
+        })
       } else {
-        setLocalStorageTheme(newTheme);
-        setTheme(newTheme);
+        setLocalStorageTheme(newTheme)
+        setTheme(newTheme)
       }
     },
-    [setTheme]
-  );
+    [setTheme],
+  )
 
   useEffect(() => {
     if (theme === null) {
-      setTheme(getLocalStorageTheme() || getBrowserTheme());
+      setTheme(getLocalStorageTheme() || getBrowserTheme())
     }
-    return onBrowserThemeChanged(updateTheme);
-  }, [theme, updateTheme]);
+    return onBrowserThemeChanged(updateTheme)
+  }, [theme, updateTheme])
 
   return (
     theme && (
@@ -74,7 +78,7 @@ export const ThemeProvider = ({ children }) => {
         {children}
       </ThemeContext.Provider>
     )
-  );
-};
+  )
+}
 
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => useContext(ThemeContext)

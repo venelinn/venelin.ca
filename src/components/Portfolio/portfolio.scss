@@ -45,7 +45,7 @@
     overflow: hidden;
     &:before {
       transition: all 0.5s ease-in-out;
-      content: '';
+      content: "";
       position: absolute;
       background-color: transparent;
       top: 0;
@@ -138,7 +138,6 @@
   }
 }
 
-
 // Carousel
 
 @keyframes tonext {
@@ -186,16 +185,16 @@
   }
 }
 
-
 .carousel {
   ::-webkit-scrollbar {
-      width: 0;
+    width: 0;
   }
   *::-webkit-scrollbar-track {
     background: transparent;
   }
 
-  ol, li {
+  ol,
+  li {
     list-style: none;
   }
   position: relative;
@@ -238,23 +237,22 @@
     width: 20px;
     cursor: pointer;
     border-style: solid;
-    border-color: rgb(51,51,51);
+    border-color: rgb(51, 51, 51);
     border-image: initial;
     border-width: 0px 5px 5px 0px;
     padding: 3px;
-    box-shadow: 1px 1px 0px rgba(255,255,255,0.1);
+    box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
     &--prev {
-      left: .8rem;
+      left: 0.8rem;
       --carousel-transform: translateY(-50%) rotate(135deg);
     }
 
     &--next {
-      right: .8rem;
+      right: 0.8rem;
       --carousel-transform: translateY(-50%) rotate(-45deg);
     }
   }
 }
-
 
 @media (hover: hover) {
   .carousel__nav:hover {

@@ -1,11 +1,11 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
-import JostTTF from '../fonts/jost/Jost-400-Book.ttf';
-import JostWOFF2 from '../fonts/jost/Jost-400-Book.woff2';
-import LeagueSpartanOTF from '../fonts/LeagueSpartan/LeagueSpartan-Bold.otf';
-import LeagueSpartanWOFF2 from '../fonts/LeagueSpartan/LeagueSpartan-Bold.woff2';
+import JostTTF from '../fonts/jost/Jost-400-Book.ttf'
+import JostWOFF2 from '../fonts/jost/Jost-400-Book.woff2'
+import LeagueSpartanOTF from '../fonts/LeagueSpartan/LeagueSpartan-Bold.otf'
+import LeagueSpartanWOFF2 from '../fonts/LeagueSpartan/LeagueSpartan-Bold.woff2'
 
-export { JostTTF, JostWOFF2, LeagueSpartanOTF, LeagueSpartanWOFF2 };
+export { JostTTF, JostWOFF2, LeagueSpartanOTF, LeagueSpartanWOFF2 }
 
 export default createGlobalStyle`
   :root {
@@ -39,4 +39,4 @@ export default createGlobalStyle`
         url(${LeagueSpartanOTF}) format("otf"),
         url(${LeagueSpartanWOFF2}) format("woff2");
   }
-`;
+`

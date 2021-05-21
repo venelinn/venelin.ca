@@ -1,8 +1,8 @@
 //@import 'fonts';
-@import 'animation';
-@import 'theme';
+@import "animation";
+@import "theme";
 
-@import 'reset';
+@import "reset";
 
 html {
   scroll-behavior: smooth;
@@ -116,7 +116,6 @@ h6 {
   z-index: -1;
   height: 100vh;
   animation: hue 15s infinite ease-in-out both;
-
 }
 
 .hero__image {
@@ -142,10 +141,10 @@ h6 {
     display: flex;
     align-items: center;
     font-weight: normal;
-    font-size: calc(16px + 32vw)
+    font-size: calc(16px + 32vw);
   }
   p {
-    opacity: .5;
+    opacity: 0.5;
   }
   a {
     text-decoration: underline;
@@ -153,7 +152,6 @@ h6 {
       text-decoration: none;
     }
   }
-
 }
 
 /**
@@ -249,7 +247,6 @@ button {
     transform: scale(1);
   }
 }
-
 
 @keyframes hue {
   0% {
