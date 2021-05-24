@@ -1,7 +1,7 @@
-import React from 'react';
-//import Fade from 'react-reveal/Fade';
-import { Fade } from 'react-awesome-reveal';
-import './Footer.scss';
+import React from 'react'
+// import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal'
+import './Footer.scss'
 
 const Footer = ({ theme }) => (
   <footer className="footer" data-theme={theme}>
@@ -12,6 +12,6 @@ const Footer = ({ theme }) => (
     </Fade>
     {` `}
   </footer>
-);
+)
 
-export default Footer;
+export default Footer

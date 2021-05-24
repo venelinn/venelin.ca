@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Fade } from 'react-awesome-reveal';
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Fade } from 'react-awesome-reveal'
 
-import './Section.scss';
+import './Section.scss'
 
 const Section = ({
   children,
@@ -13,12 +13,12 @@ const Section = ({
   ...props
 }) => (
   <section
-    id={`${className}`}
+    id={className}
     className={`section section--${className}`}
     data-theme={theme}
     {...props}
   >
-    <div className='section__inner'>
+    <div className="section__inner">
       <Fade triggerOnce delay={300}>
         <h2>{title}</h2>
         <h3>{description}</h3>
@@ -26,18 +26,21 @@ const Section = ({
     </div>
     {children}
   </section>
-);
+)
 
 Section.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
-  theme: PropTypes.string
-};
+  theme: PropTypes.string,
+}
 
 Section.defaultProps = {
-  className: ''
-};
+  className: '',
+  title: '',
+  description: '',
+  theme: '',
+}
 
-export default Section;
+export default Section

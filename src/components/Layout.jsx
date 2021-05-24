@@ -1,54 +1,51 @@
-import React, {useCallback} from 'react';
-import PropTypes from 'prop-types';
-import { useTheme, ThemeProvider } from '../theme';
-import Helmet from 'react-helmet';
-import GlobalStyle from '../styles/global';
+import React, { useCallback } from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { useTheme, ThemeProvider } from '../theme'
+import GlobalStyle from '../styles/global'
 
-import '../styles/style.scss';
+import '../styles/style.scss'
 
 const ChangeThemeButton = ({ children, theme }) => {
-  const [currentTheme, setTheme] = useTheme();
-  const changeTheme = useCallback(() => setTheme(theme), [theme, setTheme]);
+  const [currentTheme, setTheme] = useTheme()
+  const changeTheme = useCallback(() => setTheme(theme), [theme, setTheme])
   return (
     <button
       className={theme === currentTheme ? 'active' : ''}
       onClick={changeTheme}
+      type="button"
     >
       {children}
     </button>
-  );
-};
+  )
+}
 
-
-const ThemeClassOnBody = props => {
-  const [theme] = useTheme();
+const ThemeClassOnBody = ({ bodyClass }) => {
+  const [theme] = useTheme()
   return (
     <Helmet>
-      <body data-theme={theme} className={`page page--${props.bodyClass}`} />
+      <body data-theme={theme} className={`page page--${bodyClass}`} />
     </Helmet>
-  );
-};
+  )
+}
 
-
-const Layout = props => {
+const Layout = ({ bodyClass, children }) => {
   return (
     <ThemeProvider>
       <GlobalStyle />
-      <ThemeClassOnBody bodyClass={props.bodyClass} />
-      {/* <div className="theme-toggle">
-        <ChangeThemeButton theme='dark'>Dark theme</ChangeThemeButton>
-        <ChangeThemeButton theme='light'>Light theme</ChangeThemeButton>
-      </div> */}
+      <ThemeClassOnBody bodyClass={bodyClass} />
+      <div className="theme-toggle">
+        <ChangeThemeButton theme="dark">Dark theme</ChangeThemeButton>
+        <ChangeThemeButton theme="light">Light theme</ChangeThemeButton>
+      </div>
 
-
-
-      { props.children }
+      {children}
     </ThemeProvider>
   )
-};
+}
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
-};
+  children: PropTypes.node.isRequired,
+}
 
-export default Layout;
+export default Layout

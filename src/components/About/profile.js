@@ -1,27 +1,25 @@
-import React from "react"
+import React from 'react'
 
-
-const Profile = props => {
-  const profile = props.info;
-	return (
-		<>
-		  <h4>Profile</h4>
+const Profile = ({ info }) => {
+  return (
+    <>
+      <h4>Profile</h4>
       <ul className="about__info-list">
         <li>
           <strong>Name:</strong>
-          <span>{profile.name}</span>
+          <span>{info.name}</span>
         </li>
         <li>
           <strong>Job:</strong>
-          <span>{profile.jobPosition}</span>
+          <span>{info.jobPosition}</span>
         </li>
         <li>
           <strong>Website:</strong>
-          <span>{profile.website}</span>
+          <span>{info.website}</span>
         </li>
       </ul>
-	  </>
-	)
+    </>
+  )
 }
 
 export default Profile

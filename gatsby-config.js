@@ -26,6 +26,15 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+		{
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        stages: ['develop'],
+        extensions: ['js', 'jsx'],
+        exclude: ['node_modules', '.cache', 'public'],
+        // Any eslint-webpack-plugin options below
+      }
+    },
     {
       resolve: `gatsby-plugin-sass`,
       options: {

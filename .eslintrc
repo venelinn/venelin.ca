@@ -1,0 +1,55 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"parser": "babel-eslint",
+	"extends": [
+			"airbnb",
+			"plugin:prettier/recommended",
+			"plugin:react/recommended",
+			"plugin:react-hooks/recommended",
+			"plugin:jsx-a11y/recommended"
+	],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2020,
+		"sourceType": "module"
+	},
+	"plugins": [
+			"prettier",
+			"react"
+	],
+	"rules": {
+			"prettier/prettier": 										["warn", {"endOfLine":"auto", "printWidth": 80}],
+			"react/display-name":										"off",
+			"react/jsx-filename-extension":          [1, { "extensions": [".js", ".jsx"] }],
+			"react/jsx-indent":                     [2, 2],
+			"react/jsx-indent-props":               [2, 2],
+			"react/jsx-one-expression-per-line":    [0],
+			"no-console": 													["warn", { "allow": ["warn"] }],
+			"react/prefer-stateless-function":      [1],
+			"react-hooks/rules-of-hooks":           "error",
+			"react/forbid-prop-types": 							"off",
+			"react-hooks/exhaustive-deps":          "warn",
+			"react/prop-types": 										"off",
+			"react/require-default-props": 					"off", // TODO
+			"react/no-array-index-key": 						"off",
+			"react/jsx-props-no-spreading": 				"off",
+			"react/destructuring-assignment": 			"off",
+			"no-shadow": 														"off", // TODO
+			"jsx-a11y/aria-role": 									[2,	{"ignoreNonDOM": true}],
+			"react/jsx-wrap-multilines": 						"off",
+			"no-underscore-dangle": [
+				"off",
+				{
+					"allow": [],
+					"allowAfterThis": false,
+					"allowAfterSuper": false,
+					"enforceInMethodNames": true
+				}
+			]
+	}
+}

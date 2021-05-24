@@ -1,13 +1,26 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { string, array } from 'prop-types'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
+
+const detailsQuery = graphql`
+  query DefaultSEOQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+        shareImage
+      }
+    }
+  }
+`
 
 function SEO({ description, lang, meta, keywords, title }) {
   return (
     <StaticQuery
       query={detailsQuery}
-      render={data => {
+      render={(data) => {
         const metaDescription =
           description || data.site.siteMetadata.description
         return (
@@ -55,15 +68,15 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: metaDescription,
               },
             ]
-            .concat(
-              keywords.length > 0
-                ? {
-                  name: `keywords`,
-                  content: keywords.join(`, `),
-                  }
-                : []
-            )
-            .concat(meta)}
+              .concat(
+                keywords.length > 0
+                  ? {
+                      name: `keywords`,
+                      content: keywords.join(`, `),
+                    }
+                  : [],
+              )
+              .concat(meta)}
           />
         )
       }}
@@ -71,32 +84,17 @@ function SEO({ description, lang, meta, keywords, title }) {
   )
 }
 
+SEO.propTypes = {
+  description: string,
+  lang: string,
+  meta: array,
+  title: string.isRequired,
+}
+
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: [],
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
-  shareImage: PropTypes.string
+  description: '',
 }
 
 export default SEO
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-        shareImage
-      }
-    }
-  }
-`
