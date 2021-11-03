@@ -45,7 +45,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "start": "npm run develop",
-    "start:lan": "npm run develop --host=0.0.0.0",
+    "start:lan": "gatsby develop --host=0.0.0.0",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
