@@ -67,12 +67,12 @@ const IndexPage = props => {
 
 export default IndexPage;
 
-// IndexPage.propTypes = {
-//   data: PropTypes.object,
-//   about: PropTypes.object,
-//   folio: PropTypes.object,
-//   jobs: PropTypes.object
-// };
+IndexPage.propTypes = {
+  data: PropTypes.object,
+  about: PropTypes.object,
+  folio: PropTypes.object,
+  jobs: PropTypes.object
+};
 
 export const query = graphql`
   query Index {

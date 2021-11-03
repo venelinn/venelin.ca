@@ -1,8 +1,8 @@
-import React, {useCallback} from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useTheme, ThemeProvider } from '../theme';
 import Helmet from 'react-helmet';
-import GlobalStyle from '../styles/global';
+// import GlobalStyle from '../styles/global';
 
 import '../styles/style.scss';
 
@@ -33,7 +33,7 @@ const ThemeClassOnBody = props => {
 const Layout = props => {
   return (
     <ThemeProvider>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <ThemeClassOnBody bodyClass={props.bodyClass} />
       {/* <div className="theme-toggle">
         <ChangeThemeButton theme='dark'>Dark theme</ChangeThemeButton>

@@ -12,7 +12,7 @@ module.exports = {
     siteUrl: 'https://venelin.ca/', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
     author: 'Venelin Nikolov', // Author for RSS author segment and SEO schema
     authorJob: `Front-end Developer, UX/UI`,
-    copyright: 'Copyright © 2020 Venelin Nikolov', // Copyright string for the RSS feed
+    copyright: 'Copyright © 2021 Venelin Nikolov', // Copyright string for the RSS feed
     userTwitter: '@venelinn', // Change for Twitter Cards
     shortTitle: 'VNN', // Used for App manifest e.g. Mobile Home Screen
     shareImage: '/images/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended
@@ -35,16 +35,16 @@ module.exports = {
         additionalData: `@import "${__dirname}/src/styles/global.scss";`,
       }
     },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true,
-        purgeCSSOptions: {
-          // https://purgecss.com/configuration.html#options
-          safelist: [/^folio/, /^data-reach/], // Don't remove this selector
-        },
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-purgecss`,
+    //   options: {
+    //     printRejected: true,
+    //     purgeCSSOptions: {
+    //       // https://purgecss.com/configuration.html#options
+    //       safelist: [/^folio/, /^data-reach/], // Don't remove this selector
+    //     },
+    //   }
+    // },
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -54,20 +54,11 @@ module.exports = {
       }
 
     },
-    //'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: `${process.env.CONTENTFUL_SPACE_ID}`,
         accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`
-      }
-    },
-    // `@contentful/gatsby-transformer-contentful-richtext`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/src/data`
       }
     },
     {
