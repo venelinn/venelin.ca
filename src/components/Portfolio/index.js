@@ -14,7 +14,7 @@ const Portfolio = props => {
     url: null,
     description: null,
     types: null,
-    media: null
+    media: null,
   });
   const [modal, setModal] = useState(false);
 
@@ -25,32 +25,32 @@ const Portfolio = props => {
       url: item.url,
       description: item.description,
       types: item.types,
-      media: item.media.map(img => img)
+      media: item.media.map(img => img),
     });
   };
 
   return (
     <>
       <div className='portfolio'>
-        <div className="portfolio__grid">
-          <Fade cascade triggerOnce damping={0.1} direction={"up"} >
-              {items.map((item, index) => (
-                <div className='folio' key={index}>
-                  <div
-                    className='folio__link'
-                    type='button'
-                    onClick={() => openModal(item)}
-                  >
-                    <Img fluid={item.media[0].fluid} />
-                    <span className='folio__item'>
-                      <span className='folio__item__cell'>
-                        <h3 className='folio__item__title'>{item.name}</h3>
-                        <span className='folio__item__types'>{item.types}</span>
-                      </span>
+        <div className='portfolio__grid'>
+          <Fade cascade triggerOnce damping={0.1} direction={'up'}>
+            {items.map((item, index) => (
+              <div className='folio' key={index}>
+                <div
+                  className='folio__link'
+                  type='button'
+                  onClick={() => openModal(item)}
+                >
+                  <Img fluid={item.media[0].fluid} />
+                  <span className='folio__item'>
+                    <span className='folio__item__cell'>
+                      <h3 className='folio__item__title'>{item.name}</h3>
+                      <span className='folio__item__types'>{item.types}</span>
                     </span>
-                  </div>
+                  </span>
                 </div>
-              ))}
+              </div>
+            ))}
           </Fade>
         </div>
       </div>
@@ -61,37 +61,40 @@ const Portfolio = props => {
           className='modal'
           onDismiss={() => setModal(false)}
         >
-          <div className="modal__header" data-slider={state.media.length > 1 ? 'true' : null }>
+          <div
+            className='modal__header'
+            data-slider={state.media.length > 1 ? 'true' : null}
+          >
             {state.media.length > 1 ? (
-              <section className="carousel" aria-label="Gallery">
-                <ol className="carousel__viewport">
-                {state.media.map((item, index) => (
-                  <li
-                    key={index}
-                    id={`carousel__slide${index}`}
-                    tabIndex="0"
-                    className="carousel__slide"
-                  >
-                    <Img fluid={item.fluid} />
-                    <span className="carousel__snapper">
-                      {index !== 0 &&
-                        <a
-                          href={`#carousel__slide${index - 1}`}
-                          className="carousel__nav carousel__nav--prev"
+              <section className='carousel' aria-label='Gallery'>
+                <ol className='carousel__viewport'>
+                  {state.media.map((item, index) => (
+                    <li
+                      key={index}
+                      id={`carousel__slide${index}`}
+                      tabIndex='0'
+                      className='carousel__slide'
+                    >
+                      <Img fluid={item.fluid} />
+                      <span className='carousel__snapper'>
+                        {index !== 0 && (
+                          <a
+                            href={`#carousel__slide${index - 1}`}
+                            className='carousel__nav carousel__nav--prev'
                           >
-                          Go to previous
-                        </a>
-                      }
-                      {(index === index.length - 1 || index === 0) &&
-                        <a
-                          href={`#carousel__slide${index + 1}`}
-                          className="carousel__nav carousel__nav--next"
+                            Go to previous
+                          </a>
+                        )}
+                        {(index === index.length - 1 || index === 0) && (
+                          <a
+                            href={`#carousel__slide${index + 1}`}
+                            className='carousel__nav carousel__nav--next'
                           >
                             Go to next
-                        </a>
-                      }
-                    </span>
-                  </li>
+                          </a>
+                        )}
+                      </span>
+                    </li>
                   ))}
                 </ol>
               </section>

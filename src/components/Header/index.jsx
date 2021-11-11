@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../Hero';
 import Social from './Social';
-import { RellaxWrapper } from 'react-rellax-wrapper'
+import { RellaxWrapper } from 'react-rellax-wrapper';
 import './header.scss';
 
 const Header = ({ header, theme, social }) => {

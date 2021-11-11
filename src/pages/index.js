@@ -11,7 +11,7 @@ import About from '../components/About';
 import Portfolio from '../components/Portfolio';
 import Resume from '../components/Resume';
 import Contacts from '../components/Contacts';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer/Footer';
 
 
 const IndexPage = props => {

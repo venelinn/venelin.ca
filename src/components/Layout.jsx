@@ -2,7 +2,6 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useTheme, ThemeProvider } from '../theme';
 import Helmet from 'react-helmet';
-// import GlobalStyle from '../styles/global';
 
 import '../styles/style.scss';
 
@@ -20,35 +19,36 @@ const ChangeThemeButton = ({ children, theme }) => {
 };
 
 
-const ThemeClassOnBody = props => {
+const ThemeClassOnBody = ({ bodyClass }) => {
   const [theme] = useTheme();
   return (
     <Helmet>
-      <body data-theme={theme} className={`page page--${props.bodyClass}`} />
+      <body data-theme={theme} className={`page page--${bodyClass}`} />
     </Helmet>
   );
 };
 
 
-const Layout = props => {
+const Layout = ({bodyClass, children}) => {
   return (
     <ThemeProvider>
-      {/* <GlobalStyle /> */}
-      <ThemeClassOnBody bodyClass={props.bodyClass} />
+      <ThemeClassOnBody bodyClass={bodyClass} />
       {/* <div className="theme-toggle">
         <ChangeThemeButton theme='dark'>Dark theme</ChangeThemeButton>
         <ChangeThemeButton theme='light'>Light theme</ChangeThemeButton>
       </div> */}
-
-
-
-      { props.children }
+      { children }
     </ThemeProvider>
   )
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  bodyClass: PropTypes.string
+};
+
+Layout.defaultProps = {
+  bodyClass: null,
 };
 
 export default Layout;
