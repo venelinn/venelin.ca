@@ -8,11 +8,10 @@ import Section from '../components/Section';
 
 import Header from '../components/Header';
 import About from '../components/About';
-import Portfolio from '../components/Portfolio';
-import Resume from '../components/Resume';
-import Contacts from '../components/Contacts';
-import Footer from '../components/Footer/Footer';
-
+import { Portfolio } from '../components/Portfolio';
+import { Resume } from '../components/Resume';
+import { Contacts } from '../components/Contacts';
+import { Footer } from '../components/Footer';
 
 const IndexPage = props => {
   const sections = props.data.sectionsData.edges[0].node.modules;

@@ -1,6 +1,5 @@
 import React from "react"
 
-
 const Profile = props => {
   const profile = props.info;
 	return (

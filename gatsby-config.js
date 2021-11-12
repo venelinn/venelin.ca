@@ -25,7 +25,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -45,7 +44,7 @@ module.exports = {
     //     },
     //   }
     // },
-    `gatsby-transformer-json`,
+    // `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

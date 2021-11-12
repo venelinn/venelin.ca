@@ -14,3 +14,4 @@ const Footer = ({ theme }) => (
 );
 
 export default Footer;
+export { Footer };
