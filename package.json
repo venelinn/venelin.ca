@@ -37,8 +37,7 @@
     "react-rellax-wrapper": "^1.0.6",
     "sass": "^1.43.4",
     "styled-components": "^5.3.3",
-    "stylelint-config-standard": "^23.0.0",
-    "use-local-storage": "^2.2.5"
+    "stylelint-config-standard": "^23.0.0"
   },
   "keywords": [
     "gatsby"

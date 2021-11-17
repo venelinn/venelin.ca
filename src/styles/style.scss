@@ -16,7 +16,10 @@
   --primary-ease: var(--custom-ease-1);
   --body-font: 'Jost', serif;
   --header-font: 'League Spartan';
+;
 }
+
+@import 'theme-toggle';
 
 html {
   scroll-behavior: smooth;
@@ -209,13 +212,6 @@ button {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-.theme-toggle {
-  position: absolute;
-  right: 2rem;
-  top: 2rem;
-  color: #fff;
 }
 
 /**
