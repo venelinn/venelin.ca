@@ -57,3 +57,4 @@ SVG.propTypes = {
 }
 
 export default SVG
+export { SVG }

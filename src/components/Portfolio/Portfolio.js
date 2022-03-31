@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
 import { Fade } from 'react-awesome-reveal';
 import { Dialog } from '@reach/dialog';
 import '@reach/dialog/styles.css';
-
 import './portfolio.scss';
 
-const Portfolio = props => {
-  const items = props.folio.projects;
+const Portfolio = ({ items }) => {
 
   const [state, setState] = useState({
     name: null,
@@ -140,3 +139,19 @@ const Portfolio = props => {
 
 export default Portfolio;
 export { Portfolio };
+
+Portfolio.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string,
+      description: PropTypes.string,
+      types: PropTypes.string,
+      media: PropTypes.arrayOf(
+        PropTypes.shape({
+          fluid: PropTypes.object.isRequired,
+        }).isRequired
+      ).isRequired,
+    }).isRequired
+  ).isRequired,
+};

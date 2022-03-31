@@ -1,37 +1,14 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-//import Fade from 'react-reveal/Fade';
 import { Fade } from 'react-awesome-reveal';
-
 import './Contacts.scss';
 
-const Form = styled.form`
-  &::before {
-    content: '';
-    transition: 0.2s all;
-    opacity: ${props => (props.overlay ? '.8' : '0')};
-    visibility: ${props => (props.overlay ? 'visible' : 'hidden')};
-  }
-`;
-
-const Modal = styled.div`
-  background: #f1f1f1;
-  color: ${props => (props.status ? 'green' : 'red')};
-  padding: 2em;
-  border-radius: 2px;
-  transition: 0.2s all;
-  text-align: center;
-  margin-top: 2rem;
-  opacity: ${props => (props.visible ? '1' : '0')};
-  visibility: ${props => (props.visible ? 'visible' : 'hidden')};
-`;
 const encode = data => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&');
 };
 
-const Contacts = props => {
+const Contacts = () => {
   const [status, setStatus] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -77,12 +54,11 @@ const Contacts = props => {
 
   return (
     <div className='contact-form'>
-      <Form
+      <form
         name='contact'
         onSubmit={handleSubmit}
         data-netlify='true'
         data-netlify-honeypot='bot'
-        overlay={setModal}
         onClick={() => setModal(false)}
       >
         <input type='hidden' name='form-name' value='contact' aria-label='form-name' />
@@ -136,14 +112,18 @@ const Contacts = props => {
             </button>
           </p>
         </Fade>
-        <Modal visible={modal} status={status}>
+        <dialog
+          className="contact-dialog"
+          data-status={status}
+          open={modal}
+          >
           <p>
             {status
               ? 'Thank you for reaching out. I will get back to you as soon as possible.'
               : 'Ops. Something went wrong. Please try again'}
           </p>
-        </Modal>
-      </Form>
+        </dialog>
+      </form>
     </div>
   );
 };

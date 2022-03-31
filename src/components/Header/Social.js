@@ -1,7 +1,6 @@
 import React from 'react';
-//import { StaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import SVG from '../SVG';
-
 import './Social.scss';
 
 const Social = ({ data }) => {
@@ -25,3 +24,16 @@ const Social = ({ data }) => {
   );
 };
 export default Social;
+export { Social };
+
+PropTypes.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      node: PropTypes.shape({
+        icon: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+      }).isRequired,
+    }),
+  ).isRequired,
+};

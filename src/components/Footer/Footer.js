@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Fade } from 'react-awesome-reveal';
 import './Footer.scss';
 
@@ -15,3 +16,11 @@ const Footer = ({ theme }) => (
 
 export default Footer;
 export { Footer };
+
+Footer.propTypes = {
+  theme: PropTypes.string,
+};
+
+Footer.defaultProps = {
+  theme: 'light',
+}

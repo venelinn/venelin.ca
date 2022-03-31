@@ -71,11 +71,8 @@ function SEO({ description, lang, meta, keywords, title }) {
   )
 }
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [],
-}
+export default SEO
+export { SEO }
 
 SEO.propTypes = {
   description: PropTypes.string,
@@ -86,7 +83,14 @@ SEO.propTypes = {
   shareImage: PropTypes.string
 }
 
-export default SEO
+SEO.defaultProps = {
+  lang: `en`,
+  meta: [],
+  keywords: [],
+  description: ``,
+  shareImage: ``
+}
+
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {

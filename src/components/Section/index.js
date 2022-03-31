@@ -29,7 +29,7 @@ const Section = ({
 );
 
 Section.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
   className: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
@@ -37,7 +37,11 @@ Section.propTypes = {
 };
 
 Section.defaultProps = {
-  className: ''
+  className: '',
+  title: '',
+  description: '',
+  theme: '',
 };
 
 export default Section;
+export { Section };

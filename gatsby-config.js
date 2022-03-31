@@ -12,7 +12,7 @@ module.exports = {
     siteUrl: 'https://venelin.ca/', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
     author: 'Venelin Nikolov', // Author for RSS author segment and SEO schema
     authorJob: `Front-end Developer, UX/UI`,
-    copyright: 'Copyright © 2021 Venelin Nikolov', // Copyright string for the RSS feed
+    copyright: `Copyright © ${new Date().getFullYear()} Venelin Nikolov`, // Copyright string for the RSS feed
     userTwitter: '@venelinn', // Change for Twitter Cards
     shortTitle: 'VNN', // Used for App manifest e.g. Mobile Home Screen
     shareImage: '/images/share.jpg', // Open Graph Default Share Image. 1200x1200 is recommended

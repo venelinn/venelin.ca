@@ -48,10 +48,10 @@ const IndexPage = props => {
             }
           >
             {section.__typename === 'ContentfulAbout' && (
-              <About key={section.id} about={section} />
+              <About key={section.id} content={section.content} profile={section.modules[0]} />
             )}
             {section.__typename === 'ContentfulPortfolioList' && (
-              <Portfolio key={section.id} folio={section} />
+              <Portfolio key={section.id} items={section.projects} />
             )}
             {section.__typename === 'ContentfulExperienceList' && (
               <Resume key={section.id} jobs={section.modules} />
@@ -67,7 +67,7 @@ const IndexPage = props => {
 export default IndexPage;
 
 IndexPage.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.object.isRequired,
   about: PropTypes.object,
   folio: PropTypes.object,
   jobs: PropTypes.object

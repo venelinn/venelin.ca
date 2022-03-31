@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import SVG from '../SVG';
 import './Resume.scss';
@@ -11,7 +12,7 @@ const Resume = ({ jobs }) => (
       </div>
       <div className='timeline__wrap'>
         <Fade triggerOnce direction='up'>
-          {jobs.map((job, index) => (
+          {jobs?.map((job, index) => (
             <div
               key={index}
               className={`timeline__block ${!job.position ? 'hidden' : ''}`}
@@ -67,3 +68,15 @@ const Resume = ({ jobs }) => (
 
 export default Resume;
 export { Resume}
+
+Resume.propTypes = {
+  jobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      company: PropTypes.string,
+      position: PropTypes.string,
+      start: PropTypes.string,
+      end: PropTypes.string,
+      description: PropTypes.string,
+    }),
+  ).isRequired,
+};
