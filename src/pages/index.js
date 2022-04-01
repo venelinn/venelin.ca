@@ -84,16 +84,7 @@ export const query = graphql`
         ... on ContentfulHero {
           title
           image {
-            fluid(maxWidth: 1400, quality: 90) {
-              ...GatsbyContentfulFluid_withWebp_noBase64
-            }
-          }
-          media {
-            title
-            description
-            fluid(maxWidth: 1400, quality: 90) {
-              ...GatsbyContentfulFluid_withWebp_noBase64
-            }
+            gatsbyImageData(layout: FULL_WIDTH, width: 1400)
           }
         }
       }
@@ -130,9 +121,7 @@ export const query = graphql`
                   types
                   description
                   media {
-                    fluid(maxWidth: 500, quality: 80) {
-                      ...GatsbyContentfulFluid_withWebp_noBase64
-                    }
+                    gatsbyImageData(layout: FULL_WIDTH, width: 600)
                   }
                 }
               }

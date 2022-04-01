@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PropTypes from 'prop-types';
 import { Fade } from 'react-awesome-reveal';
 import { Dialog } from '@reach/dialog';
@@ -33,23 +33,26 @@ const Portfolio = ({ items }) => {
       <div className='portfolio'>
         <div className='portfolio__grid'>
           <Fade cascade triggerOnce damping={0.1} direction={'up'}>
-            {items.map((item, index) => (
-              <div className='folio' key={index}>
-                <div
-                  className='folio__link'
-                  type='button'
-                  onClick={() => openModal(item)}
-                >
-                  <Img fluid={item.media[0].fluid} />
-                  <span className='folio__item'>
-                    <span className='folio__item__cell'>
-                      <h3 className='folio__item__title'>{item.name}</h3>
-                      <span className='folio__item__types'>{item.types}</span>
+            {items.map((item, index) => {
+              const thumb = getImage(item.media[0]);
+              return (
+                <div className='folio' key={index}>
+                  <div
+                    className='folio__link'
+                    type='button'
+                    onClick={() => openModal(item)}
+                  >
+                    <GatsbyImage image={thumb} alt={item.name} />
+                    <span className='folio__item'>
+                      <span className='folio__item__cell'>
+                        <h3 className='folio__item__title'>{item.name}</h3>
+                        <span className='folio__item__types'>{item.types}</span>
+                      </span>
                     </span>
-                  </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </Fade>
         </div>
       </div>
@@ -74,7 +77,7 @@ const Portfolio = ({ items }) => {
                       tabIndex='0'
                       className='carousel__slide'
                     >
-                      <Img fluid={item.fluid} />
+                      <GatsbyImage image={getImage(item)} alt={`Portfolio image ${index}`} />
                       <span className='carousel__snapper'>
                         {index !== 0 && (
                           <a
@@ -99,7 +102,7 @@ const Portfolio = ({ items }) => {
               </section>
             ) : (
               state.media.map((item, index) => (
-                <Img key={index} fluid={item.fluid} />
+                <GatsbyImage key={index} image={getImage(item)} alt={`Portfolio image ${index}`} />
               ))
             )}
           </div>
@@ -148,9 +151,7 @@ Portfolio.propTypes = {
       description: PropTypes.string,
       types: PropTypes.string,
       media: PropTypes.arrayOf(
-        PropTypes.shape({
-          fluid: PropTypes.object.isRequired,
-        }).isRequired
+        PropTypes.object.isRequired,
       ).isRequired,
     }).isRequired
   ).isRequired,
