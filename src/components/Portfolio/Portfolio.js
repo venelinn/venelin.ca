@@ -17,7 +17,8 @@ const Portfolio = ({ items }) => {
   });
   const [modal, setModal] = useState(false);
 
-  const openModal = item => {
+  const openModal = (item, e) => {
+    e.preventDefault();
     setModal(true);
     setState({
       name: item.name,
@@ -40,15 +41,16 @@ const Portfolio = ({ items }) => {
                   <div
                     className='folio__link'
                     type='button'
-                    onClick={() => openModal(item)}
                   >
                     <GatsbyImage image={thumb} alt={item.name} />
-                    <span className='folio__item'>
-                      <span className='folio__item__cell'>
-                        <h3 className='folio__item__title'>{item.name}</h3>
+                    <div className='folio__item'>
+                      <div className='folio__item__cell'>
+                        <h3 className='folio__item__title'>
+                          <a href="#" title={item.name} onClick={(e) => openModal(item, e)}>{item.name}</a>
+                        </h3>
                         <span className='folio__item__types'>{item.types}</span>
-                      </span>
-                    </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               )
