@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import {
+  getLocalStorageTheme,
+  setLocalStorageTheme,
+  getBrowserTheme,
+  scrollAfterThemeChange
+} from '../utils/theme';
 
 import '../styles/style.scss';
 
@@ -12,26 +18,6 @@ const ThemeClassOnBody = ({ theme }) => (
 
 const Layout = ({ children }) => {
 
-  const getLocalStorageTheme = () => {
-    try {
-      const localTheme = localStorage && localStorage.getItem('theme');
-      if (localTheme && ['light', 'dark'].includes(localTheme)) {
-        return localTheme;
-      }
-    } catch (err) {
-      console.warn('Can’t access local storage:', err.message);
-    }
-    return;
-  };
-
-  const setLocalStorageTheme = theme => {
-    try {
-      localStorage && localStorage.setItem('theme', theme);
-    } catch (err) {
-      console.warn('Can’t write to local storage:', err.message);
-    }
-  };
-
   const [theme, setTheme] = useState(getLocalStorageTheme() || 'light');
 
   useEffect(() => {
@@ -41,10 +27,12 @@ const Layout = ({ children }) => {
     }
   }, []);
 
+
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     setLocalStorageTheme(newTheme);
+    scrollAfterThemeChange(newTheme === 'light' ? 'up' : 'down');
   }
 
   return (

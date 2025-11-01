@@ -18,7 +18,6 @@ const Portfolio = ({ items }) => {
   const [modal, setModal] = useState(false);
 
   const openModal = (item, e) => {
-    e.preventDefault();
     setModal(true);
     setState({
       name: item.name,
@@ -38,20 +37,18 @@ const Portfolio = ({ items }) => {
               const thumb = getImage(item.media[0]);
               return (
                 <div className='folio' key={index}>
-                  <div
-                    className='folio__link'
-                    type='button'
-                  >
-                    <GatsbyImage image={thumb} alt={item.name} />
-                    <div className='folio__item'>
-                      <div className='folio__item__cell'>
-                        <h3 className='folio__item__title'>
-                          <a href="#" title={item.name} onClick={(e) => openModal(item, e)}>{item.name}</a>
-                        </h3>
-                        <span className='folio__item__types'>{item.types}</span>
-                      </div>
-                    </div>
+                  <div className='folio__item'>
+                    <h3 className='folio__item__title'>{item.name}</h3>
+                    <span className='folio__item__types'>{item.types}</span>
                   </div>
+                  <button
+                    className="folio__link"
+                    role="button"
+                    title={item.name}
+                    onClick={(e) => openModal(item, e)}
+                    >
+                    <GatsbyImage image={thumb} alt={item.name} />
+                  </button>
                 </div>
               )
             })}
