@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
-import { Dialog } from '@reach/dialog';
-import '@reach/dialog/styles.css';
+// import { Dialog } from '@reach/dialog';
+// import '@reach/dialog/styles.css';
 import './portfolio.scss';
 
 const Portfolio = ({ items }) => {
-
   const [state, setState] = useState({
     name: null,
     url: null,
@@ -42,22 +41,22 @@ const Portfolio = ({ items }) => {
                     <span className='folio__item__types'>{item.types}</span>
                   </div>
                   <button
-                    className="folio__link"
-                    role="button"
+                    className='folio__link'
+                    role='button'
                     title={item.name}
-                    onClick={(e) => openModal(item, e)}
-                    >
+                    onClick={e => openModal(item, e)}
+                  >
                     <GatsbyImage image={thumb} alt={item.name} />
                   </button>
                 </div>
-              )
+              );
             })}
           </Fade>
         </div>
       </div>
 
       {modal && (
-        <Dialog
+        <div
           data-theme='light'
           className='modal'
           onDismiss={() => setModal(false)}
@@ -76,7 +75,10 @@ const Portfolio = ({ items }) => {
                       tabIndex='0'
                       className='carousel__slide'
                     >
-                      <GatsbyImage image={getImage(item)} alt={`Portfolio image ${index}`} />
+                      <GatsbyImage
+                        image={getImage(item)}
+                        alt={`Portfolio image ${index}`}
+                      />
                       <span className='carousel__snapper'>
                         {index !== 0 && (
                           <a
@@ -101,7 +103,11 @@ const Portfolio = ({ items }) => {
               </section>
             ) : (
               state.media.map((item, index) => (
-                <GatsbyImage key={index} image={getImage(item)} alt={`Portfolio image ${index}`} />
+                <GatsbyImage
+                  key={index}
+                  image={getImage(item)}
+                  alt={`Portfolio image ${index}`}
+                />
               ))
             )}
           </div>
@@ -133,7 +139,7 @@ const Portfolio = ({ items }) => {
               Close
             </button>
           </div>
-        </Dialog>
+        </div>
       )}
     </>
   );
@@ -149,9 +155,7 @@ Portfolio.propTypes = {
       url: PropTypes.string,
       description: PropTypes.string,
       types: PropTypes.string,
-      media: PropTypes.arrayOf(
-        PropTypes.object.isRequired,
-      ).isRequired,
+      media: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
     }).isRequired
   ).isRequired,
 };
