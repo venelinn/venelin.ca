@@ -32,9 +32,9 @@ module.exports = {
       resolve: `gatsby-plugin-sass`,
       options: {
         sassOptions: {
-          includePaths: [path.resolve(__dirname, 'src/styles')],
+          includePaths: [path.resolve(__dirname, 'src')],
         },
-        additionalData: `@import "${__dirname}/src/styles/global.scss";`,
+        // additionalData: `@import "${__dirname}/src/styles/global.scss";`,
       },
     },
     {

@@ -1,3 +1,5 @@
+@use 'styles/variables' as base;
+
 .social__list {
   display: flex;
   width: 100%;
@@ -18,7 +20,7 @@
     fill: currentColor;
     width: var(--social-size, 1.5rem);
     height: var(--social-size, 1.5rem);
-    @media (min-width: $smedium + 1) {
+    @media (width > base.$smedium) {
       --social-width: 2rem;
     }
   }

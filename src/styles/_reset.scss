@@ -16,7 +16,6 @@ a:hover {
   outline: 0;
 }
 
-
 img {
   border: 0;
 }
@@ -30,16 +29,6 @@ textarea {
   font: inherit;
   margin: 0;
 }
-
-button,
-select {
-  text-transform: none;
-}
-
-textarea {
-  overflow: auto;
-}
-
 /**
  * ===================================================================
  * 02. basic/base setup styles
@@ -53,20 +42,6 @@ textarea {
   box-sizing: border-box;
 }
 
-body {
-  text-rendering: optimizeLegibility;
-  word-wrap: break-word;
-  -webkit-overflow-scrolling: touch;
-  -webkit-text-size-adjust: none;
-}
-
-body,
-input,
-button {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 /**
  * Media
  * -------------------------------------------------------------------
@@ -75,24 +50,6 @@ img,
 video {
   max-width: 100%;
   height: auto;
-}
-
-/**
- * Typography resets
- * -------------------------------------------------------------------
- */
-ul,
-ol,
-pre,
-form,
-blockquote {
-  margin: 0;
-  padding: 0;
-}
-
-small {
-  font-size: 60%;
-  line-height: inherit;
 }
 
 /**

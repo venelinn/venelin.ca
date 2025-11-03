@@ -1,3 +1,5 @@
+@use 'styles/variables' as base;
+
 .section--contact {
   h3 {
     color: white;
@@ -16,9 +18,9 @@
   max-width: var(--page-max-width);
   margin-left: auto;
   margin-right: auto;
-  @include placeholder {
-    color: rgba(255, 255, 255, 1);
-  }
+  // @include m.placeholder {
+  //   color: rgba(255, 255, 255, 1);
+  // }
   fieldset {
     border: none;
   }
@@ -89,12 +91,12 @@ input::-ms-clear {
     &:focus {
       background: #8b0000;
     }
-    @media (min-width: $smedium + 1) {
+    @media (width > base.$smedium) {
       margin-top: 4rem;
       line-height: 4rem;
       font-size: 1.3rem;
     }
-    @media (max-width: $smedium) {
+    @media (width <= base.$smedium) {
       margin-top: 2rem;
       line-height: 3rem;
       font-size: 1.2rem;
@@ -110,8 +112,8 @@ input::-ms-clear {
   text-align: center;
   margin-top: 2rem;
   position: static;
-  color: var(--modal-status, red );
-  &[data-status="true"] {
+  color: var(--modal-status, red);
+  &[data-status='true'] {
     --modal-status: green;
   }
 }

@@ -1,3 +1,5 @@
+@use 'styles/variables' as base;
+
 @mixin h1 {
   line-height: 1.071;
   margin-top: 0;
@@ -19,7 +21,7 @@
 
 @mixin h3 {
   font-size: var(--heading3, 1.5rem);
-  @media (min-width: $smedium + 1) {
+  @media (width > base.$smedium) {
     --heading3: 2rem;
   }
 }

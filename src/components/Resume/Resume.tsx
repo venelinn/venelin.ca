@@ -1,10 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Fade, Zoom } from 'react-awesome-reveal';
-import SVG from '../SVG';
+import { Icon } from '../Icon';
 import './Resume.scss';
 
-const Resume = ({ jobs }) => (
+type Job = {
+  company: string;
+  position: string;
+  start: string;
+  end: string;
+  description: string;
+};
+
+interface ResumeProps {
+  jobs: Job[];
+}
+
+export const Resume = ({ jobs }: ResumeProps) => (
   <>
     <div className='timeline'>
       <div className='resume__header'>
@@ -19,7 +30,7 @@ const Resume = ({ jobs }) => (
             >
               <Zoom delay={200}>
                 <div className='timeline__ico'>
-                  <SVG icon='bag' />
+                  <Icon icon='bag' />
                 </div>
               </Zoom>
 
@@ -48,7 +59,7 @@ const Resume = ({ jobs }) => (
           <div className='timeline__block'>
             <Zoom delay={200}>
               <div className='timeline__ico'>
-                <SVG icon='graduation' />
+                <Icon icon='graduation' />
               </div>
             </Zoom>
             <div className='timeline__header'>
@@ -65,18 +76,3 @@ const Resume = ({ jobs }) => (
     </Fade>
   </>
 );
-
-export default Resume;
-export { Resume}
-
-Resume.propTypes = {
-  jobs: PropTypes.arrayOf(
-    PropTypes.shape({
-      company: PropTypes.string,
-      position: PropTypes.string,
-      start: PropTypes.string,
-      end: PropTypes.string,
-      description: PropTypes.string,
-    }),
-  ).isRequired,
-};

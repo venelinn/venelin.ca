@@ -1,3 +1,5 @@
+@use 'styles/variables' as base;
+
 .intro {
   min-height: 100vh;
   display: flex;
@@ -29,7 +31,7 @@
       color: inherit;
       opacity: 0.8;
       border-color: var(--text-color);
-      @media (max-width: $small) {
+      @media (width < base.$small) {
         padding: 0.7rem 1.5rem;
         letter-spacing: 0.1rem;
       }
@@ -56,7 +58,7 @@
     span {
       opacity: 0.8;
     }
-    @media (max-width: $smedium) {
+    @media (width < base.$smedium) {
       font-size: 0.9rem;
       line-height: 2rem;
     }

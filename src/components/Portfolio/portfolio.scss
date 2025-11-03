@@ -1,15 +1,17 @@
+@use 'styles/variables' as base;
+
 .portfolio {
-  @media (min-width: $smedium + 1) {
+  @media (width > base.$smedium) {
     margin: 2rem auto;
   }
   &__grid {
     display: grid;
     grid-gap: var(--portfolio-gap, 2rem);
-    @media (min-width: $smedium + 1) {
+    @media (width > base.$smedium) {
+      --portfolio-gap: 1rem;
       grid-template-columns: repeat(auto-fit, 320px);
       justify-content: center;
       grid-auto-rows: 1fr;
-      --portfolio-gap: 1rem;
     }
   }
 }
@@ -88,7 +90,7 @@
     align-items: flex-end;
     padding-bottom: 1rem;
   }
-  @media (min-width: $smedium + 1) {
+  @media (width > base.$smedium) {
     transition: all 0.5s ease-in-out;
   }
 }
@@ -96,22 +98,20 @@
 .folio__item__cell {
   text-align: center;
   position: relative;
-  @media (max-width: $smedium) {
+  @media (width <= base.$smedium) {
     margin-top: 5px;
   }
 }
 
 .folio__item__title {
   margin-bottom: 0;
-  @media (min-width: $medium + 1) {
-    font-size: 2rem;
-  }
-  @media (max-width: $medium) {
-    font-size: 1.5rem;
+  font-size: var(--_folio-title, 1.5rem);
+  @media (width > base.$medium) {
+    --_folio-title: 2rem;
   }
   a {
     &:after {
-      content: "";
+      content: '';
       cursor: pointer;
       inset-block: 0;
       inset-inline: 0;
@@ -128,12 +128,11 @@
   display: inline-block;
   line-height: 1.5;
   max-width: 80%;
-  @media (min-width: $medium + 1) {
+  @media (width > base.$medium) {
     text-transform: uppercase;
     letter-spacing: 0.05rem;
   }
 }
-
 
 // Carousel
 
@@ -182,16 +181,16 @@
   }
 }
 
-
 .carousel {
   ::-webkit-scrollbar {
-      width: 0;
+    width: 0;
   }
   *::-webkit-scrollbar-track {
     background: transparent;
   }
 
-  ol, li {
+  ol,
+  li {
     list-style: none;
   }
   position: relative;
@@ -234,23 +233,22 @@
     width: 20px;
     cursor: pointer;
     border-style: solid;
-    border-color: rgb(51,51,51);
+    border-color: rgb(51, 51, 51);
     border-image: initial;
     border-width: 0px 5px 5px 0px;
     padding: 3px;
-    box-shadow: 1px 1px 0px rgba(255,255,255,0.1);
+    box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1);
     &--prev {
-      left: .8rem;
+      left: 0.8rem;
       --carousel-transform: translateY(-50%) rotate(135deg);
     }
 
     &--next {
-      right: .8rem;
+      right: 0.8rem;
       --carousel-transform: translateY(-50%) rotate(-45deg);
     }
   }
 }
-
 
 @media (hover: hover) {
   .carousel__nav:hover {
@@ -306,11 +304,11 @@
   z-index: 5;
   padding: 0;
   position: relative;
-  @media (min-width: $medium + 1) {
+  @media (width > base.$medium) {
     max-width: 600px;
     margin: 0 auto;
   }
-  @media (max-width: $medium) {
+  @media (width <= base.$medium) {
     width: 90%;
   }
   &[data-reach-dialog-content] {
@@ -320,7 +318,7 @@
     padding: 0.3rem 0.3rem 0;
     &[data-slider] > div {
       height: var(--slider-height, 560px);
-      @media (max-width: $medium) {
+      @media (width < base.$medium) {
         --slider-height: 310px;
       }
     }
@@ -331,7 +329,7 @@
 
   &__content {
     padding: var(--modal-content, 2rem);
-    @media (max-width: $medium) {
+    @media (width < base.$medium) {
       --modal-content: 1.5rem;
     }
     &__name {
@@ -346,7 +344,7 @@
       }
     }
     p {
-      @media (max-width: $smedium) {
+      @media (width < base.$smedium) {
         font-size: 80%;
       }
     }

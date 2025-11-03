@@ -4,7 +4,7 @@ import React from 'react';
 import { About } from '../components/About';
 import { Contacts } from '../components/Contacts';
 import { Footer } from '../components/Footer';
-import Header from '../components/Header';
+import { Header } from '../components/Header';
 import Layout from '../components/Layout';
 import { Portfolio } from '../components/Portfolio';
 import { Resume } from '../components/Resume';

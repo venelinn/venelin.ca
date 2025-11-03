@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 // import { Dialog } from '@reach/dialog';
 // import '@reach/dialog/styles.css';
-import './portfolio.scss';
+import './Portfolio.scss';
 
 const Portfolio = ({ items }) => {
   const [state, setState] = useState({
@@ -16,7 +16,7 @@ const Portfolio = ({ items }) => {
   });
   const [modal, setModal] = useState(false);
 
-  const openModal = (item, e) => {
+  const openModal = item => {
     setModal(true);
     setState({
       name: item.name,
@@ -41,8 +41,8 @@ const Portfolio = ({ items }) => {
                     <span className='folio__item__types'>{item.types}</span>
                   </div>
                   <button
+                    type='button'
                     className='folio__link'
-                    role='button'
                     title={item.name}
                     onClick={e => openModal(item, e)}
                   >
