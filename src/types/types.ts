@@ -17,3 +17,5 @@ export type HeaderData = {
   sectionTitle?: string;
   modules: ContentfulHero[];
 };
+
+export type Theme = 'light' | 'dark';

@@ -5,14 +5,14 @@ import {
   setLocalStorageTheme,
   scrollAfterThemeChange,
 } from "../utils/theme";
-
+import { Theme } from '../types/types'
 import "../styles/style.scss";
 
 interface ThemeClassOnBodyProps {
-  theme: string;
+  theme: Theme;
 }
 
-const ThemeClassOnBody: React.FC<ThemeClassOnBodyProps> = ({ theme }) => (
+const ThemeClassOnBody = ({ theme }:ThemeClassOnBodyProps ) => (
   <Helmet>
     <body data-theme={theme} className={`page page--${theme}`} />
   </Helmet>

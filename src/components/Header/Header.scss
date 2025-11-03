@@ -75,3 +75,44 @@
     animation-delay: 1.5s;
   }
 }
+
+
+/* header.scss */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+//home animation
+
+.intro__content > *,
+.intro__social {
+  opacity: 0; /* start hidden */
+  animation: fadeUp 1s ease forwards;
+}
+
+.intro__msg {
+  animation-delay: 0.3s;
+}
+
+.intro__title {
+  animation-delay: 0.5s;
+}
+
+.intro__position {
+  animation-delay: 0.7s;
+}
+
+.intro__cta {
+  animation-delay: 0.9s;
+}
+
+.intro__social {
+  animation-delay: 1.5s;
+}

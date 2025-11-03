@@ -1,4 +1,4 @@
-export type Theme = "light" | "dark";
+import { Theme } from '../types/types'
 
 export const getLocalStorageTheme = (): Theme | null => {
   try {

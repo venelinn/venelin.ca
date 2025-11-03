@@ -1,19 +1,13 @@
 import React from 'react';
 import { Icon, type IconName } from "../Icon";
+import { SocialType } from '../../types/types'
 import './Social.scss';
-
-export type SocialType = {
-  name: string;
-  url: string;
-  icon: IconName ;
-};
 
 interface SocialProps {
   data: SocialType[];
 }
 
 export const Social = ({ data }: SocialProps) => {
-  console.log("social", data);
   return (
     <div className='social intro__social'>
       <ul className='social__list'>
@@ -25,7 +19,7 @@ export const Social = ({ data }: SocialProps) => {
               rel='noopener noreferrer'
               title={item.name}
             >
-              <Icon icon={item.icon} />
+              <Icon icon={item.icon as IconName} />
             </a>
           </li>
         ))}

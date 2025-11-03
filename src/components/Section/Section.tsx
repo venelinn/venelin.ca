@@ -1,5 +1,6 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
+import { Theme } from '../../types/types'
 import './Section.scss';
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
@@ -7,23 +8,21 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   className?: string;
   title?: string;
   description?: string;
-  theme?: string;
+  theme?: Theme;
   type?: string;
 }
 
-export const Section: React.FC<SectionProps> = ({
+export const Section = ({
   children,
   className,
   title,
   theme,
   description,
-  ...props // <-- this allows extra props like data-* attributes
-}) => (
+}:SectionProps) => (
   <section
     id={className}
     className={`section section--${className}`}
     data-theme={theme}
-    {...props}
   >
     <div className='section__inner'>
       <Fade triggerOnce delay={300}>
