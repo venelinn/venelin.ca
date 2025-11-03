@@ -1,4 +1,3 @@
-
 .theme-toggle {
   --theme-shade: #ffffff4f;
   --color-white: #ffffff;
@@ -15,20 +14,18 @@
     cursor: pointer;
   }
   &:before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
   }
   &--dark {
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     &:before {
       background-color: var(--theme-shade);
       border-radius: 50%;
       box-shadow: 10px 0 0 -3.5px var(--theme-shade),
-        -10px 0 0 -3.5px var(--theme-shade),
-        0 -10px 0 -3.5px var(--theme-shade),
-        0 10px 0 -3.5px var(--theme-shade),
-        7px -7px 0 -3.5px var(--theme-shade),
+        -10px 0 0 -3.5px var(--theme-shade), 0 -10px 0 -3.5px var(--theme-shade),
+        0 10px 0 -3.5px var(--theme-shade), 7px -7px 0 -3.5px var(--theme-shade),
         7px 7px 0 -3.5px var(--theme-shade),
         -7px 7px 0 -3.5px var(--theme-shade),
         -7px -7px 0 -3.5px var(--theme-shade);
@@ -42,13 +39,13 @@
       &:before {
         background-color: var(--color-white);
         box-shadow: 10px 0 0 -3.5px var(--color-white),
-                    -10px 0 0 -3.5px var(--color-white),
-                    0 -10px 0 -3.5px var(--color-white),
-                    0 10px 0 -3.5px var(--color-white),
-                    7px -7px 0 -3.5px var(--color-white),
-                    7px 7px 0 -3.5px var(--color-white),
-                    -7px 7px 0 -3.5px var(--color-white),
-                    -7px -7px 0 -3.5px var(--color-white);
+          -10px 0 0 -3.5px var(--color-white),
+          0 -10px 0 -3.5px var(--color-white),
+          0 10px 0 -3.5px var(--color-white),
+          7px -7px 0 -3.5px var(--color-white),
+          7px 7px 0 -3.5px var(--color-white),
+          -7px 7px 0 -3.5px var(--color-white),
+          -7px -7px 0 -3.5px var(--color-white);
       }
     }
   }
@@ -57,8 +54,9 @@
   &--light {
     background-color: transparent;
     box-shadow: inset 10px -8px 0px -2px var(--theme-shade);
-    animation-duration: .5s;
+    animation-duration: 0.5s;
     animation-name: moon;
+    text-shadow: 10px -8px 0px -2px var(--theme-shade);
     &:hover {
       box-shadow: inset 10px -8px 0px -2px var(--color-white);
       transform: scale(1.2);
@@ -66,28 +64,20 @@
   }
 }
 
-
 @keyframes sun {
   from {
     background-color: var(--light-shade);
-    box-shadow: 0 0 0 -5px var(--light-shade),
-                0 0 0 -5px var(--light-shade),
-                0 0 0 -5px var(--light-shade),
-                0 0 0 -5px var(--light-shade),
-                0 0 0 -5px var(--light-shade),
-                0 0 0 -5px var(--light-shade),
-                0 0 0 -5px var(--light-shade),
-                0 0 0 -5px var(--light-shade);
+    box-shadow: 0 0 0 -5px var(--light-shade), 0 0 0 -5px var(--light-shade),
+      0 0 0 -5px var(--light-shade), 0 0 0 -5px var(--light-shade),
+      0 0 0 -5px var(--light-shade), 0 0 0 -5px var(--light-shade),
+      0 0 0 -5px var(--light-shade), 0 0 0 -5px var(--light-shade);
   }
   to {
     background-color: var(--light-shade);
     box-shadow: 10px 0 0 -3.5px var(--light-shade),
-                -10px 0 0 -3.5px var(--light-shade),
-                0 -10px 0 -3.5px var(--light-shade),
-                0 10px 0 -3.5px var(--light-shade),
-                7px -7px 0 -3.5px var(--light-shade),
-                7px 7px 0 -3.5px var(--light-shade),
-                -7px 7px 0 -3.5px var(--light-shade),
-                -7px -7px 0 -3.5px var(--light-shade);
+      -10px 0 0 -3.5px var(--light-shade), 0 -10px 0 -3.5px var(--light-shade),
+      0 10px 0 -3.5px var(--light-shade), 7px -7px 0 -3.5px var(--light-shade),
+      7px 7px 0 -3.5px var(--light-shade), -7px 7px 0 -3.5px var(--light-shade),
+      -7px -7px 0 -3.5px var(--light-shade);
   }
 }
