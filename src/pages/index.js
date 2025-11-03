@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import About from '../components/About';
+import { About } from '../components/About';
 import { Contacts } from '../components/Contacts';
 import { Footer } from '../components/Footer';
 import Header from '../components/Header';
@@ -9,7 +9,7 @@ import Layout from '../components/Layout';
 import { Portfolio } from '../components/Portfolio';
 import { Resume } from '../components/Resume';
 import Section from '../components/Section';
-import SEO from '../components/Seo';
+import { Seo } from '../components/Seo';
 
 const IndexPage = props => {
   const sections = props.data.sectionsData.edges[0].node.modules;
@@ -17,7 +17,7 @@ const IndexPage = props => {
   const social = props.data.socialData.edges;
   return (
     <Layout bodyClass='home'>
-      <SEO
+      <Seo
         title={'Venelin.ca'}
         keywords={[
           `front-end`,
@@ -91,57 +91,10 @@ export const query = graphql`
           id
           modules {
             __typename
-            ... on ContentfulAbout {
-              title
-              description
-              slug
-              content {
-                raw
-              }
-              modules {
-                ... on ContentfulProfile {
-                  name
-                  jobPosition
-                  website
-                }
-              }
-            }
-            ... on ContentfulPortfolioList {
-              title
-              description
-              slug
-              projects {
-                ... on ContentfulPortfolio {
-                  name
-                  url
-                  types
-                  description
-                  media {
-                    gatsbyImageData(layout: FULL_WIDTH, width: 600)
-                  }
-                }
-              }
-            }
-            ... on ContentfulExperienceList {
-              title
-              description
-              slug
-              modules {
-                ... on ContentfulExperience {
-                  id
-                  position
-                  description
-                  company
-                  start(formatString: "MMM YYYY")
-                  end(formatString: "MMM YYYY")
-                }
-              }
-            }
-            ... on ContentfulContacts {
-              title
-              description
-              slug
-            }
+            ...ContentfulAboutFragment
+            ...ContentfulPortfolioListFragment
+            ...ContentfulExperienceListFragment
+            ...ContentfulContactsFragment
           }
         }
       }
