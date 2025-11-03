@@ -19,6 +19,9 @@
       "recommended": true,
       "a11y": {
         "useAltText": "warn"
+      },
+      "style": {
+        "useImportType": "off"
       }
     }
   },

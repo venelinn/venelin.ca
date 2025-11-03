@@ -8,7 +8,7 @@ import { Header } from '../components/Header';
 import Layout from '../components/Layout';
 import { Portfolio } from '../components/Portfolio';
 import { Resume } from '../components/Resume';
-import Section from '../components/Section';
+import { Section } from '../components/Section';
 import { Seo } from '../components/Seo';
 
 const IndexPage = props => {
