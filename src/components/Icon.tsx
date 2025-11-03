@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 
 export const icons = {
   bag: {
@@ -43,10 +43,48 @@ export const icons = {
   },
 };
 
-interface IconProps {
-  icon: string;
-}
+export type IconName = keyof typeof icons;
 
-export const Icon = ({ icon }: IconProps) => {
-  return <svg viewBox='0 0 512 512'>{icons[icon].shape}</svg>;
+export type IconProps = React.ComponentProps<'svg'> & {
+  icon: IconName;
+  title?: string;
+};
+
+export const Icon = ({ icon, title, ...props }: IconProps) => {
+  // Generate a unique ID for accessibility
+  const titleId = useId();
+
+  // Determine accessibility props
+  // If a title is provided, make the icon accessible to screen readers.
+  // If not, hide it, as it's likely decorative.
+  const accessibilityProps = title
+    ? {
+        role: 'img',
+        'aria-labelledby': titleId,
+      }
+    : {
+        role: 'presentation', // Makes it decorative
+        'aria-hidden': true, // Hides it from screen readers
+        focusable: false, // Prevents tabbing in some browsers
+      };
+
+  return (
+    <svg
+      viewBox='0 0 512 512'
+      // Sensible defaults that can be overridden by props
+      fill='currentColor'
+      width='1em'
+      height='1em'
+      // Add accessibility props
+      {...accessibilityProps}
+      // Spread all other passed-in props (like className, style, etc.)
+      {...props}
+    >
+      {/* Conditionally render the title tag for accessibility */}
+      {title && <title id={titleId}>{title}</title>}
+
+      {/* Render the correct icon shape */}
+      {icons[icon].shape}
+    </svg>
+  );
 };

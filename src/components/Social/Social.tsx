@@ -1,11 +1,11 @@
 import React from 'react';
-import { Icon } from '../Icon';
+import { Icon, type IconName } from "../Icon";
 import './Social.scss';
 
 export type SocialType = {
   name: string;
   url: string;
-  icon: string;
+  icon: IconName ;
 };
 
 interface SocialProps {
@@ -13,18 +13,19 @@ interface SocialProps {
 }
 
 export const Social = ({ data }: SocialProps) => {
+  console.log("social", data);
   return (
     <div className='social intro__social'>
       <ul className='social__list'>
         {data.map(item => (
-          <li key={item.node.icon}>
+          <li key={item.icon}>
             <a
-              href={`${item.node.url}`}
+              href={`${item.url}`}
               target='_blank'
               rel='noopener noreferrer'
-              title={`${item.node.name}`}
+              title={item.name}
             >
-              <Icon icon={`${item.node.icon}`} />
+              <Icon icon={item.icon} />
             </a>
           </li>
         ))}

@@ -145,8 +145,8 @@ h6 {
 }
 
 .not-found {
-  height: 100vh;
   height: -webkit-fill-available;
+  min-height: 100vh;
   background-color: var(--bg-even);
   display: flex;
   flex-direction: column;

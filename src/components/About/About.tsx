@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fade } from 'react-awesome-reveal';
-import RichText from '../../utils/RichText';
+import RichText from '../RichText';
 import './About.scss';
 
 interface AboutProps {

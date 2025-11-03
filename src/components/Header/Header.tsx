@@ -1,14 +1,8 @@
 import React from 'react';
 import { Hero } from '../Hero';
-import { Social, type SocialType } from '../Social';
+import { Social} from '../Social';
+import { HeaderData, SocialType } from '../../types/types'
 import './Header.scss';
-
-type HeaderData = {
-  title: string;
-  description: string;
-  sectionTitle: string;
-  modules: any;
-};
 
 type Theme = 'light' | 'dark';
 
@@ -21,7 +15,11 @@ interface HeaderProps {
 export const Header = ({ header, theme = 'light', social }: HeaderProps) => {
   return (
     <section className='intro' data-theme={theme}>
-      <Hero data={header.modules[0]} />
+      <Hero
+        title={header.modules[0].title}
+        image={header.modules[0].image?.gatsbyImageData}
+      />
+
       <div className='intro__content'>
         <div>
           <div className='intro__msg title--h2'>{header.sectionTitle}</div>
